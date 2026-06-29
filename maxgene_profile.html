@@ -208,6 +208,27 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .cta-left-sub{font-size:11px;color:rgba(255,255,255,.45)}
 .cta-right{background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:10px 24px;border-radius:20px;letter-spacing:.5px}
 
+
+/* ── SVG REDESIGN IMPROVEMENTS ── */
+/* Projects page: make cards fill full height */
+.proj-body { justify-content: flex-start; flex: 1; }
+.proj-cards { flex: 1; min-height: 0; align-items: stretch; height: 100%; }
+.proj-card { flex: 1; display: flex; flex-direction: column; }
+.proj-card-body { flex: 1; overflow: visible; display: flex; flex-direction: column; justify-content: space-between; }
+/* Partners/Clients: fill available space */
+.partners-body { overflow: hidden; justify-content: space-between; }
+.clients-body { overflow: hidden; justify-content: space-between; }
+/* Ensure cover page bg covers full height */
+.c-bg { height: 100%; }
+/* Fix for svg in photo panels */
+.sb-photo svg { display: block; }
+/* Contact page - fill space better with contact-cards stretching */
+.contact-body { justify-content: space-between; }
+.contact-cards { flex: 1; align-content: stretch; align-items: stretch; }
+.c-card { flex: 1; min-height: 80px; }
+/* About right panel - better distribution */
+.about-right { justify-content: space-between; }
+
 /* ── DESIGN POLISH ── */
 .ph { border-bottom: 2px solid var(--gold); }
 .ph-left img { filter: brightness(1.1); }
@@ -222,7 +243,113 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <!-- ═══════ PAGE 1 — COVER ═══════ -->
 <div class="page">
 <div class="cover">
-  <div class="c-bg" style="background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 45%,#1a3a70 70%,#0f2d5a 100%);"></div>
+  <div class="c-bg" style="background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 45%,#1a3a70 70%,#0f2d5a 100%);">
+    <!-- Riyadh skyline + crescent SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 340" style="position:absolute;bottom:0;right:0;width:100%;height:340px;opacity:0.18;pointer-events:none;" preserveAspectRatio="xMaxYMax meet">
+      <!-- Ground line -->
+      <line x1="0" y1="300" x2="794" y2="300" stroke="white" stroke-width="1.5"/>
+      <!-- Kingdom Tower (tallest) -->
+      <rect x="490" y="50" width="36" height="250" fill="white"/>
+      <polygon points="490,50 508,10 526,50" fill="white"/>
+      <rect x="497" y="100" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="512" y="100" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="497" y="120" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="512" y="120" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="497" y="140" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="512" y="140" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="497" y="160" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="512" y="160" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="497" y="180" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="512" y="180" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="497" y="200" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="512" y="200" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="497" y="220" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <rect x="512" y="220" width="5" height="8" fill="#0c1e3e" opacity="0.6"/>
+      <!-- Antenna on top -->
+      <line x1="508" y1="10" x2="508" y2="-10" stroke="white" stroke-width="2"/>
+      <!-- Building 2 -->
+      <rect x="540" y="120" width="50" height="180" fill="white"/>
+      <rect x="540" y="120" width="50" height="18" fill="white"/>
+      <rect x="548" y="145" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="561" y="145" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="574" y="145" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="548" y="165" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="561" y="165" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="574" y="165" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="548" y="185" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="561" y="185" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="574" y="185" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="548" y="205" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="561" y="205" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="574" y="205" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="548" y="225" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="561" y="225" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="574" y="225" width="7" height="10" fill="#0c1e3e" opacity="0.5"/>
+      <!-- Building 3 -->
+      <rect x="600" y="150" width="42" height="150" fill="white"/>
+      <polygon points="600,150 621,125 642,150" fill="white"/>
+      <rect x="608" y="160" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="622" y="160" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="636" y="160" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="608" y="178" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="622" y="178" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="636" y="178" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="608" y="196" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="622" y="196" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="636" y="196" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="608" y="214" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="622" y="214" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="636" y="214" width="6" height="9" fill="#0c1e3e" opacity="0.5"/>
+      <!-- Building 4 -->
+      <rect x="652" y="180" width="35" height="120" fill="white"/>
+      <rect x="659" y="190" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="671" y="190" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="683" y="190" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="659" y="208" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="671" y="208" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="683" y="208" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="659" y="226" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="671" y="226" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="659" y="244" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="671" y="244" width="5" height="8" fill="#0c1e3e" opacity="0.5"/>
+      <!-- Building 5 shorter -->
+      <rect x="695" y="210" width="28" height="90" fill="white"/>
+      <rect x="702" y="220" width="4" height="7" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="712" y="220" width="4" height="7" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="702" y="236" width="4" height="7" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="712" y="236" width="4" height="7" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="702" y="252" width="4" height="7" fill="#0c1e3e" opacity="0.5"/>
+      <rect x="712" y="252" width="4" height="7" fill="#0c1e3e" opacity="0.5"/>
+      <!-- Telecom tower far right -->
+      <polygon points="733,300 740,100 747,300" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="736" y1="200" x2="744" y2="200" stroke="white" stroke-width="1.5"/>
+      <line x1="735" y1="230" x2="745" y2="230" stroke="white" stroke-width="1.5"/>
+      <line x1="734" y1="260" x2="746" y2="260" stroke="white" stroke-width="1.5"/>
+      <line x1="740" y1="100" x2="740" y2="85" stroke="white" stroke-width="2"/>
+      <circle cx="740" cy="84" r="3" fill="white"/>
+      <!-- Signal waves from tower -->
+      <path d="M750,140 Q770,130 750,120" fill="none" stroke="white" stroke-width="1.5" opacity="0.7"/>
+      <path d="M755,145 Q785,130 755,115" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <path d="M760,150 Q800,132 760,112" fill="none" stroke="white" stroke-width="0.8" opacity="0.3"/>
+      <!-- Crescent moon top right -->
+      <path d="M760,30 A30,30 0 1 1 760,80 A20,20 0 1 0 760,30" fill="white"/>
+      <!-- Stars -->
+      <circle cx="730" cy="20" r="2" fill="white"/>
+      <circle cx="720" cy="45" r="1.5" fill="white"/>
+      <circle cx="745" cy="55" r="1" fill="white"/>
+      <circle cx="770" cy="25" r="1.5" fill="white"/>
+      <!-- Left shorter buildings -->
+      <rect x="430" y="180" width="30" height="120" fill="white"/>
+      <rect x="437" y="190" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+      <rect x="449" y="190" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+      <rect x="437" y="208" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+      <rect x="449" y="208" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+      <rect x="437" y="226" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+      <rect x="449" y="226" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+      <rect x="437" y="244" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+      <rect x="449" y="244" width="4" height="7" fill="#0c1e3e" opacity="0.4"/>
+    </svg>
+  </div>
   <div class="c-geo" style="background:linear-gradient(135deg,transparent 50%,rgba(200,137,12,.3) 50%);"></div><div style="position:absolute;top:0;right:0;width:180px;height:180px;background:linear-gradient(135deg,transparent 50%,rgba(200,137,12,.12) 50%);"></div><div class="c-geo2"></div>
   <div class="c-content">
     <div class="c-topbar">
@@ -273,7 +400,61 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
     </div>
   </div>
   <div class="about-right">
-    <div class="ar-img" style="background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 50%,#0e2d6e 100%);display:flex;align-items:center;justify-content:center;"><span style='font-size:11px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;'>RIYADH · KSA</span></div>
+    <div class="ar-img" style="background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 50%,#0e2d6e 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+      <!-- Smart city hexagon network SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.22;" preserveAspectRatio="xMidYMid meet">
+        <!-- Hexagon grid pattern representing smart city / tech infrastructure -->
+        <!-- Row 1 hexagons -->
+        <polygon points="60,20 80,8 100,20 100,44 80,56 60,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="110,20 130,8 150,20 150,44 130,56 110,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="160,20 180,8 200,20 200,44 180,56 160,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="210,20 230,8 250,20 250,44 230,56 210,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="260,20 280,8 300,20 300,44 280,56 260,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="310,20 330,8 350,20 350,44 330,56 310,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="360,20 380,8 400,20 400,44 380,56 360,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="410,20 430,8 450,20 450,44 430,56 410,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="460,20 480,8 500,20 500,44 480,56 460,44" fill="none" stroke="white" stroke-width="1.5"/>
+        <!-- Row 2 offset hexagons -->
+        <polygon points="35,56 55,44 75,56 75,80 55,92 35,80" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="85,56 105,44 125,56 125,80 105,92 85,80" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="135,56 155,44 175,56 175,80 155,92 135,80" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
+        <polygon points="185,56 205,44 225,56 225,80 205,92 185,80" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="235,56 255,44 275,56 275,80 255,92 235,80" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="285,56 305,44 325,56 325,80 305,92 285,80" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
+        <polygon points="335,56 355,44 375,56 375,80 355,92 335,80" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="385,56 405,44 425,56 425,80 405,92 385,80" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="435,56 455,44 475,56 475,80 455,92 435,80" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
+        <polygon points="485,56 505,44 525,56 525,80 505,92 485,80" fill="none" stroke="white" stroke-width="1.5"/>
+        <!-- Row 3 hexagons -->
+        <polygon points="60,92 80,80 100,92 100,116 80,128 60,116" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="110,92 130,80 150,92 150,116 130,128 110,116" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="160,92 180,80 200,92 200,116 180,128 160,116" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="210,92 230,80 250,92 250,116 230,128 210,116" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
+        <polygon points="260,92 280,80 300,92 300,116 280,128 260,116" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="310,92 330,80 350,92 350,116 330,128 310,116" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="360,92 380,80 400,92 400,116 380,128 360,116" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="410,92 430,80 450,92 450,116 430,128 410,116" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="460,92 480,80 500,92 500,116 480,128 460,116" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
+        <!-- Connection dots at hex centers -->
+        <circle cx="80" cy="32" r="3" fill="white" opacity="0.7"/>
+        <circle cx="180" cy="32" r="3" fill="white" opacity="0.7"/>
+        <circle cx="280" cy="32" r="3" fill="white" opacity="0.7"/>
+        <circle cx="380" cy="32" r="3" fill="white" opacity="0.7"/>
+        <circle cx="480" cy="32" r="3" fill="white" opacity="0.7"/>
+        <circle cx="155" cy="68" r="4" fill="white" opacity="0.9"/>
+        <circle cx="305" cy="68" r="4" fill="white" opacity="0.9"/>
+        <circle cx="455" cy="68" r="4" fill="white" opacity="0.9"/>
+        <circle cx="230" cy="104" r="4" fill="white" opacity="0.9"/>
+        <circle cx="480" cy="104" r="4" fill="white" opacity="0.9"/>
+        <!-- Connection lines between highlighted hexes -->
+        <line x1="155" y1="68" x2="305" y2="68" stroke="white" stroke-width="1.5" opacity="0.5"/>
+        <line x1="305" y1="68" x2="455" y2="68" stroke="white" stroke-width="1.5" opacity="0.5"/>
+        <line x1="155" y1="68" x2="230" y2="104" stroke="white" stroke-width="1.5" opacity="0.5"/>
+        <line x1="305" y1="68" x2="230" y2="104" stroke="white" stroke-width="1.5" opacity="0.5"/>
+        <line x1="455" y1="68" x2="480" y2="104" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:3px;text-transform:uppercase;position:relative;z-index:1;">RIYADH · KSA · SMART CITY</span>
+    </div>
     <div>
       <div class="ar-headline">Core Strengths</div>
       <div class="ar-grid">
@@ -304,6 +485,50 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="mv-wrap">
   <div class="mv-left">
     <div style="width:100%;height:100%;background:linear-gradient(160deg,#060e1c 0%,#0c1e3e 40%,#1a3a70 70%,#c8890c22 100%);"></div>
+    <!-- Compass / geometric diamond SVG illustration -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 900" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Large compass rose centered -->
+      <g transform="translate(190,450)">
+        <!-- Outer ring -->
+        <circle cx="0" cy="0" r="160" fill="none" stroke="white" stroke-width="1"/>
+        <circle cx="0" cy="0" r="140" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="4 8"/>
+        <circle cx="0" cy="0" r="100" fill="none" stroke="white" stroke-width="1"/>
+        <circle cx="0" cy="0" r="60" fill="none" stroke="white" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="20" fill="none" stroke="white" stroke-width="2"/>
+        <!-- Main compass points -->
+        <polygon points="0,-160 14,-80 0,-20 -14,-80" fill="white" opacity="0.8"/>
+        <polygon points="0,160 14,80 0,20 -14,80" fill="white" opacity="0.5"/>
+        <polygon points="-160,0 -80,14 -20,0 -80,-14" fill="white" opacity="0.5"/>
+        <polygon points="160,0 80,14 20,0 80,-14" fill="white" opacity="0.5"/>
+        <!-- Diagonal points -->
+        <polygon points="-113,-113 -60,-75 -15,-15 -75,-60" fill="white" opacity="0.3"/>
+        <polygon points="113,-113 60,-75 15,-15 75,-60" fill="white" opacity="0.3"/>
+        <polygon points="-113,113 -60,75 -15,15 -75,60" fill="white" opacity="0.3"/>
+        <polygon points="113,113 60,75 15,15 75,60" fill="white" opacity="0.3"/>
+        <!-- Cross lines -->
+        <line x1="0" y1="-160" x2="0" y2="160" stroke="white" stroke-width="0.5" opacity="0.3"/>
+        <line x1="-160" y1="0" x2="160" y2="0" stroke="white" stroke-width="0.5" opacity="0.3"/>
+        <line x1="-113" y1="-113" x2="113" y2="113" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <line x1="113" y1="-113" x2="-113" y2="113" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <!-- Center dot -->
+        <circle cx="0" cy="0" r="5" fill="white"/>
+        <!-- Tick marks on outer ring -->
+        <line x1="0" y1="-160" x2="0" y2="-150" stroke="white" stroke-width="2"/>
+        <line x1="0" y1="160" x2="0" y2="150" stroke="white" stroke-width="2"/>
+        <line x1="-160" y1="0" x2="-150" y2="0" stroke="white" stroke-width="2"/>
+        <line x1="160" y1="0" x2="150" y2="0" stroke="white" stroke-width="2"/>
+        <!-- Minor ticks -->
+        <line x1="0" y1="-140" x2="5" y2="-135" stroke="white" stroke-width="0.8" opacity="0.5"/>
+        <line x1="0" y1="-140" x2="-5" y2="-135" stroke="white" stroke-width="0.8" opacity="0.5"/>
+        <!-- Decorative inner diamond -->
+        <polygon points="0,-55 55,0 0,55 -55,0" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="0,-40 40,0 0,40 -40,0" fill="none" stroke="white" stroke-width="1"/>
+      </g>
+      <!-- Corner geometric accents -->
+      <polygon points="0,0 40,0 0,40" fill="white" opacity="0.15"/>
+      <polygon points="380,0 340,0 380,40" fill="white" opacity="0.15"/>
+      <polygon points="0,900 40,900 0,860" fill="white" opacity="0.15"/>
+    </svg>
     <div class="mv-left-veil"></div>
     <!-- Decorative geometric circles -->
     <div style="position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
@@ -353,6 +578,44 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ELV / Automation &amp; Control Systems</div></div><div class="ph-badge">ELV Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0c1e3e 0%,#1f4ba0 60%,#0e1d3a 100%);position:relative;">
+    <!-- ELV/Automation: Building with connected floor nodes -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Building outline -->
+      <rect x="75" y="80" width="200" height="360" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Roof -->
+      <polygon points="75,80 175,30 275,80" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Floors -->
+      <line x1="75" y1="160" x2="275" y2="160" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="75" y1="240" x2="275" y2="240" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="75" y1="320" x2="275" y2="320" stroke="white" stroke-width="1" opacity="0.6"/>
+      <!-- Floor nodes on left side -->
+      <circle cx="75" cy="120" r="6" fill="white" opacity="0.9"/>
+      <circle cx="75" cy="200" r="6" fill="white" opacity="0.9"/>
+      <circle cx="75" cy="280" r="6" fill="white" opacity="0.9"/>
+      <circle cx="75" cy="360" r="6" fill="white" opacity="0.9"/>
+      <!-- Floor nodes on right side -->
+      <circle cx="275" cy="120" r="6" fill="white" opacity="0.9"/>
+      <circle cx="275" cy="200" r="6" fill="white" opacity="0.9"/>
+      <circle cx="275" cy="280" r="6" fill="white" opacity="0.9"/>
+      <circle cx="275" cy="360" r="6" fill="white" opacity="0.9"/>
+      <!-- Central control node -->
+      <circle cx="175" cy="257" r="18" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="257" r="8" fill="white" opacity="0.7"/>
+      <!-- Connection lines to central node -->
+      <line x1="75" y1="120" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="75" y1="200" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="75" y1="280" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="75" y1="360" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="120" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="200" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="280" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="360" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Windows -->
+      <rect x="110" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <rect x="145" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <rect x="180" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <rect x="215" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -391,6 +654,44 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0d2137 0%,#0f6b57 60%,#0a1a2a 100%);position:relative;">
+    <!-- ELV/Automation: Building with connected floor nodes -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Building outline -->
+      <rect x="75" y="80" width="200" height="360" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Roof -->
+      <polygon points="75,80 175,30 275,80" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Floors -->
+      <line x1="75" y1="160" x2="275" y2="160" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="75" y1="240" x2="275" y2="240" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="75" y1="320" x2="275" y2="320" stroke="white" stroke-width="1" opacity="0.6"/>
+      <!-- Floor nodes on left side -->
+      <circle cx="75" cy="120" r="6" fill="white" opacity="0.9"/>
+      <circle cx="75" cy="200" r="6" fill="white" opacity="0.9"/>
+      <circle cx="75" cy="280" r="6" fill="white" opacity="0.9"/>
+      <circle cx="75" cy="360" r="6" fill="white" opacity="0.9"/>
+      <!-- Floor nodes on right side -->
+      <circle cx="275" cy="120" r="6" fill="white" opacity="0.9"/>
+      <circle cx="275" cy="200" r="6" fill="white" opacity="0.9"/>
+      <circle cx="275" cy="280" r="6" fill="white" opacity="0.9"/>
+      <circle cx="275" cy="360" r="6" fill="white" opacity="0.9"/>
+      <!-- Central control node -->
+      <circle cx="175" cy="257" r="18" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="257" r="8" fill="white" opacity="0.7"/>
+      <!-- Connection lines to central node -->
+      <line x1="75" y1="120" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="75" y1="200" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="75" y1="280" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="75" y1="360" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="120" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="200" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="280" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="275" y1="360" x2="175" y2="257" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Windows -->
+      <rect x="110" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <rect x="145" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <rect x="180" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <rect x="215" y="95" width="20" height="24" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -434,6 +735,55 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ELV / Life Safety Systems</div></div><div class="ph-badge">Life Safety</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#1a0a0a 0%,#8b1a1a 55%,#0c1020 100%);position:relative;">
+    <!-- Life Safety: Fire alarm system diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Main panel -->
+      <rect x="120" y="60" width="110" height="80" rx="6" fill="none" stroke="white" stroke-width="2"/>
+      <text x="175" y="92" text-anchor="middle" font-size="9" fill="white" font-family="monospace" opacity="0.7">FIRE PANEL</text>
+      <rect x="130" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="150" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="170" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="190" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="210" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <!-- Panel output line down -->
+      <line x1="175" y1="140" x2="175" y2="180" stroke="white" stroke-width="2"/>
+      <!-- Junction box -->
+      <rect x="160" y="180" width="30" height="20" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Branch lines left and right -->
+      <line x1="160" y1="190" x2="60" y2="190" stroke="white" stroke-width="1.5"/>
+      <line x1="190" y1="190" x2="290" y2="190" stroke="white" stroke-width="1.5"/>
+      <!-- Left branch down -->
+      <line x1="60" y1="190" x2="60" y2="380" stroke="white" stroke-width="1.5"/>
+      <!-- Right branch down -->
+      <line x1="290" y1="190" x2="290" y2="380" stroke="white" stroke-width="1.5"/>
+      <!-- Smoke detectors - left branch -->
+      <circle cx="60" cy="240" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="60" cy="240" r="4" fill="white" opacity="0.6"/>
+      <circle cx="60" cy="300" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="60" cy="300" r="4" fill="white" opacity="0.6"/>
+      <circle cx="60" cy="360" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="60" cy="360" r="4" fill="white" opacity="0.6"/>
+      <!-- Smoke detectors - right branch -->
+      <circle cx="290" cy="240" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="290" cy="240" r="4" fill="white" opacity="0.6"/>
+      <circle cx="290" cy="300" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="290" cy="300" r="4" fill="white" opacity="0.6"/>
+      <circle cx="290" cy="360" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="290" cy="360" r="4" fill="white" opacity="0.6"/>
+      <!-- Call points (pull stations) -->
+      <rect x="50" y="270" width="20" height="16" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="280" y="270" width="20" height="16" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Flame icon in center -->
+      <path d="M160,340 Q155,310 175,290 Q165,330 185,310 Q195,340 175,370 Q160,360 160,340Z" fill="white" opacity="0.5"/>
+      <!-- Sounder/alarm bell at top left and right -->
+      <path d="M40,80 A20,20 0 0 1 80,80 L75,110 L45,110 Z" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="60" y1="110" x2="60" y2="120" stroke="white" stroke-width="2"/>
+      <path d="M270,80 A20,20 0 0 1 310,80 L305,110 L275,110 Z" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="290" y1="110" x2="290" y2="120" stroke="white" stroke-width="2"/>
+      <!-- Connect alarms to panel -->
+      <line x1="80" y1="95" x2="120" y2="95" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="230" y1="95" x2="270" y2="95" stroke="white" stroke-width="1" opacity="0.5"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -472,6 +822,55 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#1a1200 0%,#b87800 55%,#0c1020 100%);position:relative;">
+    <!-- Life Safety: Fire alarm system diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Main panel -->
+      <rect x="120" y="60" width="110" height="80" rx="6" fill="none" stroke="white" stroke-width="2"/>
+      <text x="175" y="92" text-anchor="middle" font-size="9" fill="white" font-family="monospace" opacity="0.7">FIRE PANEL</text>
+      <rect x="130" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="150" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="170" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="190" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <rect x="210" y="100" width="14" height="10" rx="2" fill="white" opacity="0.5"/>
+      <!-- Panel output line down -->
+      <line x1="175" y1="140" x2="175" y2="180" stroke="white" stroke-width="2"/>
+      <!-- Junction box -->
+      <rect x="160" y="180" width="30" height="20" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Branch lines left and right -->
+      <line x1="160" y1="190" x2="60" y2="190" stroke="white" stroke-width="1.5"/>
+      <line x1="190" y1="190" x2="290" y2="190" stroke="white" stroke-width="1.5"/>
+      <!-- Left branch down -->
+      <line x1="60" y1="190" x2="60" y2="380" stroke="white" stroke-width="1.5"/>
+      <!-- Right branch down -->
+      <line x1="290" y1="190" x2="290" y2="380" stroke="white" stroke-width="1.5"/>
+      <!-- Smoke detectors - left branch -->
+      <circle cx="60" cy="240" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="60" cy="240" r="4" fill="white" opacity="0.6"/>
+      <circle cx="60" cy="300" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="60" cy="300" r="4" fill="white" opacity="0.6"/>
+      <circle cx="60" cy="360" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="60" cy="360" r="4" fill="white" opacity="0.6"/>
+      <!-- Smoke detectors - right branch -->
+      <circle cx="290" cy="240" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="290" cy="240" r="4" fill="white" opacity="0.6"/>
+      <circle cx="290" cy="300" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="290" cy="300" r="4" fill="white" opacity="0.6"/>
+      <circle cx="290" cy="360" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="290" cy="360" r="4" fill="white" opacity="0.6"/>
+      <!-- Call points (pull stations) -->
+      <rect x="50" y="270" width="20" height="16" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="280" y="270" width="20" height="16" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Flame icon in center -->
+      <path d="M160,340 Q155,310 175,290 Q165,330 185,310 Q195,340 175,370 Q160,360 160,340Z" fill="white" opacity="0.5"/>
+      <!-- Sounder/alarm bell at top left and right -->
+      <path d="M40,80 A20,20 0 0 1 80,80 L75,110 L45,110 Z" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="60" y1="110" x2="60" y2="120" stroke="white" stroke-width="2"/>
+      <path d="M270,80 A20,20 0 0 1 310,80 L305,110 L275,110 Z" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="290" y1="110" x2="290" y2="120" stroke="white" stroke-width="2"/>
+      <!-- Connect alarms to panel -->
+      <line x1="80" y1="95" x2="120" y2="95" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="230" y1="95" x2="270" y2="95" stroke="white" stroke-width="1" opacity="0.5"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -515,6 +914,53 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ICT &amp; Security Systems</div></div><div class="ph-badge">ICT Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1535 0%,#0e4fa8 60%,#061020 100%);position:relative;">
+    <!-- ICT/Networking: Network topology nodes -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Core switch -->
+      <rect x="140" y="70" width="70" height="40" rx="5" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="150" y1="83" x2="200" y2="83" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="150" y1="93" x2="200" y2="93" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="150" y1="103" x2="200" y2="103" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <text x="175" y="115" text-anchor="middle" font-size="8" fill="white" opacity="0.6">CORE</text>
+      <!-- Distribution switches -->
+      <rect x="55" y="190" width="60" height="30" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="85" y="210" text-anchor="middle" font-size="7" fill="white" opacity="0.6">DIST-1</text>
+      <rect x="235" y="190" width="60" height="30" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="265" y="210" text-anchor="middle" font-size="7" fill="white" opacity="0.6">DIST-2</text>
+      <!-- Lines core to distribution -->
+      <line x1="155" y1="110" x2="85" y2="190" stroke="white" stroke-width="1.5"/>
+      <line x1="195" y1="110" x2="265" y2="190" stroke="white" stroke-width="1.5"/>
+      <!-- Access layer switches -->
+      <rect x="20" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="45" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-1</text>
+      <rect x="80" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="105" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-2</text>
+      <rect x="220" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="245" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-3</text>
+      <rect x="280" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="305" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-4</text>
+      <!-- Lines dist to access -->
+      <line x1="85" y1="220" x2="45" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <line x1="85" y1="220" x2="105" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <line x1="265" y1="220" x2="245" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <line x1="265" y1="220" x2="305" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <!-- End devices (workstations) -->
+      <rect x="20" y="380" width="20" height="14" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="30" y1="394" x2="30" y2="405" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="22" y1="405" x2="38" y2="405" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <rect x="50" y="380" width="20" height="14" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="60" y1="394" x2="60" y2="405" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="52" y1="405" x2="68" y2="405" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="45" y1="326" x2="30" y2="380" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="45" y1="326" x2="60" y2="380" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <!-- WiFi symbol top right -->
+      <path d="M290,400 A40,40 0 0 0 330,400" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <path d="M296,412 A28,28 0 0 0 324,412" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <path d="M302,424 A16,16 0 0 0 318,424" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="310" cy="435" r="4" fill="white" opacity="0.7"/>
+      <!-- Fiber cable backbone diagonal line -->
+      <line x1="85" y1="220" x2="265" y2="220" stroke="white" stroke-width="1" stroke-dasharray="6 4" opacity="0.4"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -553,6 +999,53 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1d3060 55%,#0a1535 100%);position:relative;">
+    <!-- ICT/Networking: Network topology nodes -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Core switch -->
+      <rect x="140" y="70" width="70" height="40" rx="5" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="150" y1="83" x2="200" y2="83" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="150" y1="93" x2="200" y2="93" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="150" y1="103" x2="200" y2="103" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <text x="175" y="115" text-anchor="middle" font-size="8" fill="white" opacity="0.6">CORE</text>
+      <!-- Distribution switches -->
+      <rect x="55" y="190" width="60" height="30" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="85" y="210" text-anchor="middle" font-size="7" fill="white" opacity="0.6">DIST-1</text>
+      <rect x="235" y="190" width="60" height="30" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="265" y="210" text-anchor="middle" font-size="7" fill="white" opacity="0.6">DIST-2</text>
+      <!-- Lines core to distribution -->
+      <line x1="155" y1="110" x2="85" y2="190" stroke="white" stroke-width="1.5"/>
+      <line x1="195" y1="110" x2="265" y2="190" stroke="white" stroke-width="1.5"/>
+      <!-- Access layer switches -->
+      <rect x="20" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="45" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-1</text>
+      <rect x="80" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="105" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-2</text>
+      <rect x="220" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="245" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-3</text>
+      <rect x="280" y="300" width="50" height="26" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="305" y="316" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ACC-4</text>
+      <!-- Lines dist to access -->
+      <line x1="85" y1="220" x2="45" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <line x1="85" y1="220" x2="105" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <line x1="265" y1="220" x2="245" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <line x1="265" y1="220" x2="305" y2="300" stroke="white" stroke-width="1" opacity="0.7"/>
+      <!-- End devices (workstations) -->
+      <rect x="20" y="380" width="20" height="14" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="30" y1="394" x2="30" y2="405" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="22" y1="405" x2="38" y2="405" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <rect x="50" y="380" width="20" height="14" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="60" y1="394" x2="60" y2="405" stroke="white" stroke-width="1" opacity="0.6"/>
+      <line x1="52" y1="405" x2="68" y2="405" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="45" y1="326" x2="30" y2="380" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="45" y1="326" x2="60" y2="380" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <!-- WiFi symbol top right -->
+      <path d="M290,400 A40,40 0 0 0 330,400" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <path d="M296,412 A28,28 0 0 0 324,412" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <path d="M302,424 A16,16 0 0 0 318,424" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="310" cy="435" r="4" fill="white" opacity="0.7"/>
+      <!-- Fiber cable backbone diagonal line -->
+      <line x1="85" y1="220" x2="265" y2="220" stroke="white" stroke-width="1" stroke-dasharray="6 4" opacity="0.4"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -596,6 +1089,44 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Security &amp; Access Systems</div></div><div class="ph-badge">Security Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1a12 0%,#0f5733 60%,#081510 100%);position:relative;">
+    <!-- Security/Access Control: Shield with keyhole and credential icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Large shield -->
+      <path d="M175,50 L280,95 L280,220 Q280,330 175,390 Q70,330 70,220 L70,95 Z" fill="none" stroke="white" stroke-width="3"/>
+      <!-- Keyhole in shield -->
+      <circle cx="175" cy="200" r="28" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="200" r="12" fill="white" opacity="0.4"/>
+      <polygon points="165,215 185,215 180,260 170,260" fill="white" opacity="0.6"/>
+      <!-- Card reader top left -->
+      <rect x="40" y="60" width="55" height="75" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="48" y="72" width="39" height="24" rx="3" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="67" cy="112" r="8" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="67" cy="112" r="4" fill="white" opacity="0.5"/>
+      <text x="67" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.5">CARD</text>
+      <!-- Biometric top right -->
+      <rect x="255" y="60" width="55" height="75" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Fingerprint lines -->
+      <path d="M268,80 Q282,70 296,80" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M265,90 Q282,76 299,90" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M263,100 Q282,83 301,100" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M265,110 Q282,95 299,110" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M268,118 Q282,105 296,118" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <text x="282" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.5">BIO</text>
+      <!-- Connect card reader and biometric to shield -->
+      <line x1="95" y1="97" x2="145" y2="150" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="255" y1="97" x2="205" y2="150" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Door below shield -->
+      <rect x="130" y="395" width="90" height="90" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="155" cy="440" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Line from shield to door -->
+      <line x1="175" y1="390" x2="175" y2="395" stroke="white" stroke-width="1.5"/>
+      <!-- Lock icon at door -->
+      <rect x="162" y="415" width="26" height="22" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <path d="M167,415 L167,410 Q175,400 183,410 L183,415" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Access approved checkmark bottom -->
+      <circle cx="175" cy="460" r="18" fill="none" stroke="white" stroke-width="1.5"/>
+      <polyline points="163,460 172,470 188,450" fill="none" stroke="white" stroke-width="2"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -634,6 +1165,44 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1a2a50 60%,#060e1c 100%);position:relative;">
+    <!-- Security/Access Control: Shield with keyhole and credential icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Large shield -->
+      <path d="M175,50 L280,95 L280,220 Q280,330 175,390 Q70,330 70,220 L70,95 Z" fill="none" stroke="white" stroke-width="3"/>
+      <!-- Keyhole in shield -->
+      <circle cx="175" cy="200" r="28" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="200" r="12" fill="white" opacity="0.4"/>
+      <polygon points="165,215 185,215 180,260 170,260" fill="white" opacity="0.6"/>
+      <!-- Card reader top left -->
+      <rect x="40" y="60" width="55" height="75" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="48" y="72" width="39" height="24" rx="3" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="67" cy="112" r="8" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="67" cy="112" r="4" fill="white" opacity="0.5"/>
+      <text x="67" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.5">CARD</text>
+      <!-- Biometric top right -->
+      <rect x="255" y="60" width="55" height="75" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Fingerprint lines -->
+      <path d="M268,80 Q282,70 296,80" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M265,90 Q282,76 299,90" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M263,100 Q282,83 301,100" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M265,110 Q282,95 299,110" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M268,118 Q282,105 296,118" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <text x="282" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.5">BIO</text>
+      <!-- Connect card reader and biometric to shield -->
+      <line x1="95" y1="97" x2="145" y2="150" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="255" y1="97" x2="205" y2="150" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Door below shield -->
+      <rect x="130" y="395" width="90" height="90" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="155" cy="440" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Line from shield to door -->
+      <line x1="175" y1="390" x2="175" y2="395" stroke="white" stroke-width="1.5"/>
+      <!-- Lock icon at door -->
+      <rect x="162" y="415" width="26" height="22" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <path d="M167,415 L167,410 Q175,400 183,410 L183,415" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Access approved checkmark bottom -->
+      <circle cx="175" cy="460" r="18" fill="none" stroke="white" stroke-width="1.5"/>
+      <polyline points="163,460 172,470 188,450" fill="none" stroke="white" stroke-width="2"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -677,6 +1246,40 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Communication &amp; Healthcare Systems</div></div><div class="ph-badge">ELV / Life Safety</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1535 0%,#164e7a 60%,#060e1c 100%);position:relative;">
+    <!-- Public Address: Sound waves and speaker diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Speaker body -->
+      <rect x="95" y="190" width="60" height="130" rx="5" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Speaker cone trapezoid -->
+      <polygon points="95,200 55,160 55,350 95,310" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Speaker driver (circle inside) -->
+      <circle cx="125" cy="255" r="40" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="125" cy="255" r="28" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="125" cy="255" r="12" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="125" cy="255" r="4" fill="white" opacity="0.6"/>
+      <!-- Sound waves right side -->
+      <path d="M160,230 Q195,255 160,280" fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+      <path d="M175,215 Q225,255 175,295" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+      <path d="M192,198 Q260,255 192,312" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <path d="M210,180 Q295,255 210,330" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Amplifier box at bottom -->
+      <rect x="95" y="360" width="160" height="50" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="175" y="380" text-anchor="middle" font-size="8" fill="white" opacity="0.6">AMPLIFIER</text>
+      <circle cx="120" cy="392" r="7" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="230" cy="392" r="7" fill="none" stroke="white" stroke-width="1"/>
+      <rect x="145" y="385" width="60" height="14" rx="2" fill="none" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <!-- Line from speaker to amplifier -->
+      <line x1="125" y1="320" x2="125" y2="360" stroke="white" stroke-width="1.5"/>
+      <!-- Mic at top -->
+      <rect x="155" y="55" width="40" height="70" rx="20" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="125" x2="175" y2="155" stroke="white" stroke-width="1.5"/>
+      <line x1="155" y1="155" x2="195" y2="155" stroke="white" stroke-width="2"/>
+      <!-- Mic waves -->
+      <path d="M135,85 Q125,100 135,115" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <path d="M215,85 Q225,100 215,115" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Connect mic to amplifier -->
+      <line x1="175" y1="155" x2="175" y2="360" stroke="white" stroke-width="1" stroke-dasharray="5 5" opacity="0.4"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -715,6 +1318,40 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#091a1a 0%,#0a5a5a 60%,#060e18 100%);position:relative;">
+    <!-- Public Address: Sound waves and speaker diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Speaker body -->
+      <rect x="95" y="190" width="60" height="130" rx="5" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Speaker cone trapezoid -->
+      <polygon points="95,200 55,160 55,350 95,310" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Speaker driver (circle inside) -->
+      <circle cx="125" cy="255" r="40" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="125" cy="255" r="28" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="125" cy="255" r="12" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="125" cy="255" r="4" fill="white" opacity="0.6"/>
+      <!-- Sound waves right side -->
+      <path d="M160,230 Q195,255 160,280" fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+      <path d="M175,215 Q225,255 175,295" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+      <path d="M192,198 Q260,255 192,312" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <path d="M210,180 Q295,255 210,330" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Amplifier box at bottom -->
+      <rect x="95" y="360" width="160" height="50" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="175" y="380" text-anchor="middle" font-size="8" fill="white" opacity="0.6">AMPLIFIER</text>
+      <circle cx="120" cy="392" r="7" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="230" cy="392" r="7" fill="none" stroke="white" stroke-width="1"/>
+      <rect x="145" y="385" width="60" height="14" rx="2" fill="none" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <!-- Line from speaker to amplifier -->
+      <line x1="125" y1="320" x2="125" y2="360" stroke="white" stroke-width="1.5"/>
+      <!-- Mic at top -->
+      <rect x="155" y="55" width="40" height="70" rx="20" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="125" x2="175" y2="155" stroke="white" stroke-width="1.5"/>
+      <line x1="155" y1="155" x2="195" y2="155" stroke="white" stroke-width="2"/>
+      <!-- Mic waves -->
+      <path d="M135,85 Q125,100 135,115" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <path d="M215,85 Q225,100 215,115" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Connect mic to amplifier -->
+      <line x1="175" y1="155" x2="175" y2="360" stroke="white" stroke-width="1" stroke-dasharray="5 5" opacity="0.4"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -758,6 +1395,43 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Power Backup &amp; Industrial Protection</div></div><div class="ph-badge">ELV / Security</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#1a0f00 0%,#a0640a 55%,#0c0f1a 100%);position:relative;">
+    <!-- UPS/Power: Battery and lightning bolt diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- UPS unit main body -->
+      <rect x="95" y="160" width="160" height="220" rx="8" fill="none" stroke="white" stroke-width="2.5"/>
+      <!-- Battery indicator bars -->
+      <rect x="115" y="180" width="120" height="16" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="117" y="182" width="36" height="12" rx="2" fill="white" opacity="0.7"/>
+      <rect x="157" y="182" width="36" height="12" rx="2" fill="white" opacity="0.7"/>
+      <rect x="197" y="182" width="36" height="12" rx="2" fill="white" opacity="0.3"/>
+      <!-- Lightning bolt in center -->
+      <polygon points="185,220 155,285 178,285 165,340 205,265 180,265 195,220" fill="white" opacity="0.7"/>
+      <!-- Circuit lines at bottom of UPS -->
+      <line x1="115" y1="340" x2="235" y2="340" stroke="white" stroke-width="1" opacity="0.5"/>
+      <circle cx="135" cy="340" r="4" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="175" cy="340" r="4" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="215" cy="340" r="4" fill="none" stroke="white" stroke-width="1"/>
+      <!-- Input power lines from top -->
+      <line x1="175" y1="80" x2="175" y2="160" stroke="white" stroke-width="2"/>
+      <line x1="140" y1="100" x2="140" y2="160" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <line x1="210" y1="100" x2="210" y2="160" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Power source at top -->
+      <rect x="120" y="55" width="110" height="45" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="175" y="75" text-anchor="middle" font-size="8" fill="white" opacity="0.6">MAINS INPUT</text>
+      <text x="175" y="88" text-anchor="middle" font-size="7" fill="white" opacity="0.5">230V AC</text>
+      <!-- Output lines at bottom -->
+      <line x1="175" y1="380" x2="175" y2="440" stroke="white" stroke-width="2"/>
+      <line x1="140" y1="380" x2="140" y2="440" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <line x1="210" y1="380" x2="210" y2="440" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Critical load at bottom -->
+      <rect x="120" y="440" width="110" height="40" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="175" y="457" text-anchor="middle" font-size="8" fill="white" opacity="0.6">CRITICAL LOAD</text>
+      <text x="175" y="470" text-anchor="middle" font-size="7" fill="white" opacity="0.5">PROTECTED</text>
+      <!-- Status LED indicators -->
+      <circle cx="120" cy="400" r="5" fill="white" opacity="0.6"/>
+      <circle cx="135" cy="400" r="5" fill="white" opacity="0.4"/>
+      <circle cx="150" cy="400" r="5" fill="white" opacity="0.3"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -796,6 +1470,44 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1a2a50 55%,#060e1c 100%);position:relative;">
+    <!-- Security/Access Control: Shield with keyhole and credential icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Large shield -->
+      <path d="M175,50 L280,95 L280,220 Q280,330 175,390 Q70,330 70,220 L70,95 Z" fill="none" stroke="white" stroke-width="3"/>
+      <!-- Keyhole in shield -->
+      <circle cx="175" cy="200" r="28" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="200" r="12" fill="white" opacity="0.4"/>
+      <polygon points="165,215 185,215 180,260 170,260" fill="white" opacity="0.6"/>
+      <!-- Card reader top left -->
+      <rect x="40" y="60" width="55" height="75" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="48" y="72" width="39" height="24" rx="3" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="67" cy="112" r="8" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="67" cy="112" r="4" fill="white" opacity="0.5"/>
+      <text x="67" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.5">CARD</text>
+      <!-- Biometric top right -->
+      <rect x="255" y="60" width="55" height="75" rx="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Fingerprint lines -->
+      <path d="M268,80 Q282,70 296,80" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M265,90 Q282,76 299,90" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M263,100 Q282,83 301,100" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M265,110 Q282,95 299,110" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <path d="M268,118 Q282,105 296,118" fill="none" stroke="white" stroke-width="1" opacity="0.7"/>
+      <text x="282" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.5">BIO</text>
+      <!-- Connect card reader and biometric to shield -->
+      <line x1="95" y1="97" x2="145" y2="150" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="255" y1="97" x2="205" y2="150" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Door below shield -->
+      <rect x="130" y="395" width="90" height="90" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="155" cy="440" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Line from shield to door -->
+      <line x1="175" y1="390" x2="175" y2="395" stroke="white" stroke-width="1.5"/>
+      <!-- Lock icon at door -->
+      <rect x="162" y="415" width="26" height="22" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <path d="M167,415 L167,410 Q175,400 183,410 L183,415" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Access approved checkmark bottom -->
+      <circle cx="175" cy="460" r="18" fill="none" stroke="white" stroke-width="1.5"/>
+      <polyline points="163,460 172,470 188,450" fill="none" stroke="white" stroke-width="2"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -839,6 +1551,53 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Smart Facilities Management</div></div><div class="ph-badge">Smart Systems</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1530 0%,#0d4a7a 60%,#060e1c 100%);position:relative;">
+    <!-- Parking: Car + barrier diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Parking area outline -->
+      <rect x="40" y="80" width="270" height="360" rx="4" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <!-- Road lane lines -->
+      <line x1="175" y1="80" x2="175" y2="440" stroke="white" stroke-width="1.5" stroke-dasharray="12 8" opacity="0.4"/>
+      <!-- Entry barrier on left side -->
+      <rect x="40" y="230" width="16" height="60" rx="3" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="56" y1="255" x2="120" y2="255" stroke="white" stroke-width="4"/>
+      <line x1="56" y1="255" x2="56" y2="235" stroke="white" stroke-width="2"/>
+      <!-- ANPR camera box -->
+      <rect x="38" y="200" width="20" height="14" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="48" cy="207" r="4" fill="none" stroke="white" stroke-width="1"/>
+      <text x="58" y="209" font-size="7" fill="white" opacity="0.6">ANPR</text>
+      <!-- Car 1 -->
+      <rect x="80" y="150" width="72" height="40" rx="8" fill="none" stroke="white" stroke-width="2"/>
+      <rect x="88" y="156" width="56" height="20" rx="4" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <circle cx="92" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="92" cy="192" r="3" fill="white" opacity="0.5"/>
+      <circle cx="140" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="140" cy="192" r="3" fill="white" opacity="0.5"/>
+      <!-- Car 2 -->
+      <rect x="200" y="150" width="72" height="40" rx="8" fill="none" stroke="white" stroke-width="2"/>
+      <rect x="208" y="156" width="56" height="20" rx="4" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <circle cx="212" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="212" cy="192" r="3" fill="white" opacity="0.5"/>
+      <circle cx="260" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="260" cy="192" r="3" fill="white" opacity="0.5"/>
+      <!-- Car 3 parked -->
+      <rect x="80" y="300" width="72" height="40" rx="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="92" cy="342" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="92" cy="342" r="3" fill="white" opacity="0.5"/>
+      <circle cx="140" cy="342" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="140" cy="342" r="3" fill="white" opacity="0.5"/>
+      <!-- Parking space markers -->
+      <line x1="80" y1="280" x2="152" y2="280" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="80" y1="370" x2="152" y2="370" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="200" y1="280" x2="272" y2="280" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="200" y1="370" x2="272" y2="370" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- P parking symbol -->
+      <text x="175" y="430" text-anchor="middle" font-size="72" font-weight="bold" fill="none" stroke="white" stroke-width="1.5" opacity="0.15" font-family="Arial">P</text>
+      <!-- Occupancy sensor dots -->
+      <circle cx="116" cy="260" r="6" fill="white" opacity="0.3"/>
+      <text x="116" y="252" text-anchor="middle" font-size="7" fill="white" opacity="0.5">FREE</text>
+      <circle cx="236" cy="260" r="6" fill="white" opacity="0.7"/>
+      <text x="236" y="252" text-anchor="middle" font-size="7" fill="white" opacity="0.5">OCC</text>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -877,6 +1636,53 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1a14 0%,#0e5540 60%,#060e1a 100%);position:relative;">
+    <!-- Parking: Car + barrier diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Parking area outline -->
+      <rect x="40" y="80" width="270" height="360" rx="4" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+      <!-- Road lane lines -->
+      <line x1="175" y1="80" x2="175" y2="440" stroke="white" stroke-width="1.5" stroke-dasharray="12 8" opacity="0.4"/>
+      <!-- Entry barrier on left side -->
+      <rect x="40" y="230" width="16" height="60" rx="3" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="56" y1="255" x2="120" y2="255" stroke="white" stroke-width="4"/>
+      <line x1="56" y1="255" x2="56" y2="235" stroke="white" stroke-width="2"/>
+      <!-- ANPR camera box -->
+      <rect x="38" y="200" width="20" height="14" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="48" cy="207" r="4" fill="none" stroke="white" stroke-width="1"/>
+      <text x="58" y="209" font-size="7" fill="white" opacity="0.6">ANPR</text>
+      <!-- Car 1 -->
+      <rect x="80" y="150" width="72" height="40" rx="8" fill="none" stroke="white" stroke-width="2"/>
+      <rect x="88" y="156" width="56" height="20" rx="4" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <circle cx="92" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="92" cy="192" r="3" fill="white" opacity="0.5"/>
+      <circle cx="140" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="140" cy="192" r="3" fill="white" opacity="0.5"/>
+      <!-- Car 2 -->
+      <rect x="200" y="150" width="72" height="40" rx="8" fill="none" stroke="white" stroke-width="2"/>
+      <rect x="208" y="156" width="56" height="20" rx="4" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <circle cx="212" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="212" cy="192" r="3" fill="white" opacity="0.5"/>
+      <circle cx="260" cy="192" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="260" cy="192" r="3" fill="white" opacity="0.5"/>
+      <!-- Car 3 parked -->
+      <rect x="80" y="300" width="72" height="40" rx="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="92" cy="342" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="92" cy="342" r="3" fill="white" opacity="0.5"/>
+      <circle cx="140" cy="342" r="8" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="140" cy="342" r="3" fill="white" opacity="0.5"/>
+      <!-- Parking space markers -->
+      <line x1="80" y1="280" x2="152" y2="280" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="80" y1="370" x2="152" y2="370" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="200" y1="280" x2="272" y2="280" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="200" y1="370" x2="272" y2="370" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- P parking symbol -->
+      <text x="175" y="430" text-anchor="middle" font-size="72" font-weight="bold" fill="none" stroke="white" stroke-width="1.5" opacity="0.15" font-family="Arial">P</text>
+      <!-- Occupancy sensor dots -->
+      <circle cx="116" cy="260" r="6" fill="white" opacity="0.3"/>
+      <text x="116" y="252" text-anchor="middle" font-size="7" fill="white" opacity="0.5">FREE</text>
+      <circle cx="236" cy="260" r="6" fill="white" opacity="0.7"/>
+      <text x="236" y="252" text-anchor="middle" font-size="7" fill="white" opacity="0.5">OCC</text>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -920,6 +1726,64 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Energy &amp; MEP Division</div></div><div class="ph-badge">MEP / Energy</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#100c00 0%,#b86a00 55%,#0c1010 100%);position:relative;">
+    <!-- Renewable Energy: Solar panel array diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Sun at top -->
+      <circle cx="175" cy="75" r="30" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="33" x2="175" y2="22" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="117" x2="175" y2="128" stroke="white" stroke-width="2"/>
+      <line x1="133" y1="75" x2="122" y2="75" stroke="white" stroke-width="2"/>
+      <line x1="217" y1="75" x2="228" y2="75" stroke="white" stroke-width="2"/>
+      <line x1="146" y1="46" x2="138" y2="38" stroke="white" stroke-width="2"/>
+      <line x1="204" y1="104" x2="212" y2="112" stroke="white" stroke-width="2"/>
+      <line x1="204" y1="46" x2="212" y2="38" stroke="white" stroke-width="2"/>
+      <line x1="146" y1="104" x2="138" y2="112" stroke="white" stroke-width="2"/>
+      <!-- Solar panel row 1 -->
+      <rect x="50" y="160" width="65" height="45" rx="2" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="50" y1="175" x2="115" y2="175" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="50" y1="190" x2="115" y2="190" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="72" y1="160" x2="72" y2="205" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="94" y1="160" x2="94" y2="205" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <rect x="135" y="160" width="65" height="45" rx="2" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="135" y1="175" x2="200" y2="175" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="135" y1="190" x2="200" y2="190" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="157" y1="160" x2="157" y2="205" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="179" y1="160" x2="179" y2="205" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <rect x="220" y="160" width="65" height="45" rx="2" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="220" y1="175" x2="285" y2="175" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="220" y1="190" x2="285" y2="190" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="242" y1="160" x2="242" y2="205" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="264" y1="160" x2="264" y2="205" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <!-- Solar panel row 2 -->
+      <rect x="50" y="220" width="65" height="45" rx="2" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="50" y1="235" x2="115" y2="235" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="50" y1="250" x2="115" y2="250" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="72" y1="220" x2="72" y2="265" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="94" y1="220" x2="94" y2="265" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <rect x="135" y="220" width="65" height="45" rx="2" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="135" y1="235" x2="200" y2="235" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="135" y1="250" x2="200" y2="250" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="157" y1="220" x2="157" y2="265" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="179" y1="220" x2="179" y2="265" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <rect x="220" y="220" width="65" height="45" rx="2" fill="none" stroke="white" stroke-width="2"/>
+      <line x1="220" y1="235" x2="285" y2="235" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="220" y1="250" x2="285" y2="250" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="242" y1="220" x2="242" y2="265" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <line x1="264" y1="220" x2="264" y2="265" stroke="white" stroke-width="0.8" opacity="0.5"/>
+      <!-- Wiring from panels to inverter -->
+      <line x1="82" y1="265" x2="82" y2="320" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="167" y1="265" x2="167" y2="305" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="252" y1="265" x2="252" y2="320" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="82" y1="320" x2="252" y2="320" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="167" y1="320" x2="167" y2="350" stroke="white" stroke-width="2"/>
+      <!-- Inverter box -->
+      <rect x="120" y="350" width="95" height="55" rx="5" fill="none" stroke="white" stroke-width="2"/>
+      <text x="167" y="372" text-anchor="middle" font-size="8" fill="white" opacity="0.7">INVERTER</text>
+      <rect x="130" y="378" width="75" height="12" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Grid connection -->
+      <line x1="167" y1="405" x2="167" y2="450" stroke="white" stroke-width="2"/>
+      <text x="167" y="470" text-anchor="middle" font-size="8" fill="white" opacity="0.5">GRID / LOAD</text>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -958,6 +1822,66 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f20 0%,#1a3060 60%,#060e1c 100%);position:relative;">
+    <!-- Electrical: Circuit panel diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Main distribution panel -->
+      <rect x="90" y="60" width="170" height="280" rx="6" fill="none" stroke="white" stroke-width="2.5"/>
+      <!-- Panel header -->
+      <rect x="90" y="60" width="170" height="30" rx="6" fill="white" opacity="0.12"/>
+      <text x="175" y="80" text-anchor="middle" font-size="8" fill="white" opacity="0.8">MAIN DISTRIBUTION PANEL</text>
+      <!-- Main breaker -->
+      <rect x="145" y="105" width="60" height="28" rx="4" fill="none" stroke="white" stroke-width="2"/>
+      <text x="175" y="117" text-anchor="middle" font-size="7" fill="white" opacity="0.7">MAINS</text>
+      <text x="175" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.7">400A</text>
+      <!-- Busbar horizontal -->
+      <line x1="105" y1="148" x2="245" y2="148" stroke="white" stroke-width="3"/>
+      <!-- Circuit breakers -->
+      <rect x="105" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="116" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">16A</text>
+      <rect x="133" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="144" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">32A</text>
+      <rect x="161" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="172" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">20A</text>
+      <rect x="189" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="200" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">63A</text>
+      <rect x="217" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="228" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">25A</text>
+      <!-- Second row of breakers -->
+      <rect x="105" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="133" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="161" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="189" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="217" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Third row -->
+      <rect x="105" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="133" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="161" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="189" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="217" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Wiring outlet at bottom of panel -->
+      <line x1="116" y1="285" x2="116" y2="340" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="144" y1="285" x2="144" y2="360" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="172" y1="285" x2="172" y2="380" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="200" y1="285" x2="200" y2="360" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="285" x2="228" y2="340" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Loads at bottom -->
+      <rect x="88" y="340" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="108" y="356" text-anchor="middle" font-size="6" fill="white" opacity="0.5">LIGHTING</text>
+      <rect x="138" y="360" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="158" y="376" text-anchor="middle" font-size="6" fill="white" opacity="0.5">POWER</text>
+      <rect x="188" y="360" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="208" y="376" text-anchor="middle" font-size="6" fill="white" opacity="0.5">HVAC</text>
+      <rect x="238" y="340" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="258" y="356" text-anchor="middle" font-size="6" fill="white" opacity="0.5">ELV</text>
+      <!-- MV cable input -->
+      <line x1="175" y1="15" x2="175" y2="60" stroke="white" stroke-width="3"/>
+      <text x="175" y="48" text-anchor="middle" font-size="8" fill="white" opacity="0.5">MV INPUT</text>
+      <!-- Earth symbol -->
+      <line x1="175" y1="415" x2="175" y2="440" stroke="white" stroke-width="2"/>
+      <line x1="155" y1="440" x2="195" y2="440" stroke="white" stroke-width="2.5"/>
+      <line x1="161" y1="448" x2="189" y2="448" stroke="white" stroke-width="2"/>
+      <line x1="167" y1="456" x2="183" y2="456" stroke="white" stroke-width="1.5"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1001,6 +1925,44 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">MEP / Electrical Works</div></div><div class="ph-badge">MEP Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0f0a1a 0%,#4a1a80 60%,#060a18 100%);position:relative;">
+    <!-- Telecom: Tower with signal waves -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Tower structure -->
+      <polygon points="175,40 195,450 155,450" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Cross members -->
+      <line x1="165" y1="150" x2="185" y2="150" stroke="white" stroke-width="2"/>
+      <line x1="162" y1="200" x2="188" y2="200" stroke="white" stroke-width="2"/>
+      <line x1="160" y1="250" x2="190" y2="250" stroke="white" stroke-width="2"/>
+      <line x1="158" y1="300" x2="192" y2="300" stroke="white" stroke-width="2"/>
+      <line x1="156" y1="350" x2="194" y2="350" stroke="white" stroke-width="2"/>
+      <line x1="155" y1="400" x2="195" y2="400" stroke="white" stroke-width="2"/>
+      <!-- Diagonal bracing -->
+      <line x1="165" y1="150" x2="162" y2="200" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="185" y1="150" x2="188" y2="200" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="162" y1="200" x2="160" y2="250" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="188" y1="200" x2="190" y2="250" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Antenna top -->
+      <line x1="175" y1="40" x2="175" y2="15" stroke="white" stroke-width="3"/>
+      <line x1="160" y1="55" x2="190" y2="55" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="14" r="5" fill="white" opacity="0.8"/>
+      <!-- Signal waves radiating right -->
+      <path d="M198,80 Q230,55 198,30" fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+      <path d="M210,90 Q255,55 210,20" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+      <path d="M225,100 Q280,55 225,10" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <path d="M245,112 Q310,55 245,0" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Signal waves radiating left -->
+      <path d="M152,80 Q120,55 152,30" fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+      <path d="M140,90 Q95,55 140,20" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+      <path d="M125,100 Q70,55 125,10" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Base structure / foundation -->
+      <rect x="140" y="450" width="70" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="110" y="470" width="130" height="20" rx="3" fill="none" stroke="white" stroke-width="1"/>
+      <!-- Guy wires -->
+      <line x1="165" y1="200" x2="55" y2="460" stroke="white" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/>
+      <line x1="185" y1="200" x2="295" y2="460" stroke="white" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/>
+      <!-- 5G label area -->
+      <text x="255" y="170" font-size="28" font-weight="bold" fill="none" stroke="white" stroke-width="1" opacity="0.2" font-family="Arial">5G</text>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1039,6 +2001,57 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0f0f0f 0%,#2a2a3a 60%,#0a0a14 100%);position:relative;">
+    <!-- Metal Detection: Walk-through gate diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Walk-through gate frame -->
+      <rect x="110" y="80" width="130" height="320" rx="8" fill="none" stroke="white" stroke-width="3"/>
+      <!-- Gate opening -->
+      <rect x="127" y="105" width="96" height="270" rx="4" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Left panel sensor zones -->
+      <rect x="110" y="105" width="17" height="270" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Right panel sensor zones -->
+      <rect x="223" y="105" width="17" height="270" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Zone indicators on left panel -->
+      <circle cx="118" cy="150" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="190" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="230" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="270" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="310" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="350" r="4" fill="white" opacity="0.5"/>
+      <!-- Zone indicators on right panel -->
+      <circle cx="232" cy="150" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="190" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="230" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="270" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="310" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="350" r="4" fill="white" opacity="0.5"/>
+      <!-- Person silhouette walking through -->
+      <!-- Head -->
+      <circle cx="175" cy="165" r="18" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Body -->
+      <line x1="175" y1="183" x2="175" y2="280" stroke="white" stroke-width="2.5"/>
+      <!-- Arms -->
+      <line x1="175" y1="210" x2="148" y2="250" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="210" x2="202" y2="250" stroke="white" stroke-width="2"/>
+      <!-- Legs -->
+      <line x1="175" y1="280" x2="155" y2="360" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="280" x2="195" y2="360" stroke="white" stroke-width="2"/>
+      <!-- Scan lines (detection field) -->
+      <line x1="127" y1="200" x2="223" y2="200" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <line x1="127" y1="240" x2="223" y2="240" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <line x1="127" y1="280" x2="223" y2="280" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <line x1="127" y1="320" x2="223" y2="320" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <!-- Control display top of gate -->
+      <rect x="148" y="85" width="54" height="20" rx="3" fill="none" stroke="white" stroke-width="1"/>
+      <text x="175" y="99" text-anchor="middle" font-size="7" fill="white" opacity="0.6">CLEAR</text>
+      <!-- Arrow showing direction of travel -->
+      <line x1="175" y1="42" x2="175" y2="62" stroke="white" stroke-width="2"/>
+      <polygon points="175,62 168,50 182,50" fill="white" opacity="0.6"/>
+      <text x="175" y="35" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ENTER</text>
+      <!-- Alert zone highlighted -->
+      <line x1="110" y1="230" x2="127" y2="230" stroke="white" stroke-width="2" opacity="0.8"/>
+      <line x1="223" y1="230" x2="240" y2="230" stroke="white" stroke-width="2" opacity="0.8"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1082,6 +2095,49 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Telecom Division</div></div><div class="ph-badge">Telecom</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#091520 0%,#0a4a6a 60%,#060e18 100%);position:relative;">
+    <!-- Vehicle Tracking: Car with GPS pin and signal -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Satellite signals from top -->
+      <circle cx="100" cy="55" r="12" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="100" y1="43" x2="100" y2="30" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="90" y1="47" x2="82" y2="38" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="110" y1="47" x2="118" y2="38" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="250" cy="45" r="12" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="250" y1="33" x2="250" y2="20" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="240" y1="37" x2="232" y2="28" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="260" y1="37" x2="268" y2="28" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <!-- Signal lines from satellites down to GPS device on car -->
+      <line x1="100" y1="67" x2="175" y2="200" stroke="white" stroke-width="1" opacity="0.4" stroke-dasharray="6 4"/>
+      <line x1="250" y1="57" x2="175" y2="200" stroke="white" stroke-width="1" opacity="0.4" stroke-dasharray="6 4"/>
+      <!-- GPS pin / location marker -->
+      <circle cx="175" cy="195" r="16" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="195" r="7" fill="white" opacity="0.6"/>
+      <line x1="175" y1="211" x2="175" y2="240" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="243" r="4" fill="white" opacity="0.5"/>
+      <!-- Car body -->
+      <rect x="80" y="300" width="190" height="75" rx="12" fill="none" stroke="white" stroke-width="2.5"/>
+      <!-- Car cabin/roof -->
+      <rect x="110" y="262" width="130" height="50" rx="10" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Windows -->
+      <rect x="118" y="268" width="50" height="36" rx="5" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <rect x="178" y="268" width="50" height="36" rx="5" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Wheels -->
+      <circle cx="115" cy="375" r="22" fill="none" stroke="white" stroke-width="2.5"/>
+      <circle cx="115" cy="375" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="235" cy="375" r="22" fill="none" stroke="white" stroke-width="2.5"/>
+      <circle cx="235" cy="375" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- GPS device on car roof -->
+      <rect x="163" y="255" width="24" height="10" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Route/path line on map -->
+      <path d="M55,410 Q85,430 130,420 Q175,410 220,430 Q265,450 295,430" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.4"/>
+      <!-- Map grid lines -->
+      <line x1="40" y1="460" x2="310" y2="460" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="40" y1="480" x2="310" y2="480" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="80" y1="440" x2="80" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="140" y1="440" x2="140" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="210" y1="440" x2="210" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="270" y1="440" x2="270" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1120,6 +2176,66 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1a 0%,#1a2840 60%,#060e18 100%);position:relative;">
+    <!-- Electrical: Circuit panel diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Main distribution panel -->
+      <rect x="90" y="60" width="170" height="280" rx="6" fill="none" stroke="white" stroke-width="2.5"/>
+      <!-- Panel header -->
+      <rect x="90" y="60" width="170" height="30" rx="6" fill="white" opacity="0.12"/>
+      <text x="175" y="80" text-anchor="middle" font-size="8" fill="white" opacity="0.8">MAIN DISTRIBUTION PANEL</text>
+      <!-- Main breaker -->
+      <rect x="145" y="105" width="60" height="28" rx="4" fill="none" stroke="white" stroke-width="2"/>
+      <text x="175" y="117" text-anchor="middle" font-size="7" fill="white" opacity="0.7">MAINS</text>
+      <text x="175" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.7">400A</text>
+      <!-- Busbar horizontal -->
+      <line x1="105" y1="148" x2="245" y2="148" stroke="white" stroke-width="3"/>
+      <!-- Circuit breakers -->
+      <rect x="105" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="116" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">16A</text>
+      <rect x="133" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="144" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">32A</text>
+      <rect x="161" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="172" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">20A</text>
+      <rect x="189" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="200" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">63A</text>
+      <rect x="217" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="228" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">25A</text>
+      <!-- Second row of breakers -->
+      <rect x="105" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="133" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="161" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="189" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="217" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Third row -->
+      <rect x="105" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="133" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="161" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="189" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="217" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Wiring outlet at bottom of panel -->
+      <line x1="116" y1="285" x2="116" y2="340" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="144" y1="285" x2="144" y2="360" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="172" y1="285" x2="172" y2="380" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="200" y1="285" x2="200" y2="360" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="285" x2="228" y2="340" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Loads at bottom -->
+      <rect x="88" y="340" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="108" y="356" text-anchor="middle" font-size="6" fill="white" opacity="0.5">LIGHTING</text>
+      <rect x="138" y="360" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="158" y="376" text-anchor="middle" font-size="6" fill="white" opacity="0.5">POWER</text>
+      <rect x="188" y="360" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="208" y="376" text-anchor="middle" font-size="6" fill="white" opacity="0.5">HVAC</text>
+      <rect x="238" y="340" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="258" y="356" text-anchor="middle" font-size="6" fill="white" opacity="0.5">ELV</text>
+      <!-- MV cable input -->
+      <line x1="175" y1="15" x2="175" y2="60" stroke="white" stroke-width="3"/>
+      <text x="175" y="48" text-anchor="middle" font-size="8" fill="white" opacity="0.5">MV INPUT</text>
+      <!-- Earth symbol -->
+      <line x1="175" y1="415" x2="175" y2="440" stroke="white" stroke-width="2"/>
+      <line x1="155" y1="440" x2="195" y2="440" stroke="white" stroke-width="2.5"/>
+      <line x1="161" y1="448" x2="189" y2="448" stroke="white" stroke-width="2"/>
+      <line x1="167" y1="456" x2="183" y2="456" stroke="white" stroke-width="1.5"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1163,6 +2279,57 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Specialized Systems</div></div><div class="ph-badge">Security / ELV</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f20 0%,#152a55 60%,#060e1c 100%);position:relative;">
+    <!-- Metal Detection: Walk-through gate diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Walk-through gate frame -->
+      <rect x="110" y="80" width="130" height="320" rx="8" fill="none" stroke="white" stroke-width="3"/>
+      <!-- Gate opening -->
+      <rect x="127" y="105" width="96" height="270" rx="4" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Left panel sensor zones -->
+      <rect x="110" y="105" width="17" height="270" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Right panel sensor zones -->
+      <rect x="223" y="105" width="17" height="270" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Zone indicators on left panel -->
+      <circle cx="118" cy="150" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="190" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="230" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="270" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="310" r="4" fill="white" opacity="0.5"/>
+      <circle cx="118" cy="350" r="4" fill="white" opacity="0.5"/>
+      <!-- Zone indicators on right panel -->
+      <circle cx="232" cy="150" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="190" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="230" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="270" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="310" r="4" fill="white" opacity="0.5"/>
+      <circle cx="232" cy="350" r="4" fill="white" opacity="0.5"/>
+      <!-- Person silhouette walking through -->
+      <!-- Head -->
+      <circle cx="175" cy="165" r="18" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Body -->
+      <line x1="175" y1="183" x2="175" y2="280" stroke="white" stroke-width="2.5"/>
+      <!-- Arms -->
+      <line x1="175" y1="210" x2="148" y2="250" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="210" x2="202" y2="250" stroke="white" stroke-width="2"/>
+      <!-- Legs -->
+      <line x1="175" y1="280" x2="155" y2="360" stroke="white" stroke-width="2"/>
+      <line x1="175" y1="280" x2="195" y2="360" stroke="white" stroke-width="2"/>
+      <!-- Scan lines (detection field) -->
+      <line x1="127" y1="200" x2="223" y2="200" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <line x1="127" y1="240" x2="223" y2="240" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <line x1="127" y1="280" x2="223" y2="280" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <line x1="127" y1="320" x2="223" y2="320" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      <!-- Control display top of gate -->
+      <rect x="148" y="85" width="54" height="20" rx="3" fill="none" stroke="white" stroke-width="1"/>
+      <text x="175" y="99" text-anchor="middle" font-size="7" fill="white" opacity="0.6">CLEAR</text>
+      <!-- Arrow showing direction of travel -->
+      <line x1="175" y1="42" x2="175" y2="62" stroke="white" stroke-width="2"/>
+      <polygon points="175,62 168,50 182,50" fill="white" opacity="0.6"/>
+      <text x="175" y="35" text-anchor="middle" font-size="7" fill="white" opacity="0.5">ENTER</text>
+      <!-- Alert zone highlighted -->
+      <line x1="110" y1="230" x2="127" y2="230" stroke="white" stroke-width="2" opacity="0.8"/>
+      <line x1="223" y1="230" x2="240" y2="230" stroke="white" stroke-width="2" opacity="0.8"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1201,6 +2368,44 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#091820 0%,#0c3a5a 60%,#060e18 100%);position:relative;">
+    <!-- Telecom: Tower with signal waves -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Tower structure -->
+      <polygon points="175,40 195,450 155,450" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Cross members -->
+      <line x1="165" y1="150" x2="185" y2="150" stroke="white" stroke-width="2"/>
+      <line x1="162" y1="200" x2="188" y2="200" stroke="white" stroke-width="2"/>
+      <line x1="160" y1="250" x2="190" y2="250" stroke="white" stroke-width="2"/>
+      <line x1="158" y1="300" x2="192" y2="300" stroke="white" stroke-width="2"/>
+      <line x1="156" y1="350" x2="194" y2="350" stroke="white" stroke-width="2"/>
+      <line x1="155" y1="400" x2="195" y2="400" stroke="white" stroke-width="2"/>
+      <!-- Diagonal bracing -->
+      <line x1="165" y1="150" x2="162" y2="200" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="185" y1="150" x2="188" y2="200" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="162" y1="200" x2="160" y2="250" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="188" y1="200" x2="190" y2="250" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Antenna top -->
+      <line x1="175" y1="40" x2="175" y2="15" stroke="white" stroke-width="3"/>
+      <line x1="160" y1="55" x2="190" y2="55" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="14" r="5" fill="white" opacity="0.8"/>
+      <!-- Signal waves radiating right -->
+      <path d="M198,80 Q230,55 198,30" fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+      <path d="M210,90 Q255,55 210,20" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+      <path d="M225,100 Q280,55 225,10" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <path d="M245,112 Q310,55 245,0" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+      <!-- Signal waves radiating left -->
+      <path d="M152,80 Q120,55 152,30" fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+      <path d="M140,90 Q95,55 140,20" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+      <path d="M125,100 Q70,55 125,10" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Base structure / foundation -->
+      <rect x="140" y="450" width="70" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="110" y="470" width="130" height="20" rx="3" fill="none" stroke="white" stroke-width="1"/>
+      <!-- Guy wires -->
+      <line x1="165" y1="200" x2="55" y2="460" stroke="white" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/>
+      <line x1="185" y1="200" x2="295" y2="460" stroke="white" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/>
+      <!-- 5G label area -->
+      <text x="255" y="170" font-size="28" font-weight="bold" fill="none" stroke="white" stroke-width="1" opacity="0.2" font-family="Arial">5G</text>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1244,6 +2449,49 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Fleet &amp; MEP Services</div></div><div class="ph-badge">Logistics / MEP</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1520 0%,#0d3a6a 60%,#060e1c 100%);position:relative;">
+    <!-- Vehicle Tracking: Car with GPS pin and signal -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Satellite signals from top -->
+      <circle cx="100" cy="55" r="12" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="100" y1="43" x2="100" y2="30" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="90" y1="47" x2="82" y2="38" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="110" y1="47" x2="118" y2="38" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="250" cy="45" r="12" fill="none" stroke="white" stroke-width="1.5"/>
+      <line x1="250" y1="33" x2="250" y2="20" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="240" y1="37" x2="232" y2="28" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <line x1="260" y1="37" x2="268" y2="28" stroke="white" stroke-width="1.5" opacity="0.6"/>
+      <!-- Signal lines from satellites down to GPS device on car -->
+      <line x1="100" y1="67" x2="175" y2="200" stroke="white" stroke-width="1" opacity="0.4" stroke-dasharray="6 4"/>
+      <line x1="250" y1="57" x2="175" y2="200" stroke="white" stroke-width="1" opacity="0.4" stroke-dasharray="6 4"/>
+      <!-- GPS pin / location marker -->
+      <circle cx="175" cy="195" r="16" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="195" r="7" fill="white" opacity="0.6"/>
+      <line x1="175" y1="211" x2="175" y2="240" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="243" r="4" fill="white" opacity="0.5"/>
+      <!-- Car body -->
+      <rect x="80" y="300" width="190" height="75" rx="12" fill="none" stroke="white" stroke-width="2.5"/>
+      <!-- Car cabin/roof -->
+      <rect x="110" y="262" width="130" height="50" rx="10" fill="none" stroke="white" stroke-width="2"/>
+      <!-- Windows -->
+      <rect x="118" y="268" width="50" height="36" rx="5" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <rect x="178" y="268" width="50" height="36" rx="5" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Wheels -->
+      <circle cx="115" cy="375" r="22" fill="none" stroke="white" stroke-width="2.5"/>
+      <circle cx="115" cy="375" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <circle cx="235" cy="375" r="22" fill="none" stroke="white" stroke-width="2.5"/>
+      <circle cx="235" cy="375" r="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- GPS device on car roof -->
+      <rect x="163" y="255" width="24" height="10" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Route/path line on map -->
+      <path d="M55,410 Q85,430 130,420 Q175,410 220,430 Q265,450 295,430" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.4"/>
+      <!-- Map grid lines -->
+      <line x1="40" y1="460" x2="310" y2="460" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="40" y1="480" x2="310" y2="480" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="80" y1="440" x2="80" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="140" y1="440" x2="140" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="210" y1="440" x2="210" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+      <line x1="270" y1="440" x2="270" y2="495" stroke="white" stroke-width="0.8" opacity="0.2"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1282,6 +2530,66 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0e1f 0%,#142550 60%,#060c1a 100%);position:relative;">
+    <!-- Electrical: Circuit panel diagram -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 514" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+      <!-- Main distribution panel -->
+      <rect x="90" y="60" width="170" height="280" rx="6" fill="none" stroke="white" stroke-width="2.5"/>
+      <!-- Panel header -->
+      <rect x="90" y="60" width="170" height="30" rx="6" fill="white" opacity="0.12"/>
+      <text x="175" y="80" text-anchor="middle" font-size="8" fill="white" opacity="0.8">MAIN DISTRIBUTION PANEL</text>
+      <!-- Main breaker -->
+      <rect x="145" y="105" width="60" height="28" rx="4" fill="none" stroke="white" stroke-width="2"/>
+      <text x="175" y="117" text-anchor="middle" font-size="7" fill="white" opacity="0.7">MAINS</text>
+      <text x="175" y="127" text-anchor="middle" font-size="7" fill="white" opacity="0.7">400A</text>
+      <!-- Busbar horizontal -->
+      <line x1="105" y1="148" x2="245" y2="148" stroke="white" stroke-width="3"/>
+      <!-- Circuit breakers -->
+      <rect x="105" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="116" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">16A</text>
+      <rect x="133" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="144" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">32A</text>
+      <rect x="161" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="172" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">20A</text>
+      <rect x="189" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="200" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">63A</text>
+      <rect x="217" y="155" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <text x="228" y="175" text-anchor="middle" font-size="6" fill="white" opacity="0.6">25A</text>
+      <!-- Second row of breakers -->
+      <rect x="105" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="133" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="161" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="189" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="217" y="198" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Third row -->
+      <rect x="105" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="133" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="161" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="189" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="217" y="241" width="22" height="30" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+      <!-- Wiring outlet at bottom of panel -->
+      <line x1="116" y1="285" x2="116" y2="340" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="144" y1="285" x2="144" y2="360" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="172" y1="285" x2="172" y2="380" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="200" y1="285" x2="200" y2="360" stroke="white" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="285" x2="228" y2="340" stroke="white" stroke-width="1" opacity="0.5"/>
+      <!-- Loads at bottom -->
+      <rect x="88" y="340" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="108" y="356" text-anchor="middle" font-size="6" fill="white" opacity="0.5">LIGHTING</text>
+      <rect x="138" y="360" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="158" y="376" text-anchor="middle" font-size="6" fill="white" opacity="0.5">POWER</text>
+      <rect x="188" y="360" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="208" y="376" text-anchor="middle" font-size="6" fill="white" opacity="0.5">HVAC</text>
+      <rect x="238" y="340" width="40" height="28" rx="3" fill="none" stroke="white" stroke-width="1.2"/>
+      <text x="258" y="356" text-anchor="middle" font-size="6" fill="white" opacity="0.5">ELV</text>
+      <!-- MV cable input -->
+      <line x1="175" y1="15" x2="175" y2="60" stroke="white" stroke-width="3"/>
+      <text x="175" y="48" text-anchor="middle" font-size="8" fill="white" opacity="0.5">MV INPUT</text>
+      <!-- Earth symbol -->
+      <line x1="175" y1="415" x2="175" y2="440" stroke="white" stroke-width="2"/>
+      <line x1="155" y1="440" x2="195" y2="440" stroke="white" stroke-width="2.5"/>
+      <line x1="161" y1="448" x2="189" y2="448" stroke="white" stroke-width="2"/>
+      <line x1="167" y1="456" x2="183" y2="456" stroke="white" stroke-width="1.5"/>
+    </svg>
 <!-- Decorative circles -->
 <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
 <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
@@ -1323,7 +2631,51 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <!-- ═══════ PAGE 16 — PARTNERS ═══════ -->
 <div class="page">
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Technology Partners</div></div><div class="ph-badge">Partners</div></div>
-<div class="partners-hero"><div style="width:100%;height:100%;background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 60%,#0a1a33 100%);"></div><div class="partners-hero-veil"></div>
+<div class="partners-hero"><div style="width:100%;height:100%;background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 60%,#0a1a33 100%);">
+  <!-- Technology partnership network SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 200" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+    <!-- Partner nodes -->
+    <circle cx="100" cy="100" r="28" fill="none" stroke="#f0b42a" stroke-width="2"/>
+    <text x="100" y="104" text-anchor="middle" font-size="8" fill="white" opacity="0.8">CISCO</text>
+    <circle cx="210" cy="55" r="24" fill="none" stroke="white" stroke-width="1.5"/>
+    <text x="210" y="59" text-anchor="middle" font-size="7" fill="white" opacity="0.7">SIEMENS</text>
+    <circle cx="210" cy="148" r="24" fill="none" stroke="white" stroke-width="1.5"/>
+    <text x="210" y="152" text-anchor="middle" font-size="7" fill="white" opacity="0.7">HP</text>
+    <circle cx="335" cy="100" r="30" fill="none" stroke="#f0b42a" stroke-width="2.5"/>
+    <text x="335" y="97" text-anchor="middle" font-size="8" fill="white" opacity="0.9">MAX</text>
+    <text x="335" y="109" text-anchor="middle" font-size="8" fill="white" opacity="0.9">GENE</text>
+    <circle cx="460" cy="55" r="24" fill="none" stroke="white" stroke-width="1.5"/>
+    <text x="460" y="59" text-anchor="middle" font-size="7" fill="white" opacity="0.7">BOSCH</text>
+    <circle cx="460" cy="148" r="24" fill="none" stroke="white" stroke-width="1.5"/>
+    <text x="460" y="152" text-anchor="middle" font-size="7" fill="white" opacity="0.7">ARUBA</text>
+    <circle cx="580" cy="80" r="22" fill="none" stroke="white" stroke-width="1.5"/>
+    <text x="580" y="84" text-anchor="middle" font-size="7" fill="white" opacity="0.7">ZKTeco</text>
+    <circle cx="580" cy="140" r="22" fill="none" stroke="white" stroke-width="1.5"/>
+    <text x="580" y="144" text-anchor="middle" font-size="7" fill="white" opacity="0.7">DELL</text>
+    <circle cx="690" cy="100" r="26" fill="none" stroke="#f0b42a" stroke-width="2"/>
+    <text x="690" y="97" text-anchor="middle" font-size="7" fill="white" opacity="0.8">GLOBAL</text>
+    <text x="690" y="109" text-anchor="middle" font-size="7" fill="white" opacity="0.8">PARTNERS</text>
+    <!-- Connection lines -->
+    <line x1="128" y1="100" x2="186" y2="66" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="128" y1="100" x2="186" y2="134" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="234" y1="62" x2="305" y2="85" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="234" y1="141" x2="305" y2="115" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="365" y1="85" x2="436" y2="62" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="365" y1="115" x2="436" y2="141" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="484" y1="62" x2="558" y2="82" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="484" y1="141" x2="558" y2="135" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="602" y1="82" x2="664" y2="94" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <line x1="602" y1="135" x2="664" y2="106" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <!-- Horizontal backbone line -->
+    <line x1="100" y1="100" x2="335" y2="100" stroke="#f0b42a" stroke-width="1" opacity="0.3" stroke-dasharray="5 5"/>
+    <line x1="335" y1="100" x2="690" y2="100" stroke="#f0b42a" stroke-width="1" opacity="0.3" stroke-dasharray="5 5"/>
+    <!-- Dots at connection midpoints -->
+    <circle cx="180" cy="76" r="3" fill="white" opacity="0.5"/>
+    <circle cx="180" cy="131" r="3" fill="white" opacity="0.5"/>
+    <circle cx="450" cy="76" r="3" fill="white" opacity="0.5"/>
+    <circle cx="450" cy="131" r="3" fill="white" opacity="0.5"/>
+  </svg>
+</div><div class="partners-hero-veil"></div>
   <div class="partners-hero-text">
     <div class="partners-hero-label">Trusted Partners</div>
     <div class="partners-hero-title">Our Partners</div>
@@ -1467,7 +2819,68 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 18 — PROJECTS ═══════ -->
 <div class="page">
-<div class="proj-hero"><div style="width:100%;height:100%;background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 50%,#162c5a 100%);"></div><div class="proj-hero-veil"></div>
+<div class="proj-hero"><div style="width:100%;height:100%;background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 50%,#162c5a 100%);">
+  <!-- Projects: construction/telecom infrastructure SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 260" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+    <!-- Ground line -->
+    <line x1="0" y1="220" x2="794" y2="220" stroke="white" stroke-width="1.5"/>
+    <!-- Cell tower left -->
+    <polygon points="80,220 92,40 104,220" fill="none" stroke="white" stroke-width="2"/>
+    <line x1="83" y1="130" x2="101" y2="130" stroke="white" stroke-width="1.5"/>
+    <line x1="84" y1="160" x2="100" y2="160" stroke="white" stroke-width="1.5"/>
+    <line x1="85" y1="190" x2="99" y2="190" stroke="white" stroke-width="1.5"/>
+    <line x1="92" y1="40" x2="92" y2="22" stroke="white" stroke-width="2"/>
+    <circle cx="92" cy="21" r="4" fill="white" opacity="0.7"/>
+    <path d="M110,55 Q135,38 110,22" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+    <path d="M120,62 Q155,38 120,15" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+    <path d="M74,55 Q49,38 74,22" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+    <!-- Building complex center -->
+    <rect x="280" y="90" width="80" height="130" fill="none" stroke="white" stroke-width="2"/>
+    <rect x="370" y="70" width="60" height="150" fill="none" stroke="white" stroke-width="2"/>
+    <rect x="440" y="110" width="50" height="110" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Windows on buildings -->
+    <rect x="292" y="100" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="310" y="100" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="338" y="100" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="292" y="120" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="310" y="120" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="338" y="120" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="292" y="140" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="310" y="140" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="338" y="140" width="12" height="12" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="382" y="82" width="12" height="14" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="400" y="82" width="12" height="14" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="418" y="82" width="12" height="14" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="382" y="106" width="12" height="14" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <rect x="400" y="106" width="12" height="14" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+    <!-- Fiber cable ground line -->
+    <path d="M0,215 Q200,205 400,215 Q600,225 794,215" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+    <!-- Underground cable markers -->
+    <line x1="150" y1="215" x2="150" y2="228" stroke="white" stroke-width="1.5" opacity="0.4"/>
+    <line x1="280" y1="220" x2="280" y2="235" stroke="white" stroke-width="1.5" opacity="0.4"/>
+    <line x1="500" y1="218" x2="500" y2="232" stroke="white" stroke-width="1.5" opacity="0.4"/>
+    <line x1="650" y1="215" x2="650" y2="228" stroke="white" stroke-width="1.5" opacity="0.4"/>
+    <!-- Right side tower -->
+    <polygon points="680,220 692,55 704,220" fill="none" stroke="white" stroke-width="2"/>
+    <line x1="683" y1="140" x2="701" y2="140" stroke="white" stroke-width="1.5"/>
+    <line x1="684" y1="170" x2="700" y2="170" stroke="white" stroke-width="1.5"/>
+    <line x1="685" y1="200" x2="699" y2="200" stroke="white" stroke-width="1.5"/>
+    <line x1="692" y1="55" x2="692" y2="35" stroke="white" stroke-width="2"/>
+    <circle cx="692" cy="34" r="4" fill="white" opacity="0.7"/>
+    <!-- Crane for construction -->
+    <line x1="560" y1="220" x2="560" y2="50" stroke="white" stroke-width="2"/>
+    <line x1="560" y1="50" x2="640" y2="50" stroke="white" stroke-width="2"/>
+    <line x1="640" y1="50" x2="640" y2="80" stroke="white" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <line x1="560" y1="70" x2="490" y2="85" stroke="white" stroke-width="1.5" opacity="0.5"/>
+    <rect x="550" y="200" width="20" height="20" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- MEP pipes -->
+    <rect x="150" y="195" width="120" height="8" rx="4" fill="none" stroke="white" stroke-width="1.2" opacity="0.5"/>
+    <rect x="155" y="200" width="10" height="15" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+    <rect x="180" y="200" width="10" height="12" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+    <rect x="205" y="200" width="10" height="18" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+    <rect x="230" y="200" width="10" height="10" rx="2" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+  </svg>
+</div><div class="proj-hero-veil"></div>
   <div class="proj-hero-text">
     <div class="mv-label" style="margin-bottom:6px">Our Work</div>
     <div style="font-size:36px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1">Key Projects</div>
@@ -1511,7 +2924,53 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 19 — CONTACT ═══════ -->
 <div class="page">
-<div class="contact-cover"><div style="width:100%;height:100%;background:linear-gradient(160deg,#060e1c 0%,#0c1e3e 50%,#1245a8 100%);"></div><div class="contact-cover-veil"></div>
+<div class="contact-cover"><div style="width:100%;height:100%;background:linear-gradient(160deg,#060e1c 0%,#0c1e3e 50%,#1245a8 100%);">
+  <!-- Saudi Arabia map outline with Riyadh pin SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 320" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.22;pointer-events:none;" preserveAspectRatio="xMidYMid meet">
+    <!-- Approximate Saudi Arabia outline (simplified polygon) -->
+    <path d="
+      M200,60
+      L240,55 L290,50 L340,48 L400,45 L450,48 L490,52 L530,58 L560,68
+      L580,88 L600,110 L610,135 L615,160 L610,185 L600,210 L585,230
+      L570,245 L555,258 L540,265 L520,270
+      L505,275 L490,278 L475,280 L460,278
+      L445,268 L430,255 L420,240 L410,225 L400,215
+      L390,200 L382,185 L375,170 L370,155 L365,140
+      L358,130 L348,118 L335,108 L318,100
+      L300,95 L280,92 L260,90 L240,88 L220,85 L205,80 L200,60 Z
+    " fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+    <!-- Interior terrain lines -->
+    <path d="M280,100 Q310,120 340,130 Q370,140 400,135 Q430,130 460,140" fill="none" stroke="white" stroke-width="0.8" opacity="0.25"/>
+    <path d="M260,130 Q290,150 320,158 Q350,165 380,160 Q410,155 440,165 Q470,175 490,170" fill="none" stroke="white" stroke-width="0.8" opacity="0.25"/>
+    <!-- Riyadh location (center of KSA approximately) -->
+    <!-- Location pin at Riyadh -->
+    <circle cx="410" cy="165" r="14" fill="none" stroke="#f0b42a" stroke-width="2.5"/>
+    <circle cx="410" cy="165" r="6" fill="#f0b42a" opacity="0.8"/>
+    <path d="M410,179 L410,210" stroke="#f0b42a" stroke-width="2.5"/>
+    <circle cx="410" cy="213" r="4" fill="#f0b42a" opacity="0.5"/>
+    <!-- Riyadh label -->
+    <text x="430" y="162" font-size="11" fill="white" opacity="0.7" font-family="Arial" font-weight="bold">Riyadh</text>
+    <text x="430" y="176" font-size="9" fill="white" opacity="0.5" font-family="Arial">Al-Malaz, 12841</text>
+    <!-- Pulse rings around Riyadh -->
+    <circle cx="410" cy="165" r="30" fill="none" stroke="#f0b42a" stroke-width="1" opacity="0.3"/>
+    <circle cx="410" cy="165" r="50" fill="none" stroke="#f0b42a" stroke-width="0.8" opacity="0.2"/>
+    <circle cx="410" cy="165" r="75" fill="none" stroke="#f0b42a" stroke-width="0.5" opacity="0.12"/>
+    <!-- Major cities dots -->
+    <circle cx="285" cy="95" r="4" fill="white" opacity="0.5"/>
+    <text x="295" y="92" font-size="8" fill="white" opacity="0.4">Jeddah</text>
+    <circle cx="310" cy="78" r="3" fill="white" opacity="0.4"/>
+    <text x="320" y="75" font-size="8" fill="white" opacity="0.4">Mecca</text>
+    <circle cx="490" cy="100" r="3" fill="white" opacity="0.4"/>
+    <text x="498" y="97" font-size="8" fill="white" opacity="0.4">Dammam</text>
+    <circle cx="350" cy="65" r="3" fill="white" opacity="0.4"/>
+    <text x="358" y="62" font-size="8" fill="white" opacity="0.4">Madinah</text>
+    <!-- Roads from Riyadh -->
+    <line x1="410" y1="165" x2="285" y2="95" stroke="white" stroke-width="0.8" opacity="0.2" stroke-dasharray="5 5"/>
+    <line x1="410" y1="165" x2="490" y2="100" stroke="white" stroke-width="0.8" opacity="0.2" stroke-dasharray="5 5"/>
+    <!-- Coverage area shading -->
+    <path d="M250,80 Q340,70 410,100 Q480,130 520,180 Q460,240 380,250 Q300,240 250,200 Q210,160 250,80 Z" fill="white" fill-opacity="0.03"/>
+  </svg>
+</div><div class="contact-cover-veil"></div>
   <div class="contact-cover-content">
     <div class="mv-label" style="margin-bottom:8px">Contact Us</div>
     <div style="font-size:42px;font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1;margin-bottom:10px">Get In Touch</div>
