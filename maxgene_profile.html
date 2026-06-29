@@ -237,17 +237,21 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .sb.flip .sb-body { border-top: 3px solid var(--goldb); }
 .sb-photo { position: relative; }
 
+.client-sector{font-size:9px;font-weight:600;color:var(--blue);letter-spacing:.8px;text-transform:uppercase;margin-top:2px;}
+.c-card-desc{font-size:10px;color:var(--g2);line-height:1.5;border-top:1px solid var(--g1);padding-top:8px;margin-top:4px;}
+/* Center content in partner and client cards */
+.partner-card { justify-content: center !important; }
 /* ── SPACE-FILL FIXES ── */
 
 /* Page 2: About — make the right panel fill properly */
 .about-right { justify-content: space-between !important; }
-.ar-img { height: 230px !important; flex-shrink: 0; }
+.ar-img { height: 260px !important; flex-shrink: 0; }
 .ar-grid { flex: 1 !important; align-items: stretch; }
-.ar-card { height: 100%; }
+.ar-card { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 16px 14px !important; }
 .ar-card-text { font-size: 11px; line-height: 1.7; }
 
 /* Page 3: Mission/Vision — fill right panel */
-.mv-values { flex: 1 !important; align-items: stretch; }
+.mv-values { align-items: stretch; }
 .mv-val { height: 100%; display: flex; flex-direction: column; justify-content: center; }
 .mv-right-body { font-size: 13px !important; line-height: 1.85 !important; }
 
@@ -260,7 +264,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 /* Page 17: Clients — stretch grid rows to fill height */
 .clients-body { justify-content: space-between !important; }
 .client-grid { flex: 1 !important; align-content: stretch; align-items: stretch; }
-.client-card { flex: 1; height: 100%; min-height: 90px !important; }
+.client-card { flex: 1; height: 100%; min-height: 90px !important; flex-direction: column !important; gap: 6px !important; }
 .sectors-strip { padding: 28px 24px !important; }
 
 /* Page 18: Projects — make bullet items fill card evenly */
@@ -501,9 +505,9 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       </svg>
       <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:3px;text-transform:uppercase;position:relative;z-index:1;">RIYADH · KSA · SMART CITY</span>
     </div>
-    <div>
+    <div style="flex:1;display:flex;flex-direction:column;padding-top:2px;">
       <div class="ar-headline">Core Strengths</div>
-      <div class="ar-grid">
+      <div class="ar-grid" style="flex:1;align-content:stretch;margin-top:6px;">
         <div class="ar-card"><div class="ar-card-icon">🎯</div><div class="ar-card-title">Mission</div><div class="ar-card-text">Unify strategy and technology to deliver world-class consulting, solutions, and services — helping clients achieve sustainable growth.</div></div>
         <div class="ar-card blue"><div class="ar-card-icon">🔭</div><div class="ar-card-title">Vision</div><div class="ar-card-text">Inspire change through people-first solutions, transforming IT and ELV components into specialized products via intelligent engineering design.</div></div>
         <div class="ar-card"><div class="ar-card-icon">🏅</div><div class="ar-card-title">Certified Quality</div><div class="ar-card-text">CE · GS · UL · TUV certified products ensuring high quality, long lifespan, and low maintenance across all our solutions.</div></div>
@@ -597,9 +601,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       <div class="mv-right-title">Unify Strategy &amp;<br>Technology</div>
       <div class="mv-right-body">Our mission is to unify strategy and technology, creating world-class consulting, solutions, and services for enterprises. We aim to help our clients achieve sustainable business growth by providing optimized computing solutions.<br><br>From concept ideation to manufacturing and after-market services, we prioritize quality, integrity, and effective communication in every step of our journey.</div>
     </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 0 16px;">
+      <div style="background:var(--off);border:1px solid var(--g1);border-radius:10px;padding:22px 24px;">
+        <div style="font-size:9px;font-weight:700;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;"><div style="width:16px;height:2px;background:var(--blue);"></div>Our Commitment</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+          <div style="text-align:center;padding:14px 10px;border-right:1px solid var(--g1);">
+            <div style="font-size:32px;font-weight:900;color:var(--navy);line-height:1;">500<span style="font-size:20px;color:var(--gold);">+</span></div>
+            <div style="font-size:9.5px;font-weight:700;color:var(--g3);margin-top:5px;letter-spacing:.3px;">Projects Delivered</div>
+          </div>
+          <div style="text-align:center;padding:14px 10px;border-right:1px solid var(--g1);">
+            <div style="font-size:32px;font-weight:900;color:var(--navy);line-height:1;">98<span style="font-size:20px;color:var(--gold);">%</span></div>
+            <div style="font-size:9.5px;font-weight:700;color:var(--g3);margin-top:5px;letter-spacing:.3px;">Client Retention</div>
+          </div>
+          <div style="text-align:center;padding:14px 10px;">
+            <div style="font-size:32px;font-weight:900;color:var(--navy);line-height:1;">7<span style="font-size:18px;color:var(--gold);"> Certs</span></div>
+            <div style="font-size:9.5px;font-weight:700;color:var(--g3);margin-top:5px;letter-spacing:.3px;">Global Certifications</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div>
       <div class="mv-right-label" style="color:var(--g3)">Our Core Values</div>
-      <div class="mv-values">
+      <div class="mv-values" style="flex:none !important;">
         <div class="mv-val"><div class="mv-val-icon">🤝</div><div class="mv-val-title">Integrity</div><div class="mv-val-text">Transparent and honest business dealings in everything we do</div></div>
         <div class="mv-val"><div class="mv-val-icon">💡</div><div class="mv-val-title">Innovation</div><div class="mv-val-text">Intelligent engineering design fostering efficiency and creativity</div></div>
         <div class="mv-val"><div class="mv-val-icon">🏆</div><div class="mv-val-title">Excellence</div><div class="mv-val-text">World-class consulting and certified, future-proof solutions</div></div>
@@ -2800,25 +2823,25 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="clients-body">
   <div class="client-grid" style="gap:10px;margin-bottom:14px;">
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Clyde &amp; Co</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Four Seasons Hotels</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">SAR — Saudi Railway</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Nextel KSA</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Emirates NBD</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Rajhi Telecom</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Baud Telecom Company</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Trans Telecoms</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Hellmann Worldwide Logistics</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Arab Contracting Co.</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Ebttikar</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Edutech</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Madaf</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Arabian Fal Company</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">SIG Obeikan</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">RTCC</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Wallah Trading Co.</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">ICL</div></div>
-    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Ghaniya</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Clyde &amp; Co</div><div class="client-sector">Legal Services</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Four Seasons Hotels</div><div class="client-sector">Hospitality</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">SAR — Saudi Railway</div><div class="client-sector">Transport</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Nextel KSA</div><div class="client-sector">Telecom</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Emirates NBD</div><div class="client-sector">Banking</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Rajhi Telecom</div><div class="client-sector">Finance &amp; Telecom</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Baud Telecom Company</div><div class="client-sector">Telecom</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Trans Telecoms</div><div class="client-sector">Telecom</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Hellmann Worldwide Logistics</div><div class="client-sector">Logistics</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Arab Contracting Co.</div><div class="client-sector">Construction</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Ebttikar</div><div class="client-sector">Innovation</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Edutech</div><div class="client-sector">Education</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Madaf</div><div class="client-sector">Real Estate</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Arabian Fal Company</div><div class="client-sector">Trading</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">SIG Obeikan</div><div class="client-sector">Manufacturing</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">RTCC</div><div class="client-sector">Safety &amp; Security</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Wallah Trading Co.</div><div class="client-sector">Trading</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">ICL</div><div class="client-sector">Technology</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Ghaniya</div><div class="client-sector">Commercial</div></div>
     <div class="client-card" style="background:var(--off);border-style:dashed;min-height:66px;"><div class="client-card-name" style="color:var(--g2)">And many more...</div></div>
   </div>
   <div class="sectors-strip">
@@ -3029,31 +3052,37 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       <div class="c-card-icon">📍</div>
       <div class="c-card-label">Address</div>
       <div class="c-card-val">Building No. 2613, Al-Malaz<br>Salah Ad Din Al Ayyubi Road<br>Riyadh 12841, Saudi Arabia</div>
+      <div class="c-card-desc">Visit us at our main office</div>
     </div>
     <div class="c-card">
       <div class="c-card-icon">📞</div>
       <div class="c-card-label">Phone</div>
       <div class="c-card-val">+966 5671 16326<br><span style="font-size:10px;color:var(--g2)">(Customer Care)</span></div>
+      <div class="c-card-desc">Call us for quick consultation</div>
     </div>
     <div class="c-card">
       <div class="c-card-icon">✉️</div>
       <div class="c-card-label">Email</div>
       <div class="c-card-val">info@maxgen.com.sa<br>projects@maxgen.com.sa</div>
+      <div class="c-card-desc">Reply within 24 hours</div>
     </div>
     <div class="c-card">
       <div class="c-card-icon">🌐</div>
       <div class="c-card-label">Website</div>
       <div class="c-card-val">www.maxgen.com.sa</div>
+      <div class="c-card-desc">Portfolio &amp; case studies online</div>
     </div>
     <div class="c-card">
       <div class="c-card-icon">🕐</div>
       <div class="c-card-label">Business Hours</div>
       <div class="c-card-val">Sunday – Thursday<br>8:00 AM – 5:00 PM</div>
+      <div class="c-card-desc">Fri–Sat: Closed</div>
     </div>
     <div class="c-card">
       <div class="c-card-icon">🇸🇦</div>
       <div class="c-card-label">Established</div>
       <div class="c-card-val">2020 · Riyadh, KSA<br>Systems Integrator</div>
+      <div class="c-card-desc">Serving Saudi Arabia since 2020</div>
     </div>
   </div>
   <div class="contact-cta">
