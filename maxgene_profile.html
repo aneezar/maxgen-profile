@@ -56,7 +56,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .c-bg{position:absolute;inset:0}
 .c-bg img{width:100%;height:100%;object-fit:cover;display:block}
 .c-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(6,14,28,.96) 0%,rgba(12,30,62,.88) 55%,rgba(18,69,168,.5) 100%)}
-.c-geo{position:absolute;top:0;right:0;width:320px;height:320px;background:linear-gradient(135deg,transparent 50%,rgba(200,137,12,.14) 50%)}
+.c-geo{position:absolute;top:0;right:0;width:320px;height:320px;background:linear-gradient(135deg,transparent 50%,rgba(200,137,12,.28) 50%)}
 .c-geo2{position:absolute;bottom:0;left:0;width:200px;height:200px;background:linear-gradient(315deg,transparent 50%,rgba(18,69,168,.18) 50%)}
 .c-content{position:absolute;inset:0;display:flex;flex-direction:column;z-index:2}
 .c-topbar{display:flex;align-items:center;justify-content:space-between;padding:36px 60px 0}
@@ -146,8 +146,8 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .partners-hero-label{font-size:9px;font-weight:700;color:var(--goldb);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .partners-hero-label::before{content:'';width:16px;height:2px;background:var(--gold)}
 .partners-hero-title{font-size:36px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px}
-.partners-body{padding:28px 52px;flex:1}
-.partner-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.partners-body{padding:28px 52px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.partner-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px;align-content:start}
 .partner-card{border:1px solid var(--g1);border-radius:9px;padding:18px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;background:#fff}
 .partner-card-name{font-size:13px;font-weight:800;color:var(--ink);text-align:center}
 .partner-card-sub{font-size:9.5px;color:var(--g2);text-align:center;letter-spacing:.3px}
@@ -162,8 +162,8 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .clients-top-label::before{content:'';width:16px;height:2px;background:var(--gold)}
 .clients-top-title{font-size:36px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px;margin-bottom:8px}
 .clients-top-sub{font-size:12px;color:rgba(255,255,255,.45);max-width:500px;line-height:1.6;font-weight:300}
-.clients-body{padding:28px 52px;flex:1}
-.client-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+.clients-body{padding:28px 52px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.client-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px;align-content:start}
 .client-card{border:1px solid var(--g1);border-radius:8px;padding:14px 10px;display:flex;align-items:center;justify-content:center;min-height:58px;background:#fff}
 .client-card-name{font-size:11px;font-weight:700;color:var(--ink);text-align:center;line-height:1.3}
 .sectors-strip{background:var(--off);border:1px solid var(--g1);border-radius:9px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
@@ -223,7 +223,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="cover">
   <div class="c-bg" style="background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 45%,#1a3a70 70%,#0f2d5a 100%);"></div>
-  <div class="c-geo"></div><div class="c-geo2"></div>
+  <div class="c-geo" style="background:linear-gradient(135deg,transparent 50%,rgba(200,137,12,.3) 50%);"></div><div style="position:absolute;top:0;right:0;width:180px;height:180px;background:linear-gradient(135deg,transparent 50%,rgba(200,137,12,.12) 50%);"></div><div class="c-geo2"></div>
   <div class="c-content">
     <div class="c-topbar">
       <div class="c-logo">
@@ -302,7 +302,18 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Strategy &amp; Values</div></div><div class="ph-badge">Mission &amp; Vision</div></div>
 <div class="mv-wrap">
-  <div class="mv-left"><div style="width:100%;height:100%;background:linear-gradient(160deg,#060e1c 0%,#0c1e3e 40%,#1a3a70 70%,#c8890c22 100%);"></div><div class="mv-left-veil"></div>
+  <div class="mv-left">
+    <div style="width:100%;height:100%;background:linear-gradient(160deg,#060e1c 0%,#0c1e3e 40%,#1a3a70 70%,#c8890c22 100%);"></div>
+    <div class="mv-left-veil"></div>
+    <!-- Decorative geometric circles -->
+    <div style="position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+    <div style="position:absolute;top:-20px;right:-20px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+    <div style="position:absolute;top:120px;left:-80px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(18,69,168,.2);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:100px;right:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(200,137,12,.12);pointer-events:none;"></div>
+    <!-- Large decorative quotation mark -->
+    <div style="position:absolute;top:44px;left:36px;font-size:160px;font-weight:900;color:rgba(200,137,12,.1);line-height:1;font-family:Georgia,serif;pointer-events:none;">"</div>
+    <!-- Horizontal line decoration -->
+    <div style="position:absolute;top:50%;left:36px;right:36px;height:1px;background:linear-gradient(90deg,rgba(200,137,12,.3),transparent);transform:translateY(-50%);pointer-events:none;"></div>
     <div class="mv-left-content">
       <div class="mv-label">Our Vision</div>
       <div class="mv-title">Inspire Change.<br>Open Possibilities.</div>
@@ -324,6 +335,14 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
         <div class="mv-val"><div class="mv-val-icon">🛡️</div><div class="mv-val-title">Reliability</div><div class="mv-val-text">CE, GS, UL &amp; TUV certified — zero compromise on quality</div></div>
       </div>
     </div>
+    <!-- Tagline strip at bottom of right panel -->
+    <div style="background:var(--navy);border-radius:10px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;margin-top:4px;">
+      <div style="font-size:12px;font-weight:700;color:#fff;letter-spacing:-.2px;">Building Smarter Saudi Arabia</div>
+      <div style="display:flex;gap:10px;">
+        <div style="background:rgba(200,137,12,.15);border:1px solid rgba(200,137,12,.3);border-radius:5px;padding:4px 12px;font-size:9.5px;font-weight:700;color:#f0b42a;">Vision 2030 Aligned</div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:5px;padding:4px 12px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.6);">Est. 2020 · Riyadh, KSA</div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="pf"><div class="pf-l">MAX GENE LLC</div><div class="pf-c">www.maxgen.com.sa</div><div class="pf-r">03</div></div>
@@ -334,8 +353,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ELV / Automation &amp; Control Systems</div></div><div class="ph-badge">ELV Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0c1e3e 0%,#1f4ba0 60%,#0e1d3a 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ELV · AUTOMATION</span></div>
-<div class="sb-photo-num">01</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">01</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">ELV · AUTOMATION</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">01</div>
 </div><div class="sb-body">
     <div class="sb-watermark">01</div>
     <div class="sb-cat">ELV / Automation</div>
@@ -352,8 +391,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0d2137 0%,#0f6b57 60%,#0a1a2a 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">BMS · AUTOMATION</span></div>
-<div class="sb-photo-num">02</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">02</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">BMS · AUTOMATION</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">02</div>
 </div><div class="sb-body">
     <div class="sb-watermark">02</div>
     <div class="sb-cat">ELV / Building Automation</div>
@@ -375,8 +434,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ELV / Life Safety Systems</div></div><div class="ph-badge">Life Safety</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#1a0a0a 0%,#8b1a1a 55%,#0c1020 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">LIFE SAFETY</span></div>
-<div class="sb-photo-num">03</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">03</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">LIFE SAFETY</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">03</div>
 </div><div class="sb-body">
     <div class="sb-watermark">03</div>
     <div class="sb-cat">ELV / Life Safety</div>
@@ -393,8 +472,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#1a1200 0%,#b87800 55%,#0c1020 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">EMERGENCY SYSTEMS</span></div>
-<div class="sb-photo-num">04</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">04</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">EMERGENCY SYSTEMS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">04</div>
 </div><div class="sb-body">
     <div class="sb-watermark">04</div>
     <div class="sb-cat">ELV / Life Safety</div>
@@ -416,8 +515,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ICT &amp; Security Systems</div></div><div class="ph-badge">ICT Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1535 0%,#0e4fa8 60%,#061020 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ICT · NETWORKS</span></div>
-<div class="sb-photo-num">05</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">05</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">ICT · NETWORKS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">05</div>
 </div><div class="sb-body">
     <div class="sb-watermark">05</div>
     <div class="sb-cat">ICT / Data Systems</div>
@@ -434,8 +553,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1d3060 55%,#0a1535 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">DATA SYSTEMS</span></div>
-<div class="sb-photo-num">06</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">06</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">DATA SYSTEMS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">06</div>
 </div><div class="sb-body">
     <div class="sb-watermark">06</div>
     <div class="sb-cat">LCS / Security Surveillance</div>
@@ -457,8 +596,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Security &amp; Access Systems</div></div><div class="ph-badge">Security Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1a12 0%,#0f5733 60%,#081510 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ACCESS CONTROL</span></div>
-<div class="sb-photo-num">07</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">07</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">ACCESS CONTROL</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">07</div>
 </div><div class="sb-body">
     <div class="sb-watermark">07</div>
     <div class="sb-cat">LCS / Access Control</div>
@@ -475,8 +634,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1a2a50 60%,#060e1c 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SURVEILLANCE</span></div>
-<div class="sb-photo-num">08</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">08</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">SURVEILLANCE</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">08</div>
 </div><div class="sb-body">
     <div class="sb-watermark">08</div>
     <div class="sb-cat">LCS / Security</div>
@@ -498,8 +677,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Communication &amp; Healthcare Systems</div></div><div class="ph-badge">ELV / Life Safety</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1535 0%,#164e7a 60%,#060e1c 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">PUBLIC ADDRESS</span></div>
-<div class="sb-photo-num">09</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">09</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">PUBLIC ADDRESS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">09</div>
 </div><div class="sb-body">
     <div class="sb-watermark">09</div>
     <div class="sb-cat">ELV / Life Safety</div>
@@ -516,8 +715,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#091a1a 0%,#0a5a5a 60%,#060e18 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">HEALTHCARE COMMS</span></div>
-<div class="sb-photo-num">10</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">10</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">HEALTHCARE COMMS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">10</div>
 </div><div class="sb-body">
     <div class="sb-watermark">10</div>
     <div class="sb-cat">ELV / Healthcare</div>
@@ -539,8 +758,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Power Backup &amp; Industrial Protection</div></div><div class="ph-badge">ELV / Security</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#1a0f00 0%,#a0640a 55%,#0c0f1a 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">UPS · POWER</span></div>
-<div class="sb-photo-num">11</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">11</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">UPS · POWER</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">11</div>
 </div><div class="sb-body">
     <div class="sb-watermark">11</div>
     <div class="sb-cat">ELV / Power Systems</div>
@@ -557,8 +796,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1a2a50 55%,#060e1c 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">PERIMETER</span></div>
-<div class="sb-photo-num">12</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">12</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">PERIMETER</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">12</div>
 </div><div class="sb-body">
     <div class="sb-watermark">12</div>
     <div class="sb-cat">LCS / Industrial</div>
@@ -580,8 +839,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Smart Facilities Management</div></div><div class="ph-badge">Smart Systems</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1530 0%,#0d4a7a 60%,#060e1c 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SMART PARKING</span></div>
-<div class="sb-photo-num">13</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">13</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">SMART PARKING</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">13</div>
 </div><div class="sb-body">
     <div class="sb-watermark">13</div>
     <div class="sb-cat">LCS / Smart Facilities</div>
@@ -598,8 +877,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1a14 0%,#0e5540 60%,#060e1a 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SMART BUILDINGS</span></div>
-<div class="sb-photo-num">14</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">14</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">SMART BUILDINGS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">14</div>
 </div><div class="sb-body">
     <div class="sb-watermark">14</div>
     <div class="sb-cat">LCS / Smart Facilities</div>
@@ -621,8 +920,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Energy &amp; MEP Division</div></div><div class="ph-badge">MEP / Energy</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#100c00 0%,#b86a00 55%,#0c1010 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">RENEWABLE ENERGY</span></div>
-<div class="sb-photo-num">15</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">15</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">RENEWABLE ENERGY</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">15</div>
 </div><div class="sb-body">
     <div class="sb-watermark">15</div>
     <div class="sb-cat">ELV / Energy</div>
@@ -639,8 +958,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f20 0%,#1a3060 60%,#060e1c 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ELECTRICAL</span></div>
-<div class="sb-photo-num">16</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">16</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">ELECTRICAL</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">16</div>
 </div><div class="sb-body">
     <div class="sb-watermark">16</div>
     <div class="sb-cat">MEP / Mechanical</div>
@@ -662,8 +1001,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">MEP / Electrical Works</div></div><div class="ph-badge">MEP Division</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0f0a1a 0%,#4a1a80 60%,#060a18 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">TELECOM · OSP</span></div>
-<div class="sb-photo-num">17</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">17</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">TELECOM · OSP</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">17</div>
 </div><div class="sb-body">
     <div class="sb-watermark">17</div>
     <div class="sb-cat">MEP / Electrical</div>
@@ -680,8 +1039,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0f0f0f 0%,#2a2a3a 60%,#0a0a14 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SECURITY SCREENING</span></div>
-<div class="sb-photo-num">18</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">18</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">SECURITY SCREENING</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">18</div>
 </div><div class="sb-body">
     <div class="sb-watermark">18</div>
     <div class="sb-cat">MEP / Electrical</div>
@@ -703,8 +1082,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Telecom Division</div></div><div class="ph-badge">Telecom</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#091520 0%,#0a4a6a 60%,#060e18 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">FLEET · GPS</span></div>
-<div class="sb-photo-num">19</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">19</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">FLEET · GPS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">19</div>
 </div><div class="sb-body">
     <div class="sb-watermark">19</div>
     <div class="sb-cat">Telecom Division</div>
@@ -721,8 +1120,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1a 0%,#1a2840 60%,#060e18 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">MEP CIVIL</span></div>
-<div class="sb-photo-num">20</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">20</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">MEP CIVIL</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">20</div>
 </div><div class="sb-body">
     <div class="sb-watermark">20</div>
     <div class="sb-cat">Telecom / Unified Comms</div>
@@ -744,8 +1163,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Specialized Systems</div></div><div class="ph-badge">Security / ELV</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f20 0%,#152a55 60%,#060e1c 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SYSTEMS</span></div>
-<div class="sb-photo-num">21</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">21</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">SYSTEMS</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">21</div>
 </div><div class="sb-body">
     <div class="sb-watermark">21</div>
     <div class="sb-cat">LCS / Security Screening</div>
@@ -762,8 +1201,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#091820 0%,#0c3a5a 60%,#060e18 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">INTEGRATION</span></div>
-<div class="sb-photo-num">22</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">22</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">INTEGRATION</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">22</div>
 </div><div class="sb-body">
     <div class="sb-watermark">22</div>
     <div class="sb-cat">ELV / Specialized</div>
@@ -785,8 +1244,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Fleet &amp; MEP Services</div></div><div class="ph-badge">Logistics / MEP</div></div>
 <div class="sb">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a1520 0%,#0d3a6a 60%,#060e1c 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">TECHNOLOGY</span></div>
-<div class="sb-photo-num">23</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">23</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">TECHNOLOGY</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">23</div>
 </div><div class="sb-body">
     <div class="sb-watermark">23</div>
     <div class="sb-cat">Logistics / IoT</div>
@@ -803,8 +1282,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="gold-rule"></div>
 <div class="sb flip">
   <div class="sb-photo" style="background:linear-gradient(150deg,#0a0e1f 0%,#142550 60%,#060c1a 100%);position:relative;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ENGINEERING</span></div>
-<div class="sb-photo-num">24</div>
+<!-- Decorative circles -->
+<div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.07);pointer-events:none;"></div>
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none;"></div>
+<div style="position:absolute;bottom:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,137,12,.15);pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:30px;width:90px;height:90px;border-radius:50%;border:1px solid rgba(200,137,12,.1);pointer-events:none;"></div>
+<!-- Diagonal line accent -->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;">
+  <div style="position:absolute;top:40%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.2),transparent);transform:rotate(-15deg);"></div>
+  <div style="position:absolute;top:55%;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:rotate(-15deg);"></div>
+</div>
+<!-- Large number -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">24</div>
+<!-- Center content -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
+    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+  </div>
+  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
+  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">ENGINEERING</span>
+</div>
+<!-- Bottom number badge -->
+<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">24</div>
 </div><div class="sb-body">
     <div class="sb-watermark">24</div>
     <div class="sb-cat">MEP Division</div>
@@ -833,17 +1332,17 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="partners-body">
   <div style="font-size:9px;font-weight:700;color:var(--g3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">Brand Partners &amp; Technology Alliances</div>
-  <div class="partner-grid">
-    <div class="partner-card"><div class="partner-card-name" style="color:#049fd9">CISCO</div><div class="partner-card-sub">Networking</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#009999">SIEMENS</div><div class="partner-card-sub">Automation</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#0096d6">HP</div><div class="partner-card-sub">Computing</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#ff8300">ARUBA</div><div class="partner-card-sub">Wireless</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#007db8">DELL</div><div class="partner-card-sub">Infrastructure</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#c40000">BOSCH</div><div class="partner-card-sub">Security</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#1245a8">ZKTeco</div><div class="partner-card-sub">Access Control</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#e8151b">BFT</div><div class="partner-card-sub">Parking / Gates</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#cc0000">3M</div><div class="partner-card-sub">Cabling / Safety</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#444">ZETTA</div><div class="partner-card-sub">Storage</div></div>
+  <div class="partner-grid" style="gap:14px;margin-bottom:18px;">
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#049fd9;font-size:15px;">CISCO</div><div class="partner-card-sub">Networking</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#009999;font-size:15px;">SIEMENS</div><div class="partner-card-sub">Automation</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#0096d6;font-size:15px;">HP</div><div class="partner-card-sub">Computing</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#ff8300;font-size:15px;">ARUBA</div><div class="partner-card-sub">Wireless</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#007db8;font-size:15px;">DELL</div><div class="partner-card-sub">Infrastructure</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#c40000;font-size:15px;">BOSCH</div><div class="partner-card-sub">Security</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#1245a8;font-size:15px;">ZKTeco</div><div class="partner-card-sub">Access Control</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#e8151b;font-size:15px;">BFT</div><div class="partner-card-sub">Parking / Gates</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#cc0000;font-size:15px;">3M</div><div class="partner-card-sub">Cabling / Safety</div></div>
+    <div class="partner-card" style="padding:22px 12px;min-height:76px;"><div class="partner-card-name" style="color:#444;font-size:15px;">ZETTA</div><div class="partner-card-sub">Storage</div></div>
   </div>
   <div class="cert-row">
     <div class="cert-label">Certifications Supported</div>
@@ -855,6 +1354,39 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       <div class="cert-badge">NFPA Compliant</div>
       <div class="cert-badge">IEC 62305</div>
       <div class="cert-badge">SASO Compliant</div>
+    </div>
+  </div>
+  <!-- Why Choose Our Partners section -->
+  <div style="margin-top:18px;background:var(--navy);border-radius:12px;padding:22px 28px;">
+    <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;">
+      <div style="width:16px;height:2px;background:var(--gold);"></div>
+      Why Partner With Us
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+      <div style="text-align:center;padding:22px 12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:40px;font-weight:900;color:#f0b42a;line-height:1;margin-bottom:6px;">10<span style="font-size:24px;color:rgba(200,137,12,.8);">+</span></div>
+        <div style="font-size:11px;font-weight:700;color:#fff;margin-bottom:6px;">Brand Partners</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.4);line-height:1.5;">Authorized distributor &amp; certified installer across top global technology brands</div>
+      </div>
+      <div style="text-align:center;padding:22px 12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:40px;font-weight:900;color:#f0b42a;line-height:1;margin-bottom:6px;">7<span style="font-size:24px;color:rgba(200,137,12,.8);"> Certs</span></div>
+        <div style="font-size:11px;font-weight:700;color:#fff;margin-bottom:6px;">Certified Installer</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.4);line-height:1.5;">CE, GS, UL, TUV, NFPA, IEC &amp; SASO compliance ensuring quality delivery</div>
+      </div>
+      <div style="text-align:center;padding:22px 12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:40px;font-weight:900;color:#f0b42a;line-height:1;margin-bottom:6px;">24/7</div>
+        <div style="font-size:11px;font-weight:700;color:#fff;margin-bottom:6px;">Technical Support</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.4);line-height:1.5;">Dedicated after-sales support and technical partner assistance</div>
+      </div>
+    </div>
+    <!-- Saudi Vision 2030 strip -->
+    <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,.08);padding-top:12px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6);">Saudi Vision 2030 Technology Partner</div>
+      <div style="display:flex;gap:8px;">
+        <div style="background:rgba(0,150,64,.15);border:1px solid rgba(0,150,64,.3);border-radius:5px;padding:4px 12px;font-size:9px;font-weight:700;color:#00c850;">Smart Infrastructure</div>
+        <div style="background:rgba(0,150,64,.15);border:1px solid rgba(0,150,64,.3);border-radius:5px;padding:4px 12px;font-size:9px;font-weight:700;color:#00c850;">Digital KSA</div>
+        <div style="background:rgba(0,150,64,.15);border:1px solid rgba(0,150,64,.3);border-radius:5px;padding:4px 12px;font-size:9px;font-weight:700;color:#00c850;">5G Ready</div>
+      </div>
     </div>
   </div>
 </div>
@@ -869,27 +1401,27 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
   <div class="clients-top-sub">Proud to serve leading organizations across government, banking, healthcare, logistics, telecom, and hospitality sectors across the Kingdom and beyond.</div>
 </div>
 <div class="clients-body">
-  <div class="client-grid">
-    <div class="client-card"><div class="client-card-name">Clyde &amp; Co</div></div>
-    <div class="client-card"><div class="client-card-name">Four Seasons Hotels</div></div>
-    <div class="client-card"><div class="client-card-name">SAR — Saudi Railway</div></div>
-    <div class="client-card"><div class="client-card-name">Nextel KSA</div></div>
-    <div class="client-card"><div class="client-card-name">Emirates NBD</div></div>
-    <div class="client-card"><div class="client-card-name">Al Rajhi Telecom</div></div>
-    <div class="client-card"><div class="client-card-name">Baud Telecom Company</div></div>
-    <div class="client-card"><div class="client-card-name">Trans Telecoms</div></div>
-    <div class="client-card"><div class="client-card-name">Hellmann Worldwide Logistics</div></div>
-    <div class="client-card"><div class="client-card-name">Al Arab Contracting Co.</div></div>
-    <div class="client-card"><div class="client-card-name">Ebttikar</div></div>
-    <div class="client-card"><div class="client-card-name">Edutech</div></div>
-    <div class="client-card"><div class="client-card-name">Madaf</div></div>
-    <div class="client-card"><div class="client-card-name">Arabian Fal Company</div></div>
-    <div class="client-card"><div class="client-card-name">SIG Obeikan</div></div>
-    <div class="client-card"><div class="client-card-name">RTCC</div></div>
-    <div class="client-card"><div class="client-card-name">Wallah Trading Co.</div></div>
-    <div class="client-card"><div class="client-card-name">ICL</div></div>
-    <div class="client-card"><div class="client-card-name">Al Ghaniya</div></div>
-    <div class="client-card" style="background:var(--off);border-style:dashed"><div class="client-card-name" style="color:var(--g2)">And many more...</div></div>
+  <div class="client-grid" style="gap:10px;margin-bottom:14px;">
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Clyde &amp; Co</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Four Seasons Hotels</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">SAR — Saudi Railway</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Nextel KSA</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Emirates NBD</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Rajhi Telecom</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Baud Telecom Company</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Trans Telecoms</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Hellmann Worldwide Logistics</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Arab Contracting Co.</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Ebttikar</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Edutech</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Madaf</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Arabian Fal Company</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">SIG Obeikan</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">RTCC</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Wallah Trading Co.</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">ICL</div></div>
+    <div class="client-card" style="min-height:66px;"><div class="client-card-name">Al Ghaniya</div></div>
+    <div class="client-card" style="background:var(--off);border-style:dashed;min-height:66px;"><div class="client-card-name" style="color:var(--g2)">And many more...</div></div>
   </div>
   <div class="sectors-strip">
     <div>
@@ -899,6 +1431,35 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       </div>
     </div>
     <div class="clients-stat"><div class="clients-stat-num">20<span style="color:var(--gold);font-size:28px">+</span></div><div class="clients-stat-label">Active Clients</div></div>
+  </div>
+  <!-- Track Record stats strip -->
+  <div style="margin-top:14px;background:var(--navy);border-radius:12px;padding:22px 28px;">
+    <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;">
+      <div style="width:16px;height:2px;background:var(--gold);"></div>
+      Our Track Record
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;">
+      <div style="text-align:center;padding:16px 10px;border-right:1px solid rgba(255,255,255,.1);">
+        <div style="font-size:40px;font-weight:900;color:#f0b42a;line-height:1;letter-spacing:-1px;">500<span style="font-size:24px;color:rgba(200,137,12,.8);">+</span></div>
+        <div style="font-size:10.5px;font-weight:700;color:#fff;margin-top:6px;">Projects Delivered</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:3px;line-height:1.4;">Across KSA · UAE · GCC</div>
+      </div>
+      <div style="text-align:center;padding:16px 10px;border-right:1px solid rgba(255,255,255,.1);">
+        <div style="font-size:40px;font-weight:900;color:#f0b42a;line-height:1;letter-spacing:-1px;">98<span style="font-size:24px;color:rgba(200,137,12,.8);">%</span></div>
+        <div style="font-size:10.5px;font-weight:700;color:#fff;margin-top:6px;">Client Retention</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:3px;line-height:1.4;">Repeat business &amp; referrals</div>
+      </div>
+      <div style="text-align:center;padding:16px 10px;border-right:1px solid rgba(255,255,255,.1);">
+        <div style="font-size:40px;font-weight:900;color:#f0b42a;line-height:1;letter-spacing:-1px;">15<span style="font-size:24px;color:rgba(200,137,12,.8);">+</span></div>
+        <div style="font-size:10.5px;font-weight:700;color:#fff;margin-top:6px;">Years Combined</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:3px;line-height:1.4;">Team expertise in ELV &amp; ICT</div>
+      </div>
+      <div style="text-align:center;padding:16px 10px;">
+        <div style="font-size:40px;font-weight:900;color:#f0b42a;line-height:1;letter-spacing:-1px;">5</div>
+        <div style="font-size:10.5px;font-weight:700;color:#fff;margin-top:6px;">Divisions</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:3px;line-height:1.4;">ELV · ICT · Security · MEP · Telecom</div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="pf"><div class="pf-l">MAX GENE LLC</div><div class="pf-c">www.maxgen.com.sa</div><div class="pf-r">17</div></div>
