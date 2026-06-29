@@ -207,6 +207,14 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .cta-left-title{font-size:18px;font-weight:900;color:#fff;margin-bottom:3px;letter-spacing:-.3px}
 .cta-left-sub{font-size:11px;color:rgba(255,255,255,.45)}
 .cta-right{background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:10px 24px;border-radius:20px;letter-spacing:.5px}
+
+/* ── DESIGN POLISH ── */
+.ph { border-bottom: 2px solid var(--gold); }
+.ph-left img { filter: brightness(1.1); }
+.page { box-shadow: 0 4px 32px rgba(0,0,0,.18); border-radius: 2px; }
+.sb-body { border-top: 3px solid var(--gold); }
+.sb.flip .sb-body { border-top: 3px solid var(--goldb); }
+.sb-photo { position: relative; }
 </style>
 </head>
 <body>
@@ -214,9 +222,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <!-- ═══════ PAGE 1 — COVER ═══════ -->
 <div class="page">
 <div class="cover">
-  <div class="c-bg">
-    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=90&fit=crop" alt="">
-  </div>
+  <div class="c-bg" style="background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 45%,#1a3a70 70%,#0f2d5a 100%);"></div>
   <div class="c-geo"></div><div class="c-geo2"></div>
   <div class="c-content">
     <div class="c-topbar">
@@ -251,7 +257,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 2 — ABOUT ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">About the Company</div></div><div class="ph-badge">Overview</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">About the Company</div></div><div class="ph-badge">Overview</div></div>
 <div class="about-wrap">
   <div class="about-left">
     <div>
@@ -267,7 +273,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
     </div>
   </div>
   <div class="about-right">
-    <div class="ar-img"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&h=180&fit=crop&q=85" alt="Riyadh"></div>
+    <div class="ar-img" style="background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 50%,#0e2d6e 100%);display:flex;align-items:center;justify-content:center;"><span style='font-size:11px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;'>RIYADH · KSA</span></div>
     <div>
       <div class="ar-headline">Core Strengths</div>
       <div class="ar-grid">
@@ -294,11 +300,9 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 3 — MISSION & VISION ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Strategy &amp; Values</div></div><div class="ph-badge">Mission &amp; Vision</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Strategy &amp; Values</div></div><div class="ph-badge">Mission &amp; Vision</div></div>
 <div class="mv-wrap">
-  <div class="mv-left">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=900&fit=crop&q=85" alt="">
-    <div class="mv-left-veil"></div>
+  <div class="mv-left"><div style="width:100%;height:100%;background:linear-gradient(160deg,#060e1c 0%,#0c1e3e 40%,#1a3a70 70%,#c8890c22 100%);"></div><div class="mv-left-veil"></div>
     <div class="mv-left-content">
       <div class="mv-label">Our Vision</div>
       <div class="mv-title">Inspire Change.<br>Open Possibilities.</div>
@@ -327,10 +331,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 4 — SERVICES: Guest Mgmt + BMS ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">ELV / Automation &amp; Control Systems</div></div><div class="ph-badge">ELV Division</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ELV / Automation &amp; Control Systems</div></div><div class="ph-badge">ELV Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">01</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0c1e3e 0%,#1f4ba0 60%,#0e1d3a 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ELV · AUTOMATION</span></div>
+<div class="sb-photo-num">01</div>
+</div><div class="sb-body">
     <div class="sb-watermark">01</div>
     <div class="sb-cat">ELV / Automation</div>
     <div class="sb-title">Guest Management<br>System</div>
@@ -345,8 +351,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">02</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0d2137 0%,#0f6b57 60%,#0a1a2a 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">BMS · AUTOMATION</span></div>
+<div class="sb-photo-num">02</div>
+</div><div class="sb-body">
     <div class="sb-watermark">02</div>
     <div class="sb-cat">ELV / Building Automation</div>
     <div class="sb-title">Building Management<br>System (BMS)</div>
@@ -364,10 +372,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 5 — Fire Alarm + Fire Suppression ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">ELV / Life Safety Systems</div></div><div class="ph-badge">Life Safety</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ELV / Life Safety Systems</div></div><div class="ph-badge">Life Safety</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1582139329536-e7284fece006?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">03</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#1a0a0a 0%,#8b1a1a 55%,#0c1020 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">LIFE SAFETY</span></div>
+<div class="sb-photo-num">03</div>
+</div><div class="sb-body">
     <div class="sb-watermark">03</div>
     <div class="sb-cat">ELV / Life Safety</div>
     <div class="sb-title">Fire Alarm<br>System (FA)</div>
@@ -382,8 +392,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">04</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#1a1200 0%,#b87800 55%,#0c1020 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">EMERGENCY SYSTEMS</span></div>
+<div class="sb-photo-num">04</div>
+</div><div class="sb-body">
     <div class="sb-watermark">04</div>
     <div class="sb-cat">ELV / Life Safety</div>
     <div class="sb-title">Automatic Fire<br>Suppression</div>
@@ -401,10 +413,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 6 — Enterprise Networking + CCTV ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">ICT &amp; Security Systems</div></div><div class="ph-badge">ICT Division</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">ICT &amp; Security Systems</div></div><div class="ph-badge">ICT Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">05</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a1535 0%,#0e4fa8 60%,#061020 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ICT · NETWORKS</span></div>
+<div class="sb-photo-num">05</div>
+</div><div class="sb-body">
     <div class="sb-watermark">05</div>
     <div class="sb-cat">ICT / Data Systems</div>
     <div class="sb-title">Enterprise<br>Networking</div>
@@ -419,8 +433,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">06</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1d3060 55%,#0a1535 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">DATA SYSTEMS</span></div>
+<div class="sb-photo-num">06</div>
+</div><div class="sb-body">
     <div class="sb-watermark">06</div>
     <div class="sb-cat">LCS / Security Surveillance</div>
     <div class="sb-title">CCTV &amp; Security<br>Surveillance</div>
@@ -438,10 +454,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 7 — Access Control + Intrusion ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Security &amp; Access Systems</div></div><div class="ph-badge">Security Division</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Security &amp; Access Systems</div></div><div class="ph-badge">Security Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">07</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a1a12 0%,#0f5733 60%,#081510 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ACCESS CONTROL</span></div>
+<div class="sb-photo-num">07</div>
+</div><div class="sb-body">
     <div class="sb-watermark">07</div>
     <div class="sb-cat">LCS / Access Control</div>
     <div class="sb-title">Access Control<br>Systems</div>
@@ -456,8 +474,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1487611272882-4de8cbc7b5be?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">08</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1a2a50 60%,#060e1c 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SURVEILLANCE</span></div>
+<div class="sb-photo-num">08</div>
+</div><div class="sb-body">
     <div class="sb-watermark">08</div>
     <div class="sb-cat">LCS / Security</div>
     <div class="sb-title">Intrusion &amp; Burglar<br>Alarm Systems</div>
@@ -475,10 +495,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 8 — PA/VA + Nurse Call ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Communication &amp; Healthcare Systems</div></div><div class="ph-badge">ELV / Life Safety</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Communication &amp; Healthcare Systems</div></div><div class="ph-badge">ELV / Life Safety</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">09</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a1535 0%,#164e7a 60%,#060e1c 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">PUBLIC ADDRESS</span></div>
+<div class="sb-photo-num">09</div>
+</div><div class="sb-body">
     <div class="sb-watermark">09</div>
     <div class="sb-cat">ELV / Life Safety</div>
     <div class="sb-title">Public Address &amp;<br>Voice Evacuation</div>
@@ -493,8 +515,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">10</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#091a1a 0%,#0a5a5a 60%,#060e18 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">HEALTHCARE COMMS</span></div>
+<div class="sb-photo-num">10</div>
+</div><div class="sb-body">
     <div class="sb-watermark">10</div>
     <div class="sb-cat">ELV / Healthcare</div>
     <div class="sb-title">Nurse Call &amp;<br>Intercom Systems</div>
@@ -512,10 +536,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 9 — UPS + Industrial Security ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Power Backup &amp; Industrial Protection</div></div><div class="ph-badge">ELV / Security</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Power Backup &amp; Industrial Protection</div></div><div class="ph-badge">ELV / Security</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">11</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#1a0f00 0%,#a0640a 55%,#0c0f1a 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">UPS · POWER</span></div>
+<div class="sb-photo-num">11</div>
+</div><div class="sb-body">
     <div class="sb-watermark">11</div>
     <div class="sb-cat">ELV / Power Systems</div>
     <div class="sb-title">UPS &amp; Central<br>Battery Systems</div>
@@ -530,8 +556,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">12</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1f 0%,#1a2a50 55%,#060e1c 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">PERIMETER</span></div>
+<div class="sb-photo-num">12</div>
+</div><div class="sb-body">
     <div class="sb-watermark">12</div>
     <div class="sb-cat">LCS / Industrial</div>
     <div class="sb-title">Industrial<br>Security</div>
@@ -549,10 +577,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 10 — Parking + Queue ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Smart Facilities Management</div></div><div class="ph-badge">Smart Systems</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Smart Facilities Management</div></div><div class="ph-badge">Smart Systems</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">13</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a1530 0%,#0d4a7a 60%,#060e1c 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SMART PARKING</span></div>
+<div class="sb-photo-num">13</div>
+</div><div class="sb-body">
     <div class="sb-watermark">13</div>
     <div class="sb-cat">LCS / Smart Facilities</div>
     <div class="sb-title">Parking Management<br>Systems</div>
@@ -567,8 +597,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">14</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a1a14 0%,#0e5540 60%,#060e1a 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SMART BUILDINGS</span></div>
+<div class="sb-photo-num">14</div>
+</div><div class="sb-body">
     <div class="sb-watermark">14</div>
     <div class="sb-cat">LCS / Smart Facilities</div>
     <div class="sb-title">Queue Management<br>Systems</div>
@@ -586,10 +618,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 11 — Renewable + HVAC ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Energy &amp; MEP Division</div></div><div class="ph-badge">MEP / Energy</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Energy &amp; MEP Division</div></div><div class="ph-badge">MEP / Energy</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">15</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#100c00 0%,#b86a00 55%,#0c1010 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">RENEWABLE ENERGY</span></div>
+<div class="sb-photo-num">15</div>
+</div><div class="sb-body">
     <div class="sb-watermark">15</div>
     <div class="sb-cat">ELV / Energy</div>
     <div class="sb-title">Renewable Energy<br>Systems</div>
@@ -604,8 +638,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">16</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f20 0%,#1a3060 60%,#060e1c 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ELECTRICAL</span></div>
+<div class="sb-photo-num">16</div>
+</div><div class="sb-body">
     <div class="sb-watermark">16</div>
     <div class="sb-cat">MEP / Mechanical</div>
     <div class="sb-title">HVAC Systems</div>
@@ -623,10 +659,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 12 — Electrical + Grounding ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">MEP / Electrical Works</div></div><div class="ph-badge">MEP Division</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">MEP / Electrical Works</div></div><div class="ph-badge">MEP Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1621905251918-42e8e2ada5a2?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">17</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0f0a1a 0%,#4a1a80 60%,#060a18 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">TELECOM · OSP</span></div>
+<div class="sb-photo-num">17</div>
+</div><div class="sb-body">
     <div class="sb-watermark">17</div>
     <div class="sb-cat">MEP / Electrical</div>
     <div class="sb-title">Electrical Works</div>
@@ -641,8 +679,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1504615755583-2916b52192a3?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">18</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0f0f0f 0%,#2a2a3a 60%,#0a0a14 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SECURITY SCREENING</span></div>
+<div class="sb-photo-num">18</div>
+</div><div class="sb-body">
     <div class="sb-watermark">18</div>
     <div class="sb-cat">MEP / Electrical</div>
     <div class="sb-title">Grounding &amp; Lightning<br>Protection</div>
@@ -660,10 +700,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 13 — Telecom + IP PBX ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Telecom Division</div></div><div class="ph-badge">Telecom</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Telecom Division</div></div><div class="ph-badge">Telecom</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">19</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#091520 0%,#0a4a6a 60%,#060e18 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">FLEET · GPS</span></div>
+<div class="sb-photo-num">19</div>
+</div><div class="sb-body">
     <div class="sb-watermark">19</div>
     <div class="sb-cat">Telecom Division</div>
     <div class="sb-title">Telecom Solutions &amp;<br>OSP Services</div>
@@ -678,8 +720,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">20</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f1a 0%,#1a2840 60%,#060e18 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">MEP CIVIL</span></div>
+<div class="sb-photo-num">20</div>
+</div><div class="sb-body">
     <div class="sb-watermark">20</div>
     <div class="sb-cat">Telecom / Unified Comms</div>
     <div class="sb-title">IP PBX / PABX &amp;<br>Unified Communication</div>
@@ -697,10 +741,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 14 — Metal Detection + Master Clock ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Specialized Systems</div></div><div class="ph-badge">Security / ELV</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Specialized Systems</div></div><div class="ph-badge">Security / ELV</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">21</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a0f20 0%,#152a55 60%,#060e1c 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">SYSTEMS</span></div>
+<div class="sb-photo-num">21</div>
+</div><div class="sb-body">
     <div class="sb-watermark">21</div>
     <div class="sb-cat">LCS / Security Screening</div>
     <div class="sb-title">Metal Detection<br>Systems</div>
@@ -715,8 +761,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">22</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#091820 0%,#0c3a5a 60%,#060e18 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">INTEGRATION</span></div>
+<div class="sb-photo-num">22</div>
+</div><div class="sb-body">
     <div class="sb-watermark">22</div>
     <div class="sb-cat">ELV / Specialized</div>
     <div class="sb-title">Master Clock<br>Systems</div>
@@ -734,10 +782,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 15 — Vehicle Tracking + MEP ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Fleet &amp; MEP Services</div></div><div class="ph-badge">Logistics / MEP</div></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Fleet &amp; MEP Services</div></div><div class="ph-badge">Logistics / MEP</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">23</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a1520 0%,#0d3a6a 60%,#060e1c 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">TECHNOLOGY</span></div>
+<div class="sb-photo-num">23</div>
+</div><div class="sb-body">
     <div class="sb-watermark">23</div>
     <div class="sb-cat">Logistics / IoT</div>
     <div class="sb-title">Vehicle Tracking<br>System</div>
@@ -752,8 +802,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">24</div></div>
-  <div class="sb-body">
+  <div class="sb-photo" style="background:linear-gradient(150deg,#0a0e1f 0%,#142550 60%,#060c1a 100%);position:relative;">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;"><div style="width:48px;height:3px;background:rgba(200,137,12,.6);border-radius:2px;"></div><span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:3px;text-transform:uppercase;">ENGINEERING</span></div>
+<div class="sb-photo-num">24</div>
+</div><div class="sb-body">
     <div class="sb-watermark">24</div>
     <div class="sb-cat">MEP Division</div>
     <div class="sb-title">Mechanical, Electrical<br>&amp; Plumbing (MEP)</div>
@@ -771,10 +823,8 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 16 — PARTNERS ═══════ -->
 <div class="page">
-<div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Technology Partners</div></div><div class="ph-badge">Partners</div></div>
-<div class="partners-hero">
-  <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=220&fit=crop&q=85" alt="">
-  <div class="partners-hero-veil"></div>
+<div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">Technology Partners</div></div><div class="ph-badge">Partners</div></div>
+<div class="partners-hero"><div style="width:100%;height:100%;background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 60%,#0a1a33 100%);"></div><div class="partners-hero-veil"></div>
   <div class="partners-hero-text">
     <div class="partners-hero-label">Trusted Partners</div>
     <div class="partners-hero-title">Our Partners</div>
@@ -856,9 +906,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 18 — PROJECTS ═══════ -->
 <div class="page">
-<div class="proj-hero">
-  <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&h=280&fit=crop&q=85" alt="">
-  <div class="proj-hero-veil"></div>
+<div class="proj-hero"><div style="width:100%;height:100%;background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 50%,#162c5a 100%);"></div><div class="proj-hero-veil"></div>
   <div class="proj-hero-text">
     <div class="mv-label" style="margin-bottom:6px">Our Work</div>
     <div style="font-size:36px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1">Key Projects</div>
@@ -902,9 +950,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 
 <!-- ═══════ PAGE 19 — CONTACT ═══════ -->
 <div class="page">
-<div class="contact-cover">
-  <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&h=340&fit=crop&q=85" alt="">
-  <div class="contact-cover-veil"></div>
+<div class="contact-cover"><div style="width:100%;height:100%;background:linear-gradient(160deg,#060e1c 0%,#0c1e3e 50%,#1245a8 100%);"></div><div class="contact-cover-veil"></div>
   <div class="contact-cover-content">
     <div class="mv-label" style="margin-bottom:8px">Contact Us</div>
     <div style="font-size:42px;font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1;margin-bottom:10px">Get In Touch</div>
