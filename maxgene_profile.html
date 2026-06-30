@@ -295,7 +295,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="cover">
   <div class="c-bg" style="background:linear-gradient(135deg,#060e1c 0%,#0c1e3e 45%,#1a3a70 70%,#0f2d5a 100%);">
     <!-- Riyadh skyline + crescent SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 340" style="position:absolute;bottom:0;right:0;width:100%;height:340px;opacity:0.26;pointer-events:none;" preserveAspectRatio="xMaxYMax meet">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 340" style="position:absolute;bottom:0;right:0;width:100%;height:440px;opacity:0.48;pointer-events:none;" preserveAspectRatio="xMaxYMax meet">
       <!-- Ground line -->
       <line x1="0" y1="300" x2="794" y2="300" stroke="white" stroke-width="1.5"/>
       <!-- Kingdom Tower (tallest) -->
@@ -415,42 +415,63 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       <div class="c-year-tag">COMPANY PROFILE 2025</div>
     </div>
 
-    <!-- MAIN: split top-identity / bottom-services with space-between -->
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:52px 60px 36px;">
+    <!-- MAIN: Three vertical groups across full width -->
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:44px 60px 40px;">
 
-      <!-- TOP: Location + Company Identity -->
+      <!-- GROUP A: Location badges + Eyebrow + Hero title + Tagline -->
       <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:36px;">
-          <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 14px;">
-            <span style="font-size:12px;">📍</span>
-            <span style="font-size:10px;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.8px;">Riyadh, Saudi Arabia</span>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:26px;">
+          <div style="display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 14px;">
+            <span style="font-size:11px;">📍</span>
+            <span style="font-size:9.5px;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.8px;">Riyadh, Saudi Arabia</span>
           </div>
           <div style="background:rgba(200,137,12,.1);border:1px solid rgba(200,137,12,.25);border-radius:20px;padding:5px 14px;">
-            <span style="font-size:10px;font-weight:700;color:var(--goldb);letter-spacing:.8px;">Est. 2020</span>
+            <span style="font-size:9.5px;font-weight:700;color:var(--goldb);letter-spacing:.8px;">Est. 2020</span>
           </div>
           <div style="background:rgba(0,150,64,.1);border:1px solid rgba(0,150,64,.25);border-radius:20px;padding:5px 14px;">
-            <span style="font-size:10px;font-weight:700;color:#00c850;letter-spacing:.8px;">Vision 2030 Partner</span>
+            <span style="font-size:9.5px;font-weight:700;color:#00c850;letter-spacing:.8px;">Vision 2030 Aligned</span>
           </div>
         </div>
         <div class="c-eyebrow" style="margin-bottom:16px;"><div class="c-ey-line"></div><div class="c-ey-text">Building Smarter Saudi Arabia</div></div>
-        <div class="c-h1" style="margin-bottom:10px;">MAX <b>GENE</b> LLC</div>
-        <div style="font-size:16px;font-weight:600;color:rgba(200,137,12,.8);letter-spacing:-.1px;line-height:1.3;">Saudi Arabia's Premier Systems Integrator</div>
+        <div style="font-size:120px;font-weight:900;color:#fff;line-height:1;letter-spacing:-4px;margin-bottom:16px;white-space:nowrap;">MAX <span style="color:var(--goldb);">GENE</span><br>LLC</div>
+        <div style="font-size:17px;font-weight:600;color:rgba(200,137,12,.85);letter-spacing:-.2px;line-height:1.35;">Saudi Arabia's Premier Systems Integrator</div>
       </div>
 
-      <!-- BOTTOM: Description + Services -->
+      <!-- GROUP B: Description + highlights strip -->
       <div>
         <div style="width:44px;height:2px;background:var(--gold);border-radius:2px;margin-bottom:20px;"></div>
-        <div style="font-size:13px;color:rgba(255,255,255,.62);line-height:1.75;max-width:500px;margin-bottom:28px;">A high-tech enterprise specializing in Smart &amp; Connected Systems Integration — delivering ELV, ICT, Security, MEP, and Telecom solutions across the Kingdom, from concept to commissioning.</div>
-        <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.32);letter-spacing:2.5px;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-          <div style="width:18px;height:1px;background:rgba(255,255,255,.22);"></div>Core Services
+        <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.85;max-width:620px;margin-bottom:24px;">A high-tech enterprise specializing in Smart &amp; Connected Systems Integration — delivering ELV, ICT, Security, MEP, and Telecom solutions across the Kingdom of Saudi Arabia. Trusted by government and private sector clients from initial concept through to final commissioning.</div>
+        <!-- Highlights row -->
+        <div style="display:flex;gap:0;border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden;background:rgba(255,255,255,.03);">
+          <div style="flex:1;padding:18px 22px;border-right:1px solid rgba(255,255,255,.08);">
+            <div style="font-size:28px;font-weight:900;color:#fff;line-height:1;">500<span style="font-size:15px;color:var(--goldb);">+</span></div>
+            <div style="font-size:9px;font-weight:600;color:rgba(255,255,255,.38);letter-spacing:.6px;text-transform:uppercase;margin-top:5px;">Projects Delivered</div>
+          </div>
+          <div style="flex:1;padding:18px 22px;border-right:1px solid rgba(255,255,255,.08);">
+            <div style="font-size:28px;font-weight:900;color:var(--goldb);line-height:1;">98%</div>
+            <div style="font-size:9px;font-weight:600;color:rgba(255,255,255,.38);letter-spacing:1.2px;text-transform:uppercase;margin-top:5px;">Client Retention</div>
+          </div>
+          <div style="flex:1;padding:18px 22px;border-right:1px solid rgba(255,255,255,.08);">
+            <div style="font-size:28px;font-weight:900;color:#4a80e8;line-height:1;">7<span style="font-size:15px;color:var(--goldb);">+</span></div>
+            <div style="font-size:9px;font-weight:600;color:rgba(255,255,255,.38);letter-spacing:1.2px;text-transform:uppercase;margin-top:5px;">Certifications</div>
+          </div>
+          <div style="flex:1;padding:18px 22px;">
+            <div style="font-size:28px;font-weight:900;color:#00c850;line-height:1;">5</div>
+            <div style="font-size:9px;font-weight:600;color:rgba(255,255,255,.38);letter-spacing:1.2px;text-transform:uppercase;margin-top:5px;">Core Divisions</div>
+          </div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,auto);gap:8px;justify-content:start;">
+      </div>
+
+      <!-- GROUP C: Core services pills -->
+      <div>
+        <div style="font-size:8.5px;font-weight:700;color:rgba(255,255,255,.28);letter-spacing:2.5px;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:12px;"><div style="width:18px;height:1px;background:rgba(255,255,255,.2);"></div>Core Services</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <div class="c-pill">ELV &amp; Automation</div>
-          <div class="c-pill">Life Safety</div>
+          <div class="c-pill">Life Safety Systems</div>
           <div class="c-pill">ICT / Networking</div>
           <div class="c-pill">Security Systems</div>
           <div class="c-pill">MEP Division</div>
-          <div class="c-pill">Telecom</div>
+          <div class="c-pill">Telecom Infrastructure</div>
         </div>
       </div>
 
