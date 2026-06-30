@@ -3485,7 +3485,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <!-- Two-column body -->
 <div style="display:flex;flex:1;overflow:hidden;">
   <!-- Left sidebar: categories + certs + vision -->
-  <div style="width:202px;flex-shrink:0;background:var(--off);border-right:1px solid var(--g1);padding:22px 18px;display:flex;flex-direction:column;justify-content:space-between;">
+  <div style="width:202px;flex-shrink:0;background:var(--off);border-right:1px solid var(--g1);padding:22px 18px;display:flex;flex-direction:column;justify-content:flex-start;gap:20px;">
     <div>
       <div style="font-size:7.5px;font-weight:700;color:var(--g3);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px;"><div style="width:10px;height:2px;background:var(--gold);flex-shrink:0;"></div>By Category</div>
       <div style="display:flex;flex-direction:column;gap:5px;">
@@ -3510,7 +3510,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
         <div style="padding:5px 0;border-radius:5px;background:rgba(200,137,12,.09);border:1px solid rgba(200,137,12,.22);font-size:8.5px;font-weight:700;color:var(--gold);text-align:center;grid-column:span 2;">SASO Compliant</div>
       </div>
     </div>
-    <div style="background:linear-gradient(135deg,#003918,#005225);border-radius:8px;padding:14px 16px;">
+    <div style="background:linear-gradient(135deg,#003918,#005225);border-radius:8px;padding:14px 16px;margin-top:auto;">
       <div style="font-size:7.5px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:9px;">Saudi Vision 2030</div>
       <div style="display:flex;flex-direction:column;gap:5px;">
         <div style="display:flex;align-items:center;gap:7px;"><div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div><span style="font-size:9px;font-weight:600;color:#86efac;">Smart Infrastructure</span></div>
@@ -3520,19 +3520,230 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
     </div>
   </div>
   <!-- Right: partner grid -->
-  <div style="flex:1;padding:22px 28px;display:flex;flex-direction:column;">
-    <div style="font-size:7.5px;font-weight:700;color:var(--g3);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><div style="width:12px;height:2px;background:var(--gold);"></div>Brand Partners &amp; Technology Alliances</div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,1fr);gap:10px;flex:1;">
-      <div style="border:1px solid var(--g1);border-top:3px solid #049fd9;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#049fd9;letter-spacing:-.5px;">CISCO</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Networking</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Authorized</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #009999;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#009999;letter-spacing:-.5px;">SIEMENS</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Automation</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Certified</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #0096d6;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#0096d6;letter-spacing:-.5px;">HP</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Computing</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Reseller</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #ff8300;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#ff8300;letter-spacing:-.5px;">ARUBA</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Wireless</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Partner</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #007db8;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#007db8;letter-spacing:-.5px;">DELL</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Infrastructure</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Reseller</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #c40000;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#c40000;letter-spacing:-.5px;">BOSCH</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Security</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Certified</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #1245a8;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#1245a8;letter-spacing:-.5px;">ZKTeco</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Access Ctrl</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Distributor</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #e8151b;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#e8151b;letter-spacing:-.5px;">BFT</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Parking / Gates</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Installer</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #cc0000;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#cc0000;letter-spacing:-.5px;">3M</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Cabling / Safety</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Certified</div></div>
-      <div style="border:1px solid var(--g1);border-top:3px solid #555;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#fff;padding:10px 6px;"><div style="font-size:16px;font-weight:900;color:#555;letter-spacing:-.5px;">ZETTA</div><div style="font-size:8px;font-weight:600;color:var(--g2);">Storage</div><div style="font-size:7.5px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:2px 8px;font-weight:700;">Partner</div></div>
+  <div style="flex:1;padding:18px 22px;display:flex;flex-direction:column;overflow:hidden;">
+    <div style="font-size:7.5px;font-weight:700;color:var(--g3);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-shrink:0;"><div style="width:12px;height:2px;background:var(--gold);"></div>Brand Partners &amp; Technology Alliances</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,1fr);gap:8px;flex:1;min-height:0;">
+
+      <!-- CISCO -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #049fd9;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#049fd9;letter-spacing:-.5px;line-height:1;">CISCO</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Networking</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">Enterprise switching, wireless LAN &amp; SD-WAN for telecom &amp; building projects.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#049fd9;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Switching &amp; Routing</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#049fd9;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Wi-Fi 6 / 6E LAN</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#049fd9;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">SD-WAN / SASE</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#049fd9;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">IP Telephony / UC</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#049fd9;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Data Centre Infra</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(4,159,217,.1);color:#049fd9;border-radius:3px;padding:2px 4px;font-weight:700;">Meraki</div>
+          <div style="font-size:6px;background:rgba(4,159,217,.1);color:#049fd9;border-radius:3px;padding:2px 4px;font-weight:700;">Catalyst</div>
+          <div style="font-size:6px;background:rgba(4,159,217,.1);color:#049fd9;border-radius:3px;padding:2px 4px;font-weight:700;">Nexus</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Authorized Reseller</div>
+      </div>
+
+      <!-- SIEMENS -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #009999;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#009999;letter-spacing:-.5px;line-height:1;">SIEMENS</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Automation</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">BMS, smart controls &amp; automation for commercial, industrial &amp; infrastructure.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#009999;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Building Mgmt (BMS)</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#009999;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">HVAC Automation</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#009999;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">EIB / KNX</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#009999;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Fire Detection</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#009999;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Energy Management</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(0,153,153,.1);color:#009999;border-radius:3px;padding:2px 4px;font-weight:700;">Desigo</div>
+          <div style="font-size:6px;background:rgba(0,153,153,.1);color:#009999;border-radius:3px;padding:2px 4px;font-weight:700;">SCADA</div>
+          <div style="font-size:6px;background:rgba(0,153,153,.1);color:#009999;border-radius:3px;padding:2px 4px;font-weight:700;">PLC</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Certified Partner</div>
+      </div>
+
+      <!-- HP -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #0096d6;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#0096d6;letter-spacing:-.5px;line-height:1;">HP</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Computing</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">Enterprise servers, workstations &amp; print solutions for IT &amp; data centres.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#0096d6;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">ProLiant Servers</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#0096d6;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">HP Workstations</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#0096d6;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Storage Solutions</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#0096d6;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Thin Clients / VDI</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#0096d6;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Enterprise Printers</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(0,150,214,.1);color:#0096d6;border-radius:3px;padding:2px 4px;font-weight:700;">HPE</div>
+          <div style="font-size:6px;background:rgba(0,150,214,.1);color:#0096d6;border-radius:3px;padding:2px 4px;font-weight:700;">iLO</div>
+          <div style="font-size:6px;background:rgba(0,150,214,.1);color:#0096d6;border-radius:3px;padding:2px 4px;font-weight:700;">OneView</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Authorized Reseller</div>
+      </div>
+
+      <!-- ARUBA -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #ff8300;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#ff8300;letter-spacing:-.5px;line-height:1;">ARUBA</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Wireless</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">Campus Wi-Fi &amp; network access control for smart buildings, hotels &amp; government.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#ff8300;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Wi-Fi 6 / 6E APs</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#ff8300;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Network Access Ctrl</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#ff8300;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">SD-WAN</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#ff8300;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Zero Trust Security</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#ff8300;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">IoT / Guest Access</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(255,131,0,.1);color:#ff8300;border-radius:3px;padding:2px 4px;font-weight:700;">ClearPass</div>
+          <div style="font-size:6px;background:rgba(255,131,0,.1);color:#ff8300;border-radius:3px;padding:2px 4px;font-weight:700;">Central</div>
+          <div style="font-size:6px;background:rgba(255,131,0,.1);color:#ff8300;border-radius:3px;padding:2px 4px;font-weight:700;">EdgeConnect</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Authorized Partner</div>
+      </div>
+
+      <!-- DELL -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #007db8;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#007db8;letter-spacing:-.5px;line-height:1;">DELL</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Infrastructure</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">PowerEdge servers, EMC storage &amp; end-user computing for enterprise &amp; government.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#007db8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">PowerEdge Servers</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#007db8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">EMC Storage</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#007db8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">PCs &amp; Laptops</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#007db8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">VDI / VMware</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#007db8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">HCI Solutions</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(0,125,184,.1);color:#007db8;border-radius:3px;padding:2px 4px;font-weight:700;">APEX</div>
+          <div style="font-size:6px;background:rgba(0,125,184,.1);color:#007db8;border-radius:3px;padding:2px 4px;font-weight:700;">VxRail</div>
+          <div style="font-size:6px;background:rgba(0,125,184,.1);color:#007db8;border-radius:3px;padding:2px 4px;font-weight:700;">Unity XT</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Authorized Reseller</div>
+      </div>
+
+      <!-- BOSCH -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #c40000;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#c40000;letter-spacing:-.5px;line-height:1;">BOSCH</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Security</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">IP video surveillance, intrusion &amp; fire alarm for critical infrastructure &amp; facilities.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#c40000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">IP CCTV (FLEXIDOME)</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#c40000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">BVMS / VMS</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#c40000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Intrusion Detection</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#c40000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Fire Alarm Systems</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#c40000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">PA &amp; Conference</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(196,0,0,.1);color:#c40000;border-radius:3px;padding:2px 4px;font-weight:700;">BVMS</div>
+          <div style="font-size:6px;background:rgba(196,0,0,.1);color:#c40000;border-radius:3px;padding:2px 4px;font-weight:700;">DIVAR</div>
+          <div style="font-size:6px;background:rgba(196,0,0,.1);color:#c40000;border-radius:3px;padding:2px 4px;font-weight:700;">PRAESIDEO</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Certified Installer</div>
+      </div>
+
+      <!-- ZKTeco -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #1245a8;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#1245a8;letter-spacing:-.5px;line-height:1;">ZKTeco</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Access Control</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">Biometric access, time attendance &amp; visitor management for corporate facilities.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#1245a8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Fingerprint / Face ID</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#1245a8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">RFID Card Access</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#1245a8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Time &amp; Attendance</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#1245a8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Visitor Mgmt (VMS)</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#1245a8;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Turnstiles / Speed Gates</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(18,69,168,.1);color:#1245a8;border-radius:3px;padding:2px 4px;font-weight:700;">SpeedFace</div>
+          <div style="font-size:6px;background:rgba(18,69,168,.1);color:#1245a8;border-radius:3px;padding:2px 4px;font-weight:700;">ZKBioSecurity</div>
+          <div style="font-size:6px;background:rgba(18,69,168,.1);color:#1245a8;border-radius:3px;padding:2px 4px;font-weight:700;">inBio</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Authorized Distributor</div>
+      </div>
+
+      <!-- BFT -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #e8151b;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#e8151b;letter-spacing:-.5px;line-height:1;">BFT</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Gates &amp; Parking</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">Barriers, sliding gates &amp; parking systems for residential &amp; commercial sites.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#e8151b;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Boom Barriers</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#e8151b;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Sliding / Swing Gates</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#e8151b;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">ANPR Integration</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#e8151b;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Turnstile Systems</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#e8151b;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Video Door / Intercom</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(232,21,27,.1);color:#e8151b;border-radius:3px;padding:2px 4px;font-weight:700;">IGEA</div>
+          <div style="font-size:6px;background:rgba(232,21,27,.1);color:#e8151b;border-radius:3px;padding:2px 4px;font-weight:700;">ARES</div>
+          <div style="font-size:6px;background:rgba(232,21,27,.1);color:#e8151b;border-radius:3px;padding:2px 4px;font-weight:700;">NEOS</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Certified Installer</div>
+      </div>
+
+      <!-- 3M -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #cc0000;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#cc0000;letter-spacing:-.5px;line-height:1;">3M</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Cabling &amp; Safety</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">Structured cabling, fiber optic &amp; electrical safety products to intl. standards.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#cc0000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Cat 6 / 6A Cabling</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#cc0000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Fiber Optic Splicing</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#cc0000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Cable Management</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#cc0000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Electrical Insulation</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#cc0000;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Safety Labels &amp; Signs</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(204,0,0,.1);color:#cc0000;border-radius:3px;padding:2px 4px;font-weight:700;">Volition</div>
+          <div style="font-size:6px;background:rgba(204,0,0,.1);color:#cc0000;border-radius:3px;padding:2px 4px;font-weight:700;">Scotchcast</div>
+          <div style="font-size:6px;background:rgba(204,0,0,.1);color:#cc0000;border-radius:3px;padding:2px 4px;font-weight:700;">Temflex</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Certified Partner</div>
+      </div>
+
+      <!-- ZETTA -->
+      <div style="border:1px solid var(--g1);border-top:3px solid #555;border-radius:8px;display:flex;flex-direction:column;background:#fff;padding:12px 9px;overflow:hidden;">
+        <div style="font-size:18px;font-weight:900;color:#555;letter-spacing:-.5px;line-height:1;">ZETTA</div>
+        <div style="font-size:6.5px;font-weight:700;color:var(--g3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;">Data Storage</div>
+        <div style="width:18px;height:2px;background:var(--gold);margin:7px 0 7px;"></div>
+        <div style="font-size:7px;color:var(--g3);line-height:1.45;margin-bottom:8px;">High-capacity SAN/NAS, backup &amp; disaster recovery for enterprise IT infrastructure.</div>
+        <div style="font-size:6px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">SOLUTIONS</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#555;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">SAN / NAS Storage</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#555;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Backup Solutions</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#555;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Disaster Recovery</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#555;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">Cloud Archival</span></div>
+          <div style="display:flex;align-items:center;gap:4px;"><div style="width:3px;height:3px;border-radius:50%;background:#555;flex-shrink:0;"></div><span style="font-size:7px;color:var(--ink);font-weight:600;">HCI / Hyper-Converged</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:7px;margin-bottom:6px;">
+          <div style="font-size:6px;background:rgba(85,85,85,.1);color:#555;border-radius:3px;padding:2px 4px;font-weight:700;">ZettaFlash</div>
+          <div style="font-size:6px;background:rgba(85,85,85,.1);color:#555;border-radius:3px;padding:2px 4px;font-weight:700;">Guardian</div>
+          <div style="font-size:6px;background:rgba(85,85,85,.1);color:#555;border-radius:3px;padding:2px 4px;font-weight:700;">Vault</div>
+        </div>
+        <div style="font-size:7px;color:var(--blue);background:rgba(18,69,168,.07);border:1px solid rgba(18,69,168,.15);border-radius:3px;padding:3px 6px;font-weight:700;text-align:center;">Authorized Partner</div>
+      </div>
+
     </div>
   </div>
 </div>
