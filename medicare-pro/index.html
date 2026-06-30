@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MediCare Pro">
+  <meta name="theme-color" content="#1a56db">
+  <title>MediCare Pro</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<!-- ── LOADING OVERLAY ───────────────────────────────────── -->
+<div id="loading-overlay">
+  <div class="spinner"></div>
+  <div id="loading-text">Loading…</div>
+</div>
+
+<!-- ── CONFIRM DIALOG ────────────────────────────────────── -->
+<div id="confirm-overlay">
+  <div class="confirm-box">
+    <p id="confirm-msg">Are you sure?</p>
+    <div class="confirm-btns">
+      <button id="confirm-yes" class="btn btn-danger">Delete</button>
+      <button id="confirm-no"  class="btn btn-outline">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOAST ──────────────────────────────────────────────── -->
+<div id="toast-container"></div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SETUP SCREEN — shown when Supabase not yet configured  -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="setup-screen" class="screen">
+  <div class="setup-card">
+    <h2>⚙️ One-time Setup</h2>
+    <p>Open <strong>js/config.js</strong> and replace the placeholder values with your Supabase project credentials.</p>
+    <pre>window.APP_CONFIG = {
+  SUPABASE_URL:      'https://xxxx.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGci...',
+  ...
+};</pre>
+    <p style="margin-top:16px;font-size:13px;color:var(--text3)">
+      Get these from: Supabase → Project Settings → API<br>
+      Then run the SQL in <strong>supabase-schema.sql</strong> in your Supabase SQL Editor.
+    </p>
+    <button class="btn btn-primary mt-16" onclick="location.reload()">I've configured it — Reload</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- AUTH SCREEN                                            -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="auth-screen" class="screen">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="logo-icon">🏥</div>
+      <h1>MediCare Pro</h1>
+      <p>Gynecology &amp; Obstetrics EMR</p>
+    </div>
+    <div class="auth-tabs">
+      <div class="auth-tab active" id="tab-login"  onclick="authTab('login')">Sign In</div>
+      <div class="auth-tab"        id="tab-signup" onclick="authTab('signup')">Sign Up</div>
+    </div>
+
+    <!-- Login -->
+    <div id="auth-login">
+      <div class="auth-form">
+        <div>
+          <label>Email Address</label>
+          <input type="email" id="login-email" placeholder="doctor@clinic.com" autocomplete="email">
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <div id="login-error" class="auth-error"></div>
+        <button class="btn-auth" id="login-btn" onclick="authLogin()">Sign In</button>
+        <div class="auth-skip">
+          <a onclick="offlineMode()">Continue offline (no cloud sync)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup -->
+    <div id="auth-signup" style="display:none">
+      <div class="auth-form">
+        <div>
+          <label>Email Address</label>
+          <input type="email" id="signup-email" placeholder="doctor@clinic.com">
+        </div>
+        <div>
+          <label>Password (min 6 characters)</label>
+          <input type="password" id="signup-pass" placeholder="••••••••">
+        </div>
+        <div>
+          <label>Confirm Password</label>
+          <input type="password" id="signup-pass2" placeholder="••••••••">
+        </div>
+        <div id="signup-error" class="auth-error"></div>
+        <button class="btn-auth" id="signup-btn" onclick="authSignup()">Create Account</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- APP SHELL                                              -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="app-shell" class="screen">
+
+  <!-- ── SIDEBAR (desktop) ──────────────────────────────── -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🏥</div>
+      <div>
+        <div class="sidebar-logo-text">MediCare Pro</div>
+        <div class="sidebar-logo-sub">Gynecology EMR</div>
+      </div>
+    </div>
+
+    <div class="sidebar-doctor">
+      <div class="sidebar-av" id="sidebar-av">Dr</div>
+      <div>
+        <div id="sidebar-doc-name">Dr. Bincy</div>
+        <div id="sidebar-doc-spec">Gynecologist &amp; Obstetrician</div>
+      </div>
+    </div>
+
+    <div class="sidebar-nav">
+      <div class="nav-section-label">Overview</div>
+      <div class="nav-item active" data-page="dashboard" onclick="App.navigate('dashboard')">
+        <span class="nav-icon">🏠</span> Dashboard
+      </div>
+
+      <div class="nav-section-label">Patients</div>
+      <div class="nav-item" data-page="patients" onclick="App.navigate('patients')">
+        <span class="nav-icon">👩</span> Patients
+      </div>
+      <div class="nav-item" data-page="appointments" onclick="App.navigate('appointments')">
+        <span class="nav-icon">📅</span> Appointments
+      </div>
+
+      <div class="nav-section-label">Clinical</div>
+      <div class="nav-item" data-page="consultations" onclick="App.navigate('consultations')">
+        <span class="nav-icon">📋</span> Consultations
+      </div>
+      <div class="nav-item" data-page="pregnancy" onclick="App.navigate('pregnancy')">
+        <span class="nav-icon">🤰</span> Pregnancy
+      </div>
+      <div class="nav-item" data-page="anc" onclick="App.navigate('anc')">
+        <span class="nav-icon">📊</span> ANC Follow-up
+      </div>
+      <div class="nav-item" data-page="ultrasound" onclick="App.navigate('ultrasound')">
+        <span class="nav-icon">🔬</span> Ultrasound
+      </div>
+      <div class="nav-item" data-page="labs" onclick="App.navigate('labs')">
+        <span class="nav-icon">🧪</span> Lab Results
+      </div>
+      <div class="nav-item" data-page="prescriptions" onclick="App.navigate('prescriptions')">
+        <span class="nav-icon">💊</span> Prescriptions
+      </div>
+
+      <div class="nav-section-label">Finance</div>
+      <div class="nav-item" data-page="billing" onclick="App.navigate('billing')">
+        <span class="nav-icon">🧾</span> Billing
+      </div>
+
+      <div class="nav-section-label">More</div>
+      <div class="nav-item" data-page="reports" onclick="App.navigate('reports')">
+        <span class="nav-icon">📈</span> Reports
+      </div>
+      <div class="nav-item" data-page="settings" onclick="App.navigate('settings')">
+        <span class="nav-icon">⚙️</span> Settings
+      </div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div id="sync-badge" class="sync-badge offline">○ Offline</div>
+      <div style="display:flex;gap:8px;margin-top:4px">
+        <button class="btn btn-ghost btn-sm flex-1" onclick="App.toggleTheme()">
+          <span id="theme-icon">🌙</span> Theme
+        </button>
+        <button class="btn btn-ghost btn-sm" onclick="doSignOut()" title="Sign out">⎋</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE DRAWER ──────────────────────────────────── -->
+  <div class="drawer-backdrop" id="drawer-backdrop" onclick="App.closeMobileDrawer()"></div>
+  <nav id="mobile-drawer">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🏥</div>
+      <div>
+        <div class="sidebar-logo-text">MediCare Pro</div>
+        <div class="sidebar-logo-sub">Gynecology EMR</div>
+      </div>
+    </div>
+    <div class="sidebar-doctor">
+      <div class="sidebar-av" id="mob-sidebar-av">Dr</div>
+      <div>
+        <div id="mob-sidebar-doc-name">Dr. Bincy</div>
+        <div id="mob-sidebar-doc-spec">Gynecologist &amp; Obstetrician</div>
+      </div>
+    </div>
+    <div class="sidebar-nav">
+      <div class="nav-item active" data-page="dashboard" onclick="App.navigate('dashboard')"><span class="nav-icon">🏠</span> Dashboard</div>
+      <div class="nav-section-label">Patients</div>
+      <div class="nav-item" data-page="patients"      onclick="App.navigate('patients')">     <span class="nav-icon">👩</span> Patients</div>
+      <div class="nav-item" data-page="appointments"  onclick="App.navigate('appointments')"> <span class="nav-icon">📅</span> Appointments</div>
+      <div class="nav-section-label">Clinical</div>
+      <div class="nav-item" data-page="consultations" onclick="App.navigate('consultations')"><span class="nav-icon">📋</span> Consultations</div>
+      <div class="nav-item" data-page="pregnancy"     onclick="App.navigate('pregnancy')">    <span class="nav-icon">🤰</span> Pregnancy</div>
+      <div class="nav-item" data-page="anc"           onclick="App.navigate('anc')">          <span class="nav-icon">📊</span> ANC</div>
+      <div class="nav-item" data-page="ultrasound"    onclick="App.navigate('ultrasound')">   <span class="nav-icon">🔬</span> Ultrasound</div>
+      <div class="nav-item" data-page="labs"          onclick="App.navigate('labs')">         <span class="nav-icon">🧪</span> Labs</div>
+      <div class="nav-item" data-page="prescriptions" onclick="App.navigate('prescriptions')"><span class="nav-icon">💊</span> Prescriptions</div>
+      <div class="nav-section-label">Finance &amp; More</div>
+      <div class="nav-item" data-page="billing"       onclick="App.navigate('billing')">      <span class="nav-icon">🧾</span> Billing</div>
+      <div class="nav-item" data-page="reports"       onclick="App.navigate('reports')">      <span class="nav-icon">📈</span> Reports</div>
+      <div class="nav-item" data-page="settings"      onclick="App.navigate('settings')">     <span class="nav-icon">⚙️</span> Settings</div>
+    </div>
+    <div class="sidebar-bottom">
+      <div id="mob-sync-badge" class="sync-badge offline">○ Offline</div>
+      <button class="btn btn-ghost btn-sm" onclick="App.toggleTheme()"><span id="mob-theme-icon">🌙</span> Toggle Theme</button>
+      <button class="btn btn-ghost btn-sm" onclick="doSignOut()">⎋ Sign Out</button>
+    </div>
+  </nav>
+
+  <!-- ── MAIN AREA ───────────────────────────────────────── -->
+  <div class="main-area">
+
+    <!-- Topbar (desktop) -->
+    <div class="topbar">
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-search" id="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="global-search" placeholder="Search patients… (Ctrl+K)"
+               oninput="App.handleSearch(this.value)" autocomplete="off">
+        <div id="search-results"></div>
+      </div>
+      <button class="icon-btn" onclick="App.navigate('new-patient')" title="New Patient">➕</button>
+      <button class="icon-btn" onclick="App.toggleTheme()" title="Toggle theme"><span id="theme-icon">🌙</span></button>
+      <button class="icon-btn" onclick="doSignOut()" title="Sign out">⎋</button>
+    </div>
+
+    <!-- Mobile topbar -->
+    <div class="mobile-topbar">
+      <button class="icon-btn" onclick="App.openMobileDrawer()">☰</button>
+      <div class="mobile-title" id="mobile-title">Dashboard</div>
+      <button class="icon-btn" onclick="App.navigate('patients')">🔍</button>
+      <button class="icon-btn" onclick="App.navigate('new-patient')">➕</button>
+    </div>
+
+    <!-- ── PAGES ───────────────────────────────────────── -->
+    <div id="main-content">
+
+      <!-- DASHBOARD -->
+      <div class="page active" id="page-dashboard">
+        <div id="dashboard-content">
+          <div class="empty-state"><div class="spinner"></div></div>
+        </div>
+      </div>
+
+      <!-- PATIENTS LIST -->
+      <div class="page" id="page-patients">
+        <div class="page-header">
+          <h2>Patients</h2>
+          <div class="page-header-actions">
+            <input type="search" class="form-control" id="patient-search-input"
+                   placeholder="Search by name, phone…" oninput="PatientsModule.search(this.value)"
+                   style="width:220px">
+            <button class="btn btn-primary" onclick="PatientsModule.openNew()">➕ New Patient</button>
+          </div>
+        </div>
+        <div class="pill-filters" id="patient-filters">
+          <button class="pill-btn active" onclick="PatientsModule.filter('all',this)">All</button>
+          <button class="pill-btn" onclick="PatientsModule.filter('obstetric',this)">Obstetric</button>
+          <button class="pill-btn" onclick="PatientsModule.filter('gynecology',this)">Gynecology</button>
+          <button class="pill-btn" onclick="PatientsModule.filter('antenatal',this)">ANC</button>
+        </div>
+        <div class="card" style="padding:0">
+          <div id="patients-list"></div>
+        </div>
+      </div>
+
+      <!-- NEW / EDIT PATIENT -->
+      <div class="page" id="page-new-patient">
+        <div class="page-header">
+          <button class="btn btn-ghost btn-sm" onclick="App.navigate('patients')">← Back</button>
+          <h2 id="patient-form-title">New Patient</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-outline" onclick="App.navigate('patients')">Cancel</button>
+            <button class="btn btn-primary" onclick="PatientsModule.saveForm()">Save Patient</button>
+          </div>
+        </div>
+        <div id="patient-form-content"></div>
+      </div>
+
+      <!-- PATIENT DETAIL -->
+      <div class="page" id="page-patient-detail">
+        <div id="patient-detail-content"></div>
+      </div>
+
+      <!-- APPOINTMENTS -->
+      <div class="page" id="page-appointments">
+        <div class="page-header">
+          <h2>Appointments</h2>
+          <div class="page-header-actions">
+            <input type="date" class="form-control" id="appt-date-filter"
+                   oninput="AppointmentsModule.filterDate(this.value)" style="width:160px">
+            <button class="btn btn-primary" onclick="AppointmentsModule.openNew()">➕ New Appointment</button>
+          </div>
+        </div>
+        <div id="appointments-content"></div>
+      </div>
+
+      <!-- CONSULTATIONS -->
+      <div class="page" id="page-consultations">
+        <div class="page-header">
+          <h2>Consultation Notes</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" onclick="ConsultationsModule.openNew()">➕ New Note</button>
+          </div>
+        </div>
+        <div id="consultations-content"></div>
+      </div>
+
+      <!-- PREGNANCY -->
+      <div class="page" id="page-pregnancy">
+        <div class="page-header">
+          <h2>Pregnancy Tracking</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" onclick="PregnancyModule.openNew()">➕ New Pregnancy</button>
+          </div>
+        </div>
+        <div id="pregnancy-content"></div>
+      </div>
+
+      <!-- ANC -->
+      <div class="page" id="page-anc">
+        <div class="page-header">
+          <h2>ANC Follow-up</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" onclick="ANCModule.openNew()">➕ ANC Visit</button>
+          </div>
+        </div>
+        <div id="anc-content"></div>
+      </div>
+
+      <!-- ULTRASOUND -->
+      <div class="page" id="page-ultrasound">
+        <div class="page-header">
+          <h2>Ultrasound Records</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" onclick="UltrasoundModule.openNew()">➕ New Record</button>
+          </div>
+        </div>
+        <div id="ultrasound-content"></div>
+      </div>
+
+      <!-- LABS -->
+      <div class="page" id="page-labs">
+        <div class="page-header">
+          <h2>Laboratory Results</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" onclick="LabsModule.openNew()">➕ Add Result</button>
+          </div>
+        </div>
+        <div id="labs-content"></div>
+      </div>
+
+      <!-- PRESCRIPTIONS -->
+      <div class="page" id="page-prescriptions">
+        <div class="page-header">
+          <h2>Prescriptions</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" onclick="PrescriptionsModule.openNew()">➕ New Rx</button>
+          </div>
+        </div>
+        <div id="prescriptions-content"></div>
+      </div>
+
+      <!-- BILLING -->
+      <div class="page" id="page-billing">
+        <div class="page-header">
+          <h2>Billing &amp; Invoices</h2>
+          <div class="page-header-actions">
+            <button class="btn btn-primary" onclick="BillingModule.openNew()">➕ New Invoice</button>
+          </div>
+        </div>
+        <div id="billing-content"></div>
+      </div>
+
+      <!-- REPORTS -->
+      <div class="page" id="page-reports">
+        <div id="reports-content"></div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="page" id="page-settings">
+        <div id="settings-content"></div>
+      </div>
+
+    </div><!-- /#main-content -->
+
+    <!-- Bottom Navigation (mobile) -->
+    <nav class="bottom-nav">
+      <div class="bottom-nav-item active" data-page="dashboard" onclick="App.navigate('dashboard')">
+        <span class="bn-icon">🏠</span><span>Home</span>
+      </div>
+      <div class="bottom-nav-item" data-page="patients" onclick="App.navigate('patients')">
+        <span class="bn-icon">👩</span><span>Patients</span>
+      </div>
+      <div class="bottom-nav-item" data-page="appointments" onclick="App.navigate('appointments')">
+        <span class="bn-icon">📅</span><span>Appts</span>
+      </div>
+      <div class="bottom-nav-item" data-page="prescriptions" onclick="App.navigate('prescriptions')">
+        <span class="bn-icon">💊</span><span>Rx</span>
+      </div>
+      <div class="bottom-nav-item" data-page="settings" onclick="App.navigate('settings')">
+        <span class="bn-icon">⚙️</span><span>More</span>
+      </div>
+    </nav>
+
+  </div><!-- /.main-area -->
+</div><!-- /#app-shell -->
+
+<!-- ════════════════════════════════════════════════════════
+     MODALS
+     ════════════════════════════════════════════════════════ -->
+
+<!-- Patient Form Modal (quick add from within another module) -->
+<div id="modal-patient" class="modal-overlay">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-patient-title">New Patient</div>
+      <button class="modal-close" onclick="App.closeModal('modal-patient')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-patient-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-patient')">Cancel</button>
+      <button class="btn btn-primary" onclick="PatientsModule.saveModal()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Appointment Modal -->
+<div id="modal-appt" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-appt-title">New Appointment</div>
+      <button class="modal-close" onclick="App.closeModal('modal-appt')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-appt-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-appt')">Cancel</button>
+      <button class="btn btn-primary" onclick="AppointmentsModule.save()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Consultation Modal -->
+<div id="modal-consult" class="modal-overlay">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-consult-title">Consultation Note</div>
+      <button class="modal-close" onclick="App.closeModal('modal-consult')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-consult-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-consult')">Cancel</button>
+      <button class="btn btn-primary" onclick="ConsultationsModule.save()">Save Note</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pregnancy Modal -->
+<div id="modal-preg" class="modal-overlay">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-preg-title">Pregnancy Record</div>
+      <button class="modal-close" onclick="App.closeModal('modal-preg')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-preg-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-preg')">Cancel</button>
+      <button class="btn btn-primary" onclick="PregnancyModule.save()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ANC Visit Modal -->
+<div id="modal-anc" class="modal-overlay">
+  <div class="modal modal-xl">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-anc-title">ANC Visit</div>
+      <button class="modal-close" onclick="App.closeModal('modal-anc')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-anc-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-anc')">Cancel</button>
+      <button class="btn btn-primary" onclick="ANCModule.save()">Save Visit</button>
+    </div>
+  </div>
+</div>
+
+<!-- Prescription Modal -->
+<div id="modal-rx" class="modal-overlay">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-rx-title">New Prescription</div>
+      <button class="modal-close" onclick="App.closeModal('modal-rx')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-rx-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-rx')">Cancel</button>
+      <button class="btn btn-success" onclick="PrescriptionsModule.print()" style="margin-right:auto">🖨 Print</button>
+      <button class="btn btn-primary" onclick="PrescriptionsModule.save()">Save Rx</button>
+    </div>
+  </div>
+</div>
+
+<!-- Invoice Modal -->
+<div id="modal-invoice" class="modal-overlay">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-invoice-title">New Invoice</div>
+      <button class="modal-close" onclick="App.closeModal('modal-invoice')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-invoice-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-invoice')">Cancel</button>
+      <button class="btn btn-success" onclick="BillingModule.print()" style="margin-right:auto">🖨 Print</button>
+      <button class="btn btn-primary" onclick="BillingModule.save()">Save Invoice</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lab Result Modal -->
+<div id="modal-lab" class="modal-overlay">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-lab-title">Lab Result</div>
+      <button class="modal-close" onclick="App.closeModal('modal-lab')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-lab-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-lab')">Cancel</button>
+      <button class="btn btn-primary" onclick="LabsModule.save()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Ultrasound Modal -->
+<div id="modal-us" class="modal-overlay">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-us-title">Ultrasound Record</div>
+      <button class="modal-close" onclick="App.closeModal('modal-us')">✕</button>
+    </div>
+    <div class="modal-body" id="modal-us-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="App.closeModal('modal-us')">Cancel</button>
+      <button class="btn btn-primary" onclick="UltrasoundModule.save()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SCRIPTS
+     ════════════════════════════════════════════════════════ -->
+<script src="js/config.js"></script>
+<script src="js/db.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/modules/dashboard.js"></script>
+<script src="js/modules/patients.js"></script>
+<script src="js/modules/appointments.js"></script>
+<script src="js/modules/consultations.js"></script>
+<script src="js/modules/pregnancy.js"></script>
+<script src="js/modules/anc.js"></script>
+<script src="js/modules/ultrasound.js"></script>
+<script src="js/modules/labs.js"></script>
+<script src="js/modules/prescriptions.js"></script>
+<script src="js/modules/billing.js"></script>
+<script src="js/modules/reports.js"></script>
+<script src="js/modules/settings.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+// ── AUTH HELPERS ──────────────────────────────────────────────
+function authTab(tab) {
+  document.getElementById('auth-login').style.display  = tab === 'login'  ? '' : 'none';
+  document.getElementById('auth-signup').style.display = tab === 'signup' ? '' : 'none';
+  document.getElementById('tab-login').classList.toggle('active',  tab === 'login');
+  document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
+}
+
+async function authLogin() {
+  const email = document.getElementById('login-email').value.trim();
+  const pass  = document.getElementById('login-pass').value;
+  const errEl = document.getElementById('login-error');
+  errEl.classList.remove('show');
+  if (!email || !pass) { errEl.textContent = 'Please enter email and password.'; errEl.classList.add('show'); return; }
+  const btn = document.getElementById('login-btn');
+  btn.disabled = true; btn.textContent = 'Signing in…';
+  try {
+    await Sync.signIn(email, pass);
+    App.showApp();
+  } catch (e) {
+    errEl.textContent = e.message || 'Sign in failed.';
+    errEl.classList.add('show');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Sign In';
+  }
+}
+
+async function authSignup() {
+  const email = document.getElementById('signup-email').value.trim();
+  const pass  = document.getElementById('signup-pass').value;
+  const pass2 = document.getElementById('signup-pass2').value;
+  const errEl = document.getElementById('signup-error');
+  errEl.classList.remove('show');
+  if (!email || !pass) { errEl.textContent = 'Please fill all fields.'; errEl.classList.add('show'); return; }
+  if (pass !== pass2)  { errEl.textContent = 'Passwords do not match.'; errEl.classList.add('show'); return; }
+  if (pass.length < 6) { errEl.textContent = 'Password must be at least 6 characters.'; errEl.classList.add('show'); return; }
+  const btn = document.getElementById('signup-btn');
+  btn.disabled = true; btn.textContent = 'Creating account…';
+  try {
+    await Sync.signUp(email, pass);
+    errEl.textContent = '✓ Account created! Check your email to confirm, then sign in.';
+    errEl.style.color = 'var(--success)';
+    errEl.classList.add('show');
+  } catch (e) {
+    errEl.textContent = e.message || 'Sign up failed.';
+    errEl.classList.add('show');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Create Account';
+  }
+}
+
+function offlineMode() {
+  App.showApp();
+}
+
+async function doSignOut() {
+  await Sync.signOut();
+  location.reload();
+}
+
+// Keyboard shortcut: Enter on login fields
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const login  = document.getElementById('auth-login');
+    const signup = document.getElementById('auth-signup');
+    if (login  && login.style.display  !== 'none') authLogin();
+    if (signup && signup.style.display !== 'none') authSignup();
+  }
+});
+</script>
+</body>
+</html>
