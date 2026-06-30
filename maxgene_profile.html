@@ -243,12 +243,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .partner-card { justify-content: center !important; }
 /* ── SPACE-FILL FIXES ── */
 
-/* Page 2: About — make the right panel fill properly */
-.about-right { justify-content: space-between !important; }
-.ar-img { height: 260px !important; flex-shrink: 0; }
-.ar-grid { flex: 1 !important; align-items: stretch; }
-.ar-card { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 16px 14px !important; }
-.ar-card-text { font-size: 11px; line-height: 1.7; }
+/* Page 2: handled via inline styles in HTML */
 
 /* Page 3: Mission/Vision — fill right panel */
 .mv-values { align-items: stretch; }
@@ -282,9 +277,8 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 .c-card-label { font-size: 10px !important; letter-spacing: 2px !important; margin-bottom: 6px !important; }
 .c-card-icon { width: 42px !important; height: 42px !important; font-size: 20px !important; margin-bottom: 4px !important; }
 
-/* About left panel: fill stats */
-.al-stats { flex: 1; align-items: stretch; }
-.al-stat { display: flex; flex-direction: column; justify-content: center; padding: 20px !important; }
+/* About left: stats at natural height */
+.al-stats { flex: none !important; }
 
 </style>
 </head>
@@ -515,86 +509,93 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><img src="logo.png" style="height:22px;width:auto;object-fit:contain;opacity:.9;margin-right:2px;"><div class="ph-title">About the Company</div></div><div class="ph-badge">Overview</div></div>
 <div class="about-wrap">
-  <div class="about-left">
-    <div>
-      <div class="al-logo"><div class="al-mark" style="background:transparent;border:none;padding:0;"><img src="logo.png" style="width:46px;height:46px;object-fit:contain;" alt="MAX GENE Logo"></div><div><div class="al-name">MAX GENE LLC</div><div class="al-label">Riyadh, KSA · Est. 2020</div></div></div>
-      <div class="al-section-title">About Us</div>
-      <div class="al-body">We are a <b>high-tech enterprise</b> specializing in Smart and Connected Systems Integration with a proven track record across the Kingdom of Saudi Arabia.<br><br>We specialize in the design, engineering, and implementation of solutions across <b>Government, Healthcare, Telecom, Retail, Logistics, Education, Airports,</b> and Buildings — converting concepts into deployable solutions.<br><br>Our products carry <b>CE, GS, UL, and TUV certifications</b> — ensuring long lifespan, low maintenance cost, and wide international acceptance.</div>
+  <!-- LEFT COLUMN -->
+  <div class="about-left" style="justify-content:flex-start;">
+    <div class="al-logo"><div class="al-mark" style="background:transparent;border:none;padding:0;"><img src="logo.png" style="width:46px;height:46px;object-fit:contain;" alt="MAX GENE Logo"></div><div><div class="al-name">MAX GENE LLC</div><div class="al-label">Riyadh, KSA · Est. 2020</div></div></div>
+    <div class="al-section-title">About Us</div>
+    <div class="al-body">We are a <b>high-tech enterprise</b> specializing in Smart and Connected Systems Integration with a proven track record across the Kingdom of Saudi Arabia.<br><br>We specialize in the design, engineering, and implementation of solutions across <b>Government, Healthcare, Telecom, Retail, Logistics, Education, Airports,</b> and Buildings — converting concepts into deployable solutions.<br><br>Our products carry <b>CE, GS, UL, and TUV certifications</b> — ensuring long lifespan, low maintenance cost, and wide international acceptance.</div>
+    <!-- Key Sectors -->
+    <div style="margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);">
+      <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Key Sectors</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div style="font-size:9.5px;color:rgba(255,255,255,.55);padding:6px 10px;border-left:2px solid rgba(200,137,12,.45);background:rgba(255,255,255,.04);border-radius:0 4px 4px 0;">Government</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.55);padding:6px 10px;border-left:2px solid rgba(200,137,12,.45);background:rgba(255,255,255,.04);border-radius:0 4px 4px 0;">Healthcare</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.55);padding:6px 10px;border-left:2px solid rgba(200,137,12,.45);background:rgba(255,255,255,.04);border-radius:0 4px 4px 0;">Telecom</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.55);padding:6px 10px;border-left:2px solid rgba(200,137,12,.45);background:rgba(255,255,255,.04);border-radius:0 4px 4px 0;">Retail</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.55);padding:6px 10px;border-left:2px solid rgba(200,137,12,.45);background:rgba(255,255,255,.04);border-radius:0 4px 4px 0;">Education</div>
+        <div style="font-size:9.5px;color:rgba(255,255,255,.55);padding:6px 10px;border-left:2px solid rgba(200,137,12,.45);background:rgba(255,255,255,.04);border-radius:0 4px 4px 0;">Airports</div>
+      </div>
     </div>
-    <div class="al-stats">
+    <!-- Certifications -->
+    <div style="margin-top:18px;">
+      <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Certifications</div>
+      <div style="display:flex;gap:8px;">
+        <div style="padding:5px 12px;border-radius:5px;border:1px solid rgba(200,137,12,.35);background:rgba(200,137,12,.08);font-size:10px;font-weight:700;color:rgba(200,137,12,.8);">CE</div>
+        <div style="padding:5px 12px;border-radius:5px;border:1px solid rgba(200,137,12,.35);background:rgba(200,137,12,.08);font-size:10px;font-weight:700;color:rgba(200,137,12,.8);">GS</div>
+        <div style="padding:5px 12px;border-radius:5px;border:1px solid rgba(200,137,12,.35);background:rgba(200,137,12,.08);font-size:10px;font-weight:700;color:rgba(200,137,12,.8);">UL</div>
+        <div style="padding:5px 12px;border-radius:5px;border:1px solid rgba(200,137,12,.35);background:rgba(200,137,12,.08);font-size:10px;font-weight:700;color:rgba(200,137,12,.8);">TUV</div>
+      </div>
+    </div>
+    <!-- Stats pushed to bottom -->
+    <div class="al-stats" style="margin-top:auto;padding-top:24px;">
       <div class="al-stat"><div class="al-stat-num">5<sup>+</sup></div><div class="al-stat-lab">Years</div></div>
       <div class="al-stat"><div class="al-stat-num">24<sup>+</sup></div><div class="al-stat-lab">Services</div></div>
       <div class="al-stat"><div class="al-stat-num">20<sup>+</sup></div><div class="al-stat-lab">Clients</div></div>
       <div class="al-stat"><div class="al-stat-num">5</div><div class="al-stat-lab">Divisions</div></div>
     </div>
   </div>
-  <div class="about-right">
-    <div class="ar-img" style="background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 50%,#0e2d6e 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-      <!-- Smart city hexagon network SVG -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.22;" preserveAspectRatio="xMidYMid meet">
-        <!-- Hexagon grid pattern representing smart city / tech infrastructure -->
-        <!-- Row 1 hexagons -->
-        <polygon points="60,20 80,8 100,20 100,44 80,56 60,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="110,20 130,8 150,20 150,44 130,56 110,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="160,20 180,8 200,20 200,44 180,56 160,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="210,20 230,8 250,20 250,44 230,56 210,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="260,20 280,8 300,20 300,44 280,56 260,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="310,20 330,8 350,20 350,44 330,56 310,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="360,20 380,8 400,20 400,44 380,56 360,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="410,20 430,8 450,20 450,44 430,56 410,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="460,20 480,8 500,20 500,44 480,56 460,44" fill="none" stroke="white" stroke-width="1.5"/>
-        <!-- Row 2 offset hexagons -->
-        <polygon points="35,56 55,44 75,56 75,80 55,92 35,80" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="85,56 105,44 125,56 125,80 105,92 85,80" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="135,56 155,44 175,56 175,80 155,92 135,80" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
-        <polygon points="185,56 205,44 225,56 225,80 205,92 185,80" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="235,56 255,44 275,56 275,80 255,92 235,80" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="285,56 305,44 325,56 325,80 305,92 285,80" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
-        <polygon points="335,56 355,44 375,56 375,80 355,92 335,80" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="385,56 405,44 425,56 425,80 405,92 385,80" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="435,56 455,44 475,56 475,80 455,92 435,80" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
-        <polygon points="485,56 505,44 525,56 525,80 505,92 485,80" fill="none" stroke="white" stroke-width="1.5"/>
-        <!-- Row 3 hexagons -->
-        <polygon points="60,92 80,80 100,92 100,116 80,128 60,116" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="110,92 130,80 150,92 150,116 130,128 110,116" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="160,92 180,80 200,92 200,116 180,128 160,116" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="210,92 230,80 250,92 250,116 230,128 210,116" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
-        <polygon points="260,92 280,80 300,92 300,116 280,128 260,116" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="310,92 330,80 350,92 350,116 330,128 310,116" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="360,92 380,80 400,92 400,116 380,128 360,116" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="410,92 430,80 450,92 450,116 430,128 410,116" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="460,92 480,80 500,92 500,116 480,128 460,116" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
-        <!-- Connection dots at hex centers -->
-        <circle cx="80" cy="32" r="3" fill="white" opacity="0.7"/>
-        <circle cx="180" cy="32" r="3" fill="white" opacity="0.7"/>
-        <circle cx="280" cy="32" r="3" fill="white" opacity="0.7"/>
-        <circle cx="380" cy="32" r="3" fill="white" opacity="0.7"/>
-        <circle cx="480" cy="32" r="3" fill="white" opacity="0.7"/>
-        <circle cx="155" cy="68" r="4" fill="white" opacity="0.9"/>
-        <circle cx="305" cy="68" r="4" fill="white" opacity="0.9"/>
-        <circle cx="455" cy="68" r="4" fill="white" opacity="0.9"/>
-        <circle cx="230" cy="104" r="4" fill="white" opacity="0.9"/>
-        <circle cx="480" cy="104" r="4" fill="white" opacity="0.9"/>
-        <!-- Connection lines between highlighted hexes -->
-        <line x1="155" y1="68" x2="305" y2="68" stroke="white" stroke-width="1.5" opacity="0.5"/>
-        <line x1="305" y1="68" x2="455" y2="68" stroke="white" stroke-width="1.5" opacity="0.5"/>
-        <line x1="155" y1="68" x2="230" y2="104" stroke="white" stroke-width="1.5" opacity="0.5"/>
-        <line x1="305" y1="68" x2="230" y2="104" stroke="white" stroke-width="1.5" opacity="0.5"/>
-        <line x1="455" y1="68" x2="480" y2="104" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <!-- RIGHT COLUMN -->
+  <div class="about-right" style="justify-content:flex-start;gap:20px;">
+    <!-- Compact image strip -->
+    <div style="background:linear-gradient(135deg,#0c1e3e 0%,#1245a8 60%,#0e2d6e 100%);border-radius:10px;height:130px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;" preserveAspectRatio="xMidYMid meet">
+        <polygon points="50,10 70,-2 90,10 90,34 70,46 50,34" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="100,10 120,-2 140,10 140,34 120,46 100,34" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="150,10 170,-2 190,10 190,34 170,46 150,34" fill="white" fill-opacity="0.15" stroke="white" stroke-width="1.5"/>
+        <polygon points="200,10 220,-2 240,10 240,34 220,46 200,34" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="250,10 270,-2 290,10 290,34 270,46 250,34" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="300,10 320,-2 340,10 340,34 320,46 300,34" fill="white" fill-opacity="0.15" stroke="white" stroke-width="1.5"/>
+        <polygon points="75,46 95,34 115,46 115,70 95,82 75,70" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="125,46 145,34 165,46 165,70 145,82 125,70" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="175,46 195,34 215,46 215,70 195,82 175,70" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="225,46 245,34 265,46 265,70 245,82 225,70" fill="white" fill-opacity="0.12" stroke="white" stroke-width="1.5"/>
+        <polygon points="275,46 295,34 315,46 315,70 295,82 275,70" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="100,82 120,70 140,82 140,106 120,118 100,106" fill="none" stroke="white" stroke-width="1.5"/>
+        <polygon points="200,82 220,70 240,82 240,106 220,118 200,106" fill="white" fill-opacity="0.1" stroke="white" stroke-width="1.5"/>
+        <circle cx="170" cy="22" r="3" fill="white" opacity="0.8"/>
+        <circle cx="320" cy="22" r="3" fill="white" opacity="0.8"/>
+        <circle cx="245" cy="58" r="4" fill="white" opacity="0.9"/>
+        <circle cx="145" cy="58" r="3" fill="white" opacity="0.7"/>
+        <line x1="145" y1="58" x2="245" y2="58" stroke="white" stroke-width="1.2" opacity="0.4"/>
+        <line x1="170" y1="22" x2="245" y2="58" stroke="white" stroke-width="1.2" opacity="0.35"/>
+        <line x1="320" y1="22" x2="245" y2="58" stroke="white" stroke-width="1.2" opacity="0.35"/>
       </svg>
-      <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:3px;text-transform:uppercase;position:relative;z-index:1;">RIYADH · KSA · SMART CITY</span>
+      <span style="font-size:10px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:3.5px;text-transform:uppercase;position:relative;">RIYADH · KSA · SMART CITY</span>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;padding-top:2px;">
-      <div class="ar-headline">Core Strengths</div>
-      <div class="ar-grid" style="flex:1;align-content:stretch;margin-top:6px;">
-        <div class="ar-card"><div class="ar-card-icon">🎯</div><div class="ar-card-title">Mission</div><div class="ar-card-text">Unify strategy and technology to deliver world-class consulting, solutions, and services — helping clients achieve sustainable growth.</div></div>
-        <div class="ar-card blue"><div class="ar-card-icon">🔭</div><div class="ar-card-title">Vision</div><div class="ar-card-text">Inspire change through people-first solutions, transforming IT and ELV components into specialized products via intelligent engineering design.</div></div>
-        <div class="ar-card"><div class="ar-card-icon">🏅</div><div class="ar-card-title">Certified Quality</div><div class="ar-card-text">CE · GS · UL · TUV certified products ensuring high quality, long lifespan, and low maintenance across all our solutions.</div></div>
-        <div class="ar-card blue"><div class="ar-card-icon">🇸🇦</div><div class="ar-card-title">Vision 2030</div><div class="ar-card-text">Actively supporting Saudi Vision 2030 through smart infrastructure, 5G deployment, IoT, and national digital transformation.</div></div>
+    <!-- Core Strengths headline -->
+    <div class="ar-headline" style="flex-shrink:0;">Core Strengths</div>
+    <!-- 4 full-width horizontal cards — each flex:1 distributes remaining height evenly -->
+    <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+      <div style="flex:1;display:flex;align-items:center;gap:16px;padding:0 18px;border:1px solid var(--g1);border-radius:9px;border-left:3px solid var(--gold);">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(200,137,12,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🎯</div>
+        <div><div style="font-size:11.5px;font-weight:800;color:var(--ink);margin-bottom:4px;">Mission</div><div class="ar-card-text">Unify strategy and technology to deliver world-class consulting, solutions, and services — helping clients achieve sustainable growth.</div></div>
+      </div>
+      <div style="flex:1;display:flex;align-items:center;gap:16px;padding:0 18px;border:1px solid var(--g1);border-radius:9px;border-left:3px solid var(--blue);background:rgba(18,69,168,.025);">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(18,69,168,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🔭</div>
+        <div><div style="font-size:11.5px;font-weight:800;color:var(--ink);margin-bottom:4px;">Vision</div><div class="ar-card-text">Inspire change through people-first solutions, transforming IT and ELV components into specialized products via intelligent engineering design.</div></div>
+      </div>
+      <div style="flex:1;display:flex;align-items:center;gap:16px;padding:0 18px;border:1px solid var(--g1);border-radius:9px;border-left:3px solid var(--gold);">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(200,137,12,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🏅</div>
+        <div><div style="font-size:11.5px;font-weight:800;color:var(--ink);margin-bottom:4px;">Certified Quality</div><div class="ar-card-text">CE · GS · UL · TUV certified products ensuring high quality, long lifespan, and low maintenance across all our solutions.</div></div>
+      </div>
+      <div style="flex:1;display:flex;align-items:center;gap:16px;padding:0 18px;border:1px solid var(--g1);border-radius:9px;border-left:3px solid var(--blue);background:rgba(18,69,168,.025);">
+        <div style="width:42px;height:42px;border-radius:8px;background:rgba(18,69,168,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🇸🇦</div>
+        <div><div style="font-size:11.5px;font-weight:800;color:var(--ink);margin-bottom:4px;">Vision 2030</div><div class="ar-card-text">Actively supporting Saudi Vision 2030 through smart infrastructure, 5G deployment, IoT, and national digital transformation.</div></div>
       </div>
     </div>
-    <div>
-      <div class="ar-headline" style="margin-bottom:10px">Our Five Divisions</div>
+    <!-- Five Divisions -->
+    <div style="flex-shrink:0;">
+      <div class="ar-headline" style="margin-bottom:10px;">Our Five Divisions</div>
       <div class="ar-divs">
         <div class="ar-div elv">ELV &amp; Automation</div>
         <div class="ar-div ict">ICT &amp; Networking</div>
