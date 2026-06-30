@@ -876,16 +876,15 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <!-- Large number -->
 <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">01</div>
-<!-- Center content -->
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
-  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
-    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+<!-- Center content — Hotel key icon -->
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;">
+  <div style="width:68px;height:68px;border-radius:50%;background:rgba(200,137,12,.15);border:1px solid rgba(200,137,12,.35);display:flex;align-items:center;justify-content:center;">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(200,137,12,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
   </div>
-  <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
-  <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">ELV · AUTOMATION</span>
+  <div style="width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.6),transparent);"></div>
+  <span style="font-size:8.5px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;">ELV · GMS</span>
 </div>
-<!-- Bottom number badge -->
-<div style="position:absolute;bottom:16px;left:16px;font-size:11px;font-weight:900;color:rgba(200,137,12,.7);letter-spacing:1px;font-family:monospace;">01</div>
+<div style="position:absolute;bottom:16px;left:16px;font-size:10px;font-weight:900;color:rgba(200,137,12,.6);letter-spacing:1px;font-family:monospace;">01</div>
 </div><div class="sb-body">
     <div class="sb-watermark">01</div>
     <div class="sb-cat">ELV / Automation</div>
@@ -896,6 +895,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       <div class="sb-feat"><div class="sb-feat-icon"></div><span>Guest preference tracking and personalization engine</span></div>
       <div class="sb-feat"><div class="sb-feat-icon"></div><span>Room management and housekeeping workflow automation</span></div>
       <div class="sb-feat"><div class="sb-feat-icon"></div><span>Real-time occupancy dashboards and reporting</span></div>
+    </div>
+    <!-- Metrics strip -->
+    <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--g1);display:grid;grid-template-columns:repeat(3,1fr);">
+      <div style="text-align:center;padding:8px 6px;border-right:1px solid var(--g1);">
+        <div style="font-size:20px;font-weight:900;color:var(--navy);line-height:1;">24<span style="font-size:11px;color:var(--gold);">/7</span></div>
+        <div style="font-size:8px;font-weight:600;color:var(--g2);margin-top:3px;letter-spacing:.3px;">Uptime Support</div>
+      </div>
+      <div style="text-align:center;padding:8px 6px;border-right:1px solid var(--g1);">
+        <div style="font-size:20px;font-weight:900;color:var(--navy);line-height:1;">50<span style="font-size:11px;color:var(--gold);">+</span></div>
+        <div style="font-size:8px;font-weight:600;color:var(--g2);margin-top:3px;letter-spacing:.3px;">Hotel Deployments</div>
+      </div>
+      <div style="text-align:center;padding:8px 6px;">
+        <div style="font-size:20px;font-weight:900;color:var(--navy);line-height:1;">PMS</div>
+        <div style="font-size:8px;font-weight:600;color:var(--g2);margin-top:3px;letter-spacing:.3px;">System Integrated</div>
+      </div>
+    </div>
+    <!-- Tech tags -->
+    <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">PMS Integration</div>
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">Cloud Sync</div>
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">Mobile App</div>
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">API Ready</div>
     </div>
   </div>
 </div>
@@ -953,9 +974,13 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <!-- Large number -->
 <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:120px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-5px;pointer-events:none;text-align:center;">02</div>
 <!-- Center content -->
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
-  <div style="width:40px;height:40px;border:2px solid rgba(200,137,12,.5);transform:rotate(45deg);display:flex;align-items:center;justify-content:center;">
-    <div style="width:14px;height:14px;background:rgba(200,137,12,.4);"></div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;">
+  <div style="width:68px;height:68px;border-radius:50%;background:rgba(200,137,12,.15);border:1px solid rgba(200,137,12,.35);display:flex;align-items:center;justify-content:center;">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(200,137,12,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+      <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
   </div>
   <div style="width:48px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,137,12,.7),transparent);"></div>
   <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase;text-align:center;padding:0 12px;">BMS · AUTOMATION</span>
@@ -972,6 +997,28 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       <div class="sb-feat"><div class="sb-feat-icon"></div><span>Energy monitoring and consumption optimization</span></div>
       <div class="sb-feat"><div class="sb-feat-icon"></div><span>Lighting and access integration via single platform</span></div>
       <div class="sb-feat"><div class="sb-feat-icon"></div><span>Preventive maintenance scheduling and fault alerts</span></div>
+    </div>
+    <!-- BMS Metrics strip -->
+    <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--g1);display:grid;grid-template-columns:repeat(3,1fr);">
+      <div style="text-align:center;padding:8px 6px;border-right:1px solid var(--g1);">
+        <div style="font-size:20px;font-weight:900;color:var(--navy);line-height:1;">30<span style="font-size:11px;color:var(--gold);">%+</span></div>
+        <div style="font-size:8px;font-weight:600;color:var(--g2);margin-top:3px;letter-spacing:.3px;">Energy Savings</div>
+      </div>
+      <div style="text-align:center;padding:8px 6px;border-right:1px solid var(--g1);">
+        <div style="font-size:13px;font-weight:900;color:var(--navy);line-height:1.2;">Real<span style="font-size:11px;color:var(--gold);">-time</span></div>
+        <div style="font-size:8px;font-weight:600;color:var(--g2);margin-top:3px;letter-spacing:.3px;">Fault Monitoring</div>
+      </div>
+      <div style="text-align:center;padding:8px 6px;">
+        <div style="font-size:13px;font-weight:900;color:var(--navy);line-height:1.2;">ASHRAE</div>
+        <div style="font-size:8px;font-weight:600;color:var(--g2);margin-top:3px;letter-spacing:.3px;">Compliant</div>
+      </div>
+    </div>
+    <!-- Tech tags -->
+    <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">BACnet</div>
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">Modbus</div>
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">KNX Protocol</div>
+      <div style="padding:3px 10px;border-radius:4px;background:rgba(18,69,168,.06);border:1px solid rgba(18,69,168,.14);font-size:8.5px;font-weight:600;color:var(--blue);">SCADA Ready</div>
     </div>
   </div>
 </div>
