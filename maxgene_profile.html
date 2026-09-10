@@ -180,12 +180,12 @@ body{font-family:'Inter',sans-serif;background:#1a1f2e}
 .sector-group-label::before{content:'';width:12px;height:1px;background:var(--g2)}
 .client-row{display:flex;gap:9px;flex-wrap:wrap}
 /* logo card */
-.client-logo-card{width:110px;height:62px;border:1px solid var(--g1);border-radius:6px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;flex-shrink:0;transition:border-color .2s,box-shadow .2s}
+.client-logo-card{width:100%;height:110px;border:1px solid var(--g1);border-radius:6px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;flex-shrink:0;transition:border-color .2s,box-shadow .2s}
 .client-logo-card:hover{border-color:var(--goldb);box-shadow:0 2px 8px rgba(184,120,10,.15)}
 .client-logo-card img{width:100%;height:100%;object-fit:contain;padding:8px;display:none}
 .client-logo-card img.loaded{display:block}
-.client-logo-initials{font-size:11px;font-weight:800;color:var(--navy);text-align:center;line-height:1.2;padding:4px 6px}
-.client-logo-name{font-size:8px;color:var(--g2);text-align:center;margin-top:2px;padding:0 4px;line-height:1.2}
+.client-logo-initials{font-size:22px;font-weight:300;color:var(--g1);text-align:center;line-height:1}
+.client-logo-name{display:none}
 .client-upload-hint{position:absolute;inset:0;background:rgba(10,24,48,.82);display:none;align-items:center;justify-content:center;flex-direction:column;gap:3px}
 .client-logo-card:hover .client-upload-hint{display:flex}
 .client-upload-hint span{font-size:8px;font-weight:700;color:#fff;letter-spacing:.5px}
@@ -856,100 +856,18 @@ body{font-family:'Inter',sans-serif;background:#1a1f2e}
   <div class="clients-top-title">Our Clients</div>
   <div class="clients-top-sub">Proud to serve leading organizations across banking, telecom, hospitality, logistics, and government sectors across the Kingdom and beyond. Click any logo card to upload a client logo.</div>
 </div>
-<div class="clients-body">
-
-  <div class="sector-group">
-    <div class="sector-group-label">Banking &amp; Finance</div>
-    <div class="client-row">
-      <div class="client-logo-card" onclick="uploadLogo(this,'Emirates NBD')">
-        <img alt="Emirates NBD"><div class="client-logo-initials">EN</div><div class="client-logo-name">Emirates NBD</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'Al Rajhi Telecom')">
-        <img alt="Al Rajhi Telecom"><div class="client-logo-initials">AR</div><div class="client-logo-name">Al Rajhi Telecom</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sector-group">
-    <div class="sector-group-label">Telecom &amp; Connectivity</div>
-    <div class="client-row">
-      <div class="client-logo-card" onclick="uploadLogo(this,'Baud Telecom')">
-        <img alt="Baud Telecom"><div class="client-logo-initials">BT</div><div class="client-logo-name">Baud Telecom Co.</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'Trans Telecoms')">
-        <img alt="Trans Telecoms"><div class="client-logo-initials">TT</div><div class="client-logo-name">Trans Telecoms</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'Nextel KSA')">
-        <img alt="Nextel KSA"><div class="client-logo-initials">NX</div><div class="client-logo-name">Nextel KSA</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sector-group">
-    <div class="sector-group-label">Hospitality &amp; Legal</div>
-    <div class="client-row">
-      <div class="client-logo-card" onclick="uploadLogo(this,'Four Seasons')">
-        <img alt="Four Seasons"><div class="client-logo-initials">FS</div><div class="client-logo-name">Four Seasons Hotels</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'Clyde & Co')">
-        <img alt="Clyde & Co"><div class="client-logo-initials">C&amp;C</div><div class="client-logo-name">Clyde &amp; Co</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sector-group">
-    <div class="sector-group-label">Logistics &amp; Infrastructure</div>
-    <div class="client-row">
-      <div class="client-logo-card" onclick="uploadLogo(this,'Hellmann')">
-        <img alt="Hellmann"><div class="client-logo-initials">HW</div><div class="client-logo-name">Hellmann Worldwide</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'SAR')">
-        <img alt="SAR"><div class="client-logo-initials">SAR</div><div class="client-logo-name">Saudi Railway</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'Al Arab Contracting')">
-        <img alt="Al Arab Contracting"><div class="client-logo-initials">AA</div><div class="client-logo-name">Al Arab Contracting</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sector-group">
-    <div class="sector-group-label">Education, Technology &amp; Others</div>
-    <div class="client-row">
-      <div class="client-logo-card" onclick="uploadLogo(this,'Ebttikar')">
-        <img alt="Ebttikar"><div class="client-logo-initials">EB</div><div class="client-logo-name">Ebttikar</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'Edutech')">
-        <img alt="Edutech"><div class="client-logo-initials">ED</div><div class="client-logo-name">Edutech</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'Madaf')">
-        <img alt="Madaf"><div class="client-logo-initials">MD</div><div class="client-logo-name">Madaf</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'SIG Obeikan')">
-        <img alt="SIG Obeikan"><div class="client-logo-initials">SIG</div><div class="client-logo-name">SIG Obeikan</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'RTCC')">
-        <img alt="RTCC"><div class="client-logo-initials">RT</div><div class="client-logo-name">RTCC</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-      <div class="client-logo-card" onclick="uploadLogo(this,'ICL')">
-        <img alt="ICL"><div class="client-logo-initials">ICL</div><div class="client-logo-name">ICL</div>
-        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
-      </div>
-    </div>
+<div class="clients-body" style="justify-content:center">
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:8px 0">
+    <div class="client-logo-card" onclick="uploadLogo(this,'client1')"><img alt="client1"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client2')"><img alt="client2"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client3')"><img alt="client3"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client4')"><img alt="client4"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client5')"><img alt="client5"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client6')"><img alt="client6"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client7')"><img alt="client7"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client8')"><img alt="client8"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client9')"><img alt="client9"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
+    <div class="client-logo-card" onclick="uploadLogo(this,'client10')"><img alt="client10"><div class="client-logo-initials">+</div><div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div></div>
   </div>
 
   <div class="clients-stats-bar">
