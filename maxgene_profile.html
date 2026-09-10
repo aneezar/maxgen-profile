@@ -1104,8 +1104,9 @@ body{font-family:'Inter',sans-serif;background:#1a1f2e}
   <div class="img-row"><label>23 Vehicle Tracking</label><input id="img-23" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-23',22)">Apply</button></div>
   <div class="img-row"><label>24 MEP</label><input id="img-24" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-24',23)">Apply</button></div>
   <div class="img-row" style="margin-top:20px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px">
+    <button class="img-apply-btn" onclick="exportHTML()" style="margin-bottom:8px;background:linear-gradient(135deg,#14573a,#1a7a52)">⬇ Export &amp; Save Updated HTML</button>
     <button class="img-apply-btn" style="background:rgba(255,255,255,.08);margin-bottom:8px" onclick="resetAll()">Reset All to Default</button>
-    <p style="font-size:9px;color:rgba(255,255,255,.3);margin:0">Images save in your browser. Clear browser data to reset.</p>
+    <p style="font-size:9px;color:rgba(255,255,255,.3);margin:0">Export bakes all logos &amp; images permanently into the file. Upload to GitHub to go live.</p>
   </div>
 </div>
 
@@ -1187,6 +1188,64 @@ function resetAll() {
     });
   } catch(e) {}
   location.reload();
+}
+
+function exportHTML() {
+  // Clone the full document
+  var clone = document.documentElement.cloneNode(true);
+
+  // Remove the manager panel and toggle button from export
+  var mgr = clone.querySelector('#img-manager');
+  var tog = clone.querySelector('#img-toggle');
+  var inp = clone.querySelector('#logo-file-input');
+  if (mgr) mgr.remove();
+  if (tog) tog.remove();
+  if (inp) inp.remove();
+
+  // Embed all current logo src values (base64 data URLs) into cloned img tags
+  var liveCards = document.querySelectorAll('.client-logo-card');
+  var cloneCards = clone.querySelectorAll('.client-logo-card');
+  liveCards.forEach(function(card, i) {
+    var liveImg = card.querySelector('img');
+    var cloneImg = cloneCards[i] && cloneCards[i].querySelector('img');
+    if (liveImg && cloneImg && liveImg.src && liveImg.classList.contains('loaded')) {
+      cloneImg.src = liveImg.src;
+      cloneImg.classList.add('loaded');
+      var initials = cloneCards[i].querySelector('.client-logo-initials');
+      if (initials) initials.style.display = 'none';
+      // Remove hover upload hint so it doesn't show in print
+      var hint = cloneCards[i].querySelector('.client-upload-hint');
+      if (hint) hint.remove();
+    }
+  });
+
+  // Embed current service image srcs
+  var liveSvcImgs = document.querySelectorAll('.sb-photo img');
+  var cloneSvcImgs = clone.querySelectorAll('.sb-photo img');
+  liveSvcImgs.forEach(function(img, i) {
+    if (cloneSvcImgs[i]) cloneSvcImgs[i].src = img.src;
+  });
+
+  // Embed cover image
+  var liveCover = document.querySelector('.c-bg img');
+  var cloneCover = clone.querySelector('.c-bg img');
+  if (liveCover && cloneCover) cloneCover.src = liveCover.src;
+
+  // Strip the script block (localStorage logic no longer needed)
+  clone.querySelectorAll('script').forEach(function(s){ s.remove(); });
+
+  // Build final HTML string
+  var html = '<!DOCTYPE html>\n' + clone.outerHTML;
+
+  // Trigger download
+  var blob = new Blob([html], {type: 'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'maxgene_profile.html';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); }, 1000);
 }
 </script>
 </body>
