@@ -6,207 +6,223 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#c8cdd6}
+body{font-family:'Inter',sans-serif;background:#1a1f2e}
 :root{
-  --ink:#060e1c;--navy:#0c1e3e;--blue:#1245a8;
-  --gold:#c8890c;--goldb:#f0b42a;--goldl:#fdefc4;
-  --white:#fff;--off:#f3f6fb;--g1:#e2e8f3;--g2:#9aabc2;--g3:#5a6a82;
-  --text:#0d1a2e;--radius:10px;
+  --ink:#040c1a;--navy:#0a1830;--blue:#0f3d8c;
+  --gold:#b8780a;--goldb:#e8a020;--goldl:#fdefc4;
+  --white:#fff;--off:#f4f6fb;--g1:#dde4ef;--g2:#8a9bb8;--g3:#4a5a78;
+  --text:#0a1626;--radius:8px;
 }
-.page{width:794px;height:1123px;background:#fff;margin:0 auto 40px;overflow:hidden;position:relative;display:flex;flex-direction:column}
-@media print{body{background:#fff}.page{margin:0;page-break-after:always;break-after:page}@page{size:A4;margin:0}}
+.page{width:794px;height:1123px;background:#fff;margin:0 auto 48px;overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.45)}
+@media print{body{background:#fff}.page{margin:0;box-shadow:none;page-break-after:always;break-after:page}@page{size:A4;margin:0}}
 
 /* ── PAGE HEADER ── */
-.ph{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:46px;flex-shrink:0}
-.ph-left{display:flex;align-items:center;gap:10px}
-.ph-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
-.ph-title{font-size:9.5px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:2px;text-transform:uppercase}
-.ph-badge{font-size:9px;font-weight:700;padding:3px 11px;border-radius:20px;letter-spacing:.8px;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55)}
+.ph{background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:48px;flex-shrink:0;position:relative}
+.ph::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,var(--goldb) 30%,transparent 100%)}
+.ph-left{display:flex;align-items:center;gap:12px}
+.ph-dot{width:6px;height:6px;border-radius:50%;background:var(--goldb)}
+.ph-title{font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2.5px;text-transform:uppercase}
+.ph-badge{font-size:8.5px;font-weight:700;padding:4px 13px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.3);color:var(--goldb)}
 
 /* ── GOLD RULE ── */
-.gold-rule{height:3px;background:linear-gradient(90deg,var(--gold),var(--goldb),var(--gold));flex-shrink:0}
+.gold-rule{height:2px;background:linear-gradient(90deg,var(--goldb) 0%,var(--gold) 50%,var(--goldb) 100%);flex-shrink:0;opacity:.6}
 
 /* ── PAGE FOOTER ── */
-.pf{background:var(--ink);height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;flex-shrink:0}
-.pf-l{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.5px}
-.pf-c{font-size:9.5px;color:rgba(255,255,255,.3);letter-spacing:.5px}
-.pf-r{font-size:11px;font-weight:800;color:var(--goldb);letter-spacing:.5px}
+.pf{background:var(--ink);height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;flex-shrink:0;position:relative}
+.pf::before{content:'';position:absolute;top:0;left:0;width:100%;height:1px;background:rgba(255,255,255,.06)}
+.pf-l{font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1px}
+.pf-c{font-size:9px;color:rgba(255,255,255,.25);letter-spacing:.5px}
+.pf-r{font-size:12px;font-weight:900;color:var(--goldb);letter-spacing:1px}
 
 /* ── SERVICE BLOCK ── */
-.sb{display:flex;height:514px;flex-shrink:0}
+.sb{display:flex;height:511px;flex-shrink:0}
 .sb.flip{flex-direction:row-reverse}
-.sb-photo{width:44%;position:relative;overflow:hidden;flex-shrink:0}
-.sb-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.sb-photo-veil{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,28,.1) 0%,rgba(6,14,28,.6) 100%)}
-.sb-photo-num{position:absolute;bottom:20px;left:20px;font-size:80px;font-weight:900;color:rgba(255,255,255,.12);line-height:1;letter-spacing:-3px;pointer-events:none}
-.sb-body{flex:1;background:#fff;padding:40px 44px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;border-top:3px solid var(--gold)}
-.sb.flip .sb-body{border-top:3px solid var(--goldb)}
-.sb-watermark{position:absolute;right:-8px;bottom:-18px;font-size:150px;font-weight:900;color:#f0f4f9;line-height:1;pointer-events:none;letter-spacing:-5px}
-.sb-cat{font-size:9px;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.sb-cat::before{content:'';width:20px;height:2px;background:var(--gold);display:block}
-.sb-title{font-size:22px;font-weight:900;color:var(--ink);line-height:1.15;margin-bottom:10px;letter-spacing:-.4px}
-.sb-desc{font-size:11.5px;color:var(--g3);line-height:1.75;margin-bottom:16px}
-.sb-feats{display:flex;flex-direction:column;gap:6px}
-.sb-feat{display:flex;align-items:flex-start;gap:10px;font-size:11px;color:var(--text);line-height:1.4}
-.sb-feat-icon{width:16px;height:16px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center}
-.sb-feat-icon::after{content:'';width:5px;height:5px;background:#fff;border-radius:50%}
+.sb-photo{width:50%;position:relative;overflow:hidden;flex-shrink:0}
+.sb-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.sb-photo-veil{position:absolute;inset:0;background:linear-gradient(140deg,rgba(4,12,26,.05) 0%,rgba(4,12,26,.72) 100%)}
+.sb-photo-num{position:absolute;bottom:18px;right:18px;font-size:96px;font-weight:900;color:rgba(255,255,255,.08);line-height:1;letter-spacing:-4px;pointer-events:none}
+.sb-photo-tag{position:absolute;top:22px;left:22px;background:rgba(232,160,32,.18);backdrop-filter:blur(6px);border:1px solid rgba(232,160,32,.35);color:var(--goldb);font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:3px}
+.sb-body{flex:1;background:#fff;padding:40px 42px 36px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;border-left:4px solid var(--goldb)}
+.sb.flip .sb-body{border-left:none;border-right:4px solid var(--blue)}
+.sb-watermark{position:absolute;right:-12px;bottom:-22px;font-size:200px;font-weight:900;color:#edf0f6;line-height:1;pointer-events:none;letter-spacing:-8px;z-index:0}
+.sb-cat{font-size:8.5px;font-weight:700;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px;position:relative;z-index:1}
+.sb-cat::before{content:'';width:24px;height:2px;background:var(--gold);display:block}
+.sb-title{font-size:24px;font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:12px;letter-spacing:-.6px;position:relative;z-index:1}
+.sb-desc{font-size:11px;color:var(--g3);line-height:1.8;margin-bottom:18px;position:relative;z-index:1}
+.sb-feats{display:flex;flex-direction:column;gap:7px;position:relative;z-index:1}
+.sb-feat{display:flex;align-items:flex-start;gap:10px;font-size:10.5px;color:var(--text);line-height:1.45}
+.sb-feat-icon{width:14px;height:14px;border-radius:50%;background:var(--goldb);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
+.sb-feat-icon::after{content:'';width:4px;height:4px;background:#fff;border-radius:50%}
 
 /* ── COVER ── */
 .cover{position:relative;width:100%;height:100%}
 .c-bg{position:absolute;inset:0}
 .c-bg img{width:100%;height:100%;object-fit:cover;display:block}
-.c-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(6,14,28,.96) 0%,rgba(12,30,62,.88) 55%,rgba(18,69,168,.5) 100%)}
-.c-geo{position:absolute;top:0;right:0;width:320px;height:320px;background:linear-gradient(135deg,transparent 50%,rgba(200,137,12,.14) 50%)}
-.c-geo2{position:absolute;bottom:0;left:0;width:200px;height:200px;background:linear-gradient(315deg,transparent 50%,rgba(18,69,168,.18) 50%)}
+.c-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(4,12,26,.97) 0%,rgba(10,24,48,.92) 48%,rgba(15,61,140,.55) 100%)}
+.c-band{position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 280px 280px 0;border-color:transparent rgba(232,160,32,.08) transparent transparent}
+.c-band2{position:absolute;bottom:0;left:0;width:0;height:0;border-style:solid;border-width:160px 0 0 160px;border-color:transparent transparent transparent rgba(15,61,140,.15)}
+.c-goldbar{position:absolute;top:0;right:180px;width:3px;height:100%;background:linear-gradient(to bottom,transparent,rgba(232,160,32,.7) 30%,rgba(232,160,32,.7) 70%,transparent)}
 .c-content{position:absolute;inset:0;display:flex;flex-direction:column;z-index:2}
-.c-topbar{display:flex;align-items:center;justify-content:space-between;padding:36px 60px 0}
+.c-topbar{display:flex;align-items:center;justify-content:space-between;padding:38px 62px 0}
 .c-logo{display:flex;align-items:center;gap:14px}
-.c-logo-mark{width:46px;height:46px;border-radius:8px;border:2px solid rgba(200,137,12,.5);background:rgba(200,137,12,.08);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--goldb);letter-spacing:-1px}
+.c-logo-mark{width:48px;height:48px;border-radius:6px;border:2px solid rgba(232,160,32,.45);background:rgba(232,160,32,.07);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--goldb);letter-spacing:-1px}
 .c-logo-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:.5px}
-.c-logo-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;letter-spacing:.5px}
-.c-year-tag{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:1.5px;border:1px solid rgba(255,255,255,.15);padding:4px 12px;border-radius:12px}
-.c-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 60px}
-.c-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px}
-.c-ey-line{width:36px;height:2px;background:var(--gold)}
-.c-ey-text{font-size:10px;font-weight:700;color:var(--goldb);letter-spacing:2.5px;text-transform:uppercase}
-.c-h1{font-size:72px;font-weight:900;color:#fff;line-height:.96;letter-spacing:-3px;margin-bottom:24px}
-.c-h1 b{color:var(--goldb);font-style:normal;display:block}
-.c-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;max-width:440px;font-weight:300;margin-bottom:36px}
-.c-pills{display:flex;gap:8px;flex-wrap:wrap}
-.c-pill{padding:6px 16px;border-radius:20px;font-size:10.5px;font-weight:600;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.65);letter-spacing:.3px}
-.c-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.1);padding:0 60px;margin-top:auto}
-.c-stat{padding:24px 0}
-.c-stat+.c-stat{border-left:1px solid rgba(255,255,255,.1);padding-left:28px}
-.c-stat-num{font-size:36px;font-weight:900;color:#fff;line-height:1}
+.c-logo-sub{font-size:9.5px;color:rgba(255,255,255,.35);margin-top:2px;letter-spacing:.8px}
+.c-year-tag{font-size:9px;color:rgba(255,255,255,.3);letter-spacing:2px;border:1px solid rgba(255,255,255,.12);padding:5px 14px;border-radius:2px;text-transform:uppercase}
+.c-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 62px}
+.c-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.c-ey-line{width:40px;height:2px;background:var(--goldb)}
+.c-ey-text{font-size:9.5px;font-weight:700;color:var(--goldb);letter-spacing:3px;text-transform:uppercase}
+.c-h1{font-size:88px;font-weight:900;color:#fff;line-height:.92;letter-spacing:-5px;margin-bottom:28px}
+.c-h1 span{color:var(--goldb)}
+.c-h1 em{color:rgba(255,255,255,.22);font-style:normal}
+.c-sub{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.75;max-width:430px;font-weight:300;margin-bottom:36px}
+.c-pills{display:flex;gap:7px;flex-wrap:wrap}
+.c-pill{padding:6px 15px;border-radius:2px;font-size:9.5px;font-weight:600;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.55);letter-spacing:.5px}
+.c-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.08);padding:0 62px;margin-top:auto}
+.c-stat{padding:22px 0}
+.c-stat+.c-stat{border-left:1px solid rgba(255,255,255,.08);padding-left:28px}
+.c-stat-num{font-size:38px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px}
 .c-stat-num sup{font-size:20px;color:var(--goldb);vertical-align:super;line-height:0}
-.c-stat-lab{font-size:9.5px;color:rgba(255,255,255,.38);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
+.c-stat-lab{font-size:9px;color:rgba(255,255,255,.3);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px}
 
 /* ── ABOUT ── */
 .about-wrap{display:flex;flex:1;min-height:0}
-.about-left{width:36%;background:var(--navy);padding:48px 36px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0}
-.about-right{flex:1;background:#fff;padding:48px 44px;display:flex;flex-direction:column;gap:20px}
-.al-logo{display:flex;align-items:center;gap:10px;margin-bottom:32px}
-.al-mark{width:40px;height:40px;border-radius:7px;border:2px solid rgba(200,137,12,.5);background:rgba(200,137,12,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:var(--goldb)}
+.about-left{width:38%;background:var(--navy);padding:46px 36px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;position:relative;overflow:hidden}
+.about-left::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(232,160,32,.04);pointer-events:none}
+.about-right{flex:1;background:#fff;padding:46px 44px;display:flex;flex-direction:column;gap:18px}
+.al-logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.al-mark{width:42px;height:42px;border-radius:6px;border:2px solid rgba(232,160,32,.4);background:rgba(232,160,32,.08);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:var(--goldb)}
 .al-name{font-size:13px;font-weight:800;color:#fff}
-.al-label{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:1px;margin-top:2px}
-.al-section-title{font-size:9px;font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.al-section-title::before{content:'';width:16px;height:2px;background:var(--gold)}
-.al-body{font-size:12px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300}
+.al-label{font-size:9px;color:rgba(255,255,255,.35);letter-spacing:1px;margin-top:2px}
+.al-section-title{font-size:8.5px;font-weight:700;color:var(--goldb);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.al-section-title::before{content:'';width:18px;height:2px;background:var(--goldb)}
+.al-body{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.85;font-weight:300}
 .al-body b{color:#fff;font-weight:600}
-.al-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.al-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:14px}
-.al-stat-num{font-size:28px;font-weight:900;color:#fff;line-height:1}
+.al-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.al-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:14px;border-left:3px solid var(--goldb)}
+.al-stat-num{font-size:30px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px}
 .al-stat-num sup{font-size:16px;color:var(--goldb);vertical-align:super;line-height:0}
-.al-stat-lab{font-size:9px;color:rgba(255,255,255,.38);letter-spacing:1px;text-transform:uppercase;margin-top:3px}
-.ar-img{width:100%;height:160px;border-radius:10px;overflow:hidden;flex-shrink:0}
+.al-stat-lab{font-size:8.5px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-top:3px}
+.ar-img{width:100%;height:155px;border-radius:8px;overflow:hidden;flex-shrink:0;position:relative}
 .ar-img img{width:100%;height:100%;object-fit:cover;display:block}
-.ar-headline{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.ar-headline::before{content:'';width:16px;height:2px;background:var(--blue)}
-.ar-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1}
-.ar-card{border:1px solid var(--g1);border-radius:9px;padding:18px 16px;position:relative;overflow:hidden}
-.ar-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);border-radius:3px 0 0 3px}
+.ar-img::after{content:'RIYADH, KSA';position:absolute;bottom:10px;right:14px;font-size:8px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2px}
+.ar-headline{font-size:8.5px;font-weight:700;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.ar-headline::before{content:'';width:18px;height:2px;background:var(--blue)}
+.ar-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1}
+.ar-card{border:1px solid var(--g1);border-radius:7px;padding:16px 14px;position:relative;overflow:hidden;background:#fff}
+.ar-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--gold)}
 .ar-card.blue::before{background:var(--blue)}
-.ar-card-icon{font-size:18px;margin-bottom:8px}
-.ar-card-title{font-size:11.5px;font-weight:800;color:var(--ink);margin-bottom:5px}
-.ar-card-text{font-size:10.5px;color:var(--g3);line-height:1.6}
-.ar-divs{display:flex;gap:8px;flex-wrap:wrap}
-.ar-div{padding:7px 14px;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:.4px}
-.ar-div.elv{background:#e8f0fd;color:#1245a8}
-.ar-div.ict{background:#e6f5ee;color:#15643b}
-.ar-div.sec{background:#fef3e2;color:#92580a}
-.ar-div.mep{background:#f0eafd;color:#5b21b6}
-.ar-div.tel{background:#fde8ef;color:#9b1239}
+.ar-card-icon{font-size:16px;margin-bottom:7px}
+.ar-card-title{font-size:11px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.ar-card-text{font-size:10px;color:var(--g3);line-height:1.65}
+.ar-divs{display:flex;gap:7px;flex-wrap:wrap}
+.ar-div{padding:6px 13px;border-radius:3px;font-size:9.5px;font-weight:700;letter-spacing:.5px}
+.ar-div.elv{background:#e6eeff;color:#0f3d8c}
+.ar-div.ict{background:#e5f5ec;color:#14573a}
+.ar-div.sec{background:#fff4e5;color:#8a4f00}
+.ar-div.mep{background:#f0ebfd;color:#5218b0}
+.ar-div.tel{background:#fde8ef;color:#93103a}
 
 /* ── MV PAGE ── */
 .mv-wrap{display:flex;flex:1;min-height:0}
 .mv-left{width:50%;position:relative;overflow:hidden;flex-shrink:0}
 .mv-left img{width:100%;height:100%;object-fit:cover}
-.mv-left-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,14,28,.5),rgba(6,14,28,.9))}
-.mv-left-content{position:absolute;inset:0;padding:44px 40px;display:flex;flex-direction:column;justify-content:flex-end}
-.mv-label{font-size:9px;font-weight:700;color:var(--goldb);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.mv-label::before{content:'';width:16px;height:2px;background:var(--gold)}
-.mv-title{font-size:36px;font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1px;margin-bottom:18px}
-.mv-body{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.75;font-weight:300}
-.mv-right{flex:1;background:var(--off);padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between}
-.mv-right-label{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.mv-right-label::before{content:'';width:16px;height:2px;background:var(--blue)}
-.mv-right-title{font-size:36px;font-weight:900;color:var(--ink);line-height:1.05;letter-spacing:-1px;margin-bottom:18px}
-.mv-right-body{font-size:12.5px;color:var(--g3);line-height:1.75;font-weight:400}
-.mv-values{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
-.mv-val{background:#fff;border:1px solid var(--g1);border-radius:8px;padding:14px 16px}
-.mv-val-icon{font-size:16px;margin-bottom:6px}
-.mv-val-title{font-size:11px;font-weight:800;color:var(--ink);margin-bottom:3px}
-.mv-val-text{font-size:10px;color:var(--g3);line-height:1.5}
+.mv-left-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,12,26,.4),rgba(4,12,26,.92))}
+.mv-left-content{position:absolute;inset:0;padding:48px 42px;display:flex;flex-direction:column;justify-content:flex-end}
+.mv-label{font-size:8.5px;font-weight:700;color:var(--goldb);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mv-label::before{content:'';width:18px;height:2px;background:var(--goldb)}
+.mv-title{font-size:38px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1.5px;margin-bottom:18px}
+.mv-body{font-size:12px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300}
+.mv-right{flex:1;background:var(--off);padding:48px 42px;display:flex;flex-direction:column;justify-content:space-between}
+.mv-right-label{font-size:8.5px;font-weight:700;color:var(--blue);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mv-right-label::before{content:'';width:18px;height:2px;background:var(--blue)}
+.mv-right-title{font-size:38px;font-weight:900;color:var(--ink);line-height:1;letter-spacing:-1.5px;margin-bottom:18px}
+.mv-right-body{font-size:12px;color:var(--g3);line-height:1.8;font-weight:400}
+.mv-values{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.mv-val{background:#fff;border:1px solid var(--g1);border-radius:6px;padding:14px 15px;border-top:3px solid var(--goldb)}
+.mv-val.blue{border-top-color:var(--blue)}
+.mv-val-icon{font-size:15px;margin-bottom:6px}
+.mv-val-title{font-size:10.5px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.mv-val-text{font-size:9.5px;color:var(--g3);line-height:1.55}
 
 /* ── PARTNERS ── */
-.partners-hero{height:200px;position:relative;overflow:hidden;flex-shrink:0}
+.partners-hero{height:210px;position:relative;overflow:hidden;flex-shrink:0}
 .partners-hero img{width:100%;height:100%;object-fit:cover}
-.partners-hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,14,28,.4),rgba(6,14,28,.85))}
-.partners-hero-text{position:absolute;bottom:32px;left:52px}
-.partners-hero-label{font-size:9px;font-weight:700;color:var(--goldb);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.partners-hero-label::before{content:'';width:16px;height:2px;background:var(--gold)}
-.partners-hero-title{font-size:36px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px}
+.partners-hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,12,26,.3),rgba(4,12,26,.88))}
+.partners-hero-text{position:absolute;bottom:30px;left:52px}
+.partners-hero-label{font-size:8.5px;font-weight:700;color:var(--goldb);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.partners-hero-label::before{content:'';width:18px;height:2px;background:var(--goldb)}
+.partners-hero-title{font-size:40px;font-weight:900;color:#fff;line-height:.95;letter-spacing:-1.5px}
 .partners-body{padding:28px 52px;flex:1}
-.partner-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
-.partner-card{border:1px solid var(--g1);border-radius:9px;padding:18px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;background:#fff}
-.partner-card-name{font-size:13px;font-weight:800;color:var(--ink);text-align:center}
-.partner-card-sub{font-size:9.5px;color:var(--g2);text-align:center;letter-spacing:.3px}
-.cert-row{background:var(--navy);border-radius:10px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.cert-label{font-size:9px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase}
-.cert-badges{display:flex;gap:10px;flex-wrap:wrap}
-.cert-badge{background:rgba(200,137,12,.15);border:1px solid rgba(200,137,12,.3);border-radius:6px;padding:6px 14px;font-size:10.5px;font-weight:700;color:var(--goldb)}
+.partners-sub{font-size:8.5px;font-weight:700;color:var(--g3);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.partner-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+.partner-card{border:1px solid var(--g1);border-radius:7px;padding:16px 10px;display:flex;flex-direction:column;align-items:center;gap:7px;background:#fff;transition:border-color .2s}
+.partner-card:hover{border-color:var(--goldb)}
+.partner-card-name{font-size:13px;font-weight:900;text-align:center;letter-spacing:-.3px}
+.partner-card-sub{font-size:8.5px;color:var(--g2);text-align:center;letter-spacing:.5px;text-transform:uppercase}
+.cert-row{background:var(--ink);border-radius:8px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cert-label{font-size:8.5px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase}
+.cert-badges{display:flex;gap:8px;flex-wrap:wrap}
+.cert-badge{background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.25);border-radius:3px;padding:5px 13px;font-size:9.5px;font-weight:700;color:var(--goldb)}
 
 /* ── CLIENTS ── */
-.clients-top{background:var(--ink);padding:40px 52px 36px;flex-shrink:0}
-.clients-top-label{font-size:9px;font-weight:700;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.clients-top-label::before{content:'';width:16px;height:2px;background:var(--gold)}
-.clients-top-title{font-size:36px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px;margin-bottom:8px}
-.clients-top-sub{font-size:12px;color:rgba(255,255,255,.45);max-width:500px;line-height:1.6;font-weight:300}
-.clients-body{padding:28px 52px;flex:1}
-.client-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
-.client-card{border:1px solid var(--g1);border-radius:8px;padding:14px 10px;display:flex;align-items:center;justify-content:center;min-height:58px;background:#fff}
-.client-card-name{font-size:11px;font-weight:700;color:var(--ink);text-align:center;line-height:1.3}
-.sectors-strip{background:var(--off);border:1px solid var(--g1);border-radius:9px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
-.sectors-label{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
-.sectors-list{display:flex;gap:8px;flex-wrap:wrap}
-.sector-tag{background:#fff;border:1px solid var(--g1);border-radius:5px;padding:5px 12px;font-size:10px;font-weight:600;color:var(--g3)}
+.clients-top{background:var(--ink);padding:38px 52px 34px;flex-shrink:0;position:relative;overflow:hidden}
+.clients-top::after{content:'';position:absolute;top:0;right:0;width:200px;height:100%;background:linear-gradient(to left,rgba(232,160,32,.04),transparent)}
+.clients-top-label{font-size:8.5px;font-weight:700;color:var(--goldb);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.clients-top-label::before{content:'';width:18px;height:2px;background:var(--goldb)}
+.clients-top-title{font-size:40px;font-weight:900;color:#fff;line-height:.95;letter-spacing:-1.5px;margin-bottom:8px}
+.clients-top-sub{font-size:11.5px;color:rgba(255,255,255,.38);max-width:500px;line-height:1.65;font-weight:300}
+.clients-body{padding:26px 52px;flex:1}
+.client-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-bottom:18px}
+.client-card{border:1px solid var(--g1);border-radius:6px;padding:12px 10px;display:flex;align-items:center;justify-content:center;min-height:55px;background:#fff}
+.client-card:hover{border-color:var(--gold);background:var(--off)}
+.client-card-name{font-size:10.5px;font-weight:700;color:var(--ink);text-align:center;line-height:1.35}
+.sectors-strip{background:var(--off);border:1px solid var(--g1);border-radius:7px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.sectors-label{font-size:8.5px;font-weight:700;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.sectors-list{display:flex;gap:7px;flex-wrap:wrap}
+.sector-tag{background:#fff;border:1px solid var(--g1);border-radius:3px;padding:4px 11px;font-size:9.5px;font-weight:600;color:var(--g3)}
 .clients-stat{text-align:right;flex-shrink:0}
-.clients-stat-num{font-size:44px;font-weight:900;color:var(--navy);line-height:1}
-.clients-stat-label{font-size:9.5px;color:var(--g2);letter-spacing:1px;text-transform:uppercase}
+.clients-stat-num{font-size:46px;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-2px}
+.clients-stat-label{font-size:9px;color:var(--g2);letter-spacing:1.5px;text-transform:uppercase}
 
 /* ── PROJECTS ── */
-.proj-hero{position:relative;height:260px;overflow:hidden;flex-shrink:0}
+.proj-hero{position:relative;height:270px;overflow:hidden;flex-shrink:0}
 .proj-hero img{width:100%;height:100%;object-fit:cover}
-.proj-hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,14,28,.3),rgba(6,14,28,.88))}
-.proj-hero-text{position:absolute;bottom:30px;left:52px}
-.proj-body{padding:28px 52px;flex:1;display:flex;flex-direction:column;gap:18px}
-.proj-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1}
-.proj-card{border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
-.proj-card-head{padding:18px 22px}
+.proj-hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,12,26,.25),rgba(4,12,26,.9))}
+.proj-hero-text{position:absolute;bottom:32px;left:52px}
+.proj-body{padding:26px 52px;flex:1;display:flex;flex-direction:column;gap:16px}
+.proj-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1}
+.proj-card{border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.proj-card-head{padding:18px 22px;position:relative;overflow:hidden}
 .proj-card.dark .proj-card-head{background:var(--navy)}
 .proj-card.mid .proj-card-head{background:var(--blue)}
-.proj-card-tag{font-size:9px;font-weight:700;color:var(--goldb);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
-.proj-card-title{font-size:15px;font-weight:800;color:#fff;line-height:1.25}
-.proj-card-body{flex:1;border:1px solid var(--g1);border-top:none;border-radius:0 0 10px 10px;padding:16px 22px}
-.proj-item{display:flex;align-items:flex-start;gap:8px;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px solid var(--g1)}
+.proj-card-head::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--goldb)}
+.proj-card-tag{font-size:8.5px;font-weight:700;color:var(--goldb);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
+.proj-card-title{font-size:14px;font-weight:800;color:#fff;line-height:1.3;letter-spacing:-.3px}
+.proj-card-body{flex:1;border:1px solid var(--g1);border-top:none;border-radius:0 0 8px 8px;padding:14px 22px}
+.proj-item{display:flex;align-items:flex-start;gap:8px;font-size:10.5px;color:var(--text);padding:5px 0;border-bottom:1px solid var(--g1)}
 .proj-item:last-child{border-bottom:none}
-.proj-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
+.proj-dot{width:5px;height:5px;border-radius:50%;background:var(--goldb);flex-shrink:0;margin-top:4px}
 
 /* ── CONTACT ── */
-.contact-cover{position:relative;height:320px;overflow:hidden;flex-shrink:0}
+.contact-cover{position:relative;height:310px;overflow:hidden;flex-shrink:0}
 .contact-cover img{width:100%;height:100%;object-fit:cover}
-.contact-cover-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,14,28,.45),rgba(6,14,28,.92))}
+.contact-cover-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,12,26,.4),rgba(4,12,26,.94))}
 .contact-cover-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:40px 52px}
-.contact-body{padding:28px 52px;flex:1;display:flex;flex-direction:column;gap:20px}
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.c-card{border:1px solid var(--g1);border-radius:9px;padding:20px 18px;display:flex;flex-direction:column;gap:8px}
-.c-card-icon{width:34px;height:34px;border-radius:7px;background:var(--off);display:flex;align-items:center;justify-content:center;font-size:16px}
-.c-card-label{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase}
-.c-card-val{font-size:11.5px;font-weight:600;color:var(--ink);line-height:1.5}
-.contact-cta{background:var(--navy);border-radius:10px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between}
-.cta-left-title{font-size:18px;font-weight:900;color:#fff;margin-bottom:3px;letter-spacing:-.3px}
-.cta-left-sub{font-size:11px;color:rgba(255,255,255,.45)}
-.cta-right{background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:10px 24px;border-radius:20px;letter-spacing:.5px}
+.contact-body{padding:26px 52px;flex:1;display:flex;flex-direction:column;gap:18px}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.c-card{border:1px solid var(--g1);border-radius:7px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--g1)}
+.c-card:nth-child(1),.c-card:nth-child(2),.c-card:nth-child(3){border-top-color:var(--goldb)}
+.c-card:nth-child(4),.c-card:nth-child(5),.c-card:nth-child(6){border-top-color:var(--blue)}
+.c-card-icon{font-size:18px}
+.c-card-label{font-size:8.5px;font-weight:700;color:var(--blue);letter-spacing:2px;text-transform:uppercase}
+.c-card-val{font-size:11px;font-weight:600;color:var(--ink);line-height:1.55}
+.contact-cta{background:var(--ink);border-radius:8px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.contact-cta::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--goldb)}
+.cta-left-title{font-size:18px;font-weight:900;color:#fff;margin-bottom:3px;letter-spacing:-.5px}
+.cta-left-sub{font-size:10.5px;color:rgba(255,255,255,.38);letter-spacing:.3px}
+.cta-right{background:linear-gradient(135deg,var(--gold),var(--goldb));color:#fff;font-size:10.5px;font-weight:700;padding:10px 24px;border-radius:3px;letter-spacing:.8px}
 </style>
 </head>
 <body>
@@ -217,18 +233,18 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
   <div class="c-bg">
     <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=90&fit=crop" alt="">
   </div>
-  <div class="c-geo"></div><div class="c-geo2"></div>
+  <div class="c-band"></div><div class="c-band2"></div><div class="c-goldbar"></div>
   <div class="c-content">
     <div class="c-topbar">
       <div class="c-logo">
         <div class="c-logo-mark">MG</div>
         <div><div class="c-logo-name">MAX GENE LLC</div><div class="c-logo-sub">www.maxgen.com.sa</div></div>
       </div>
-      <div class="c-year-tag">COMPANY PROFILE 2025</div>
+      <div class="c-year-tag">Company Profile 2025</div>
     </div>
     <div class="c-main">
       <div class="c-eyebrow"><div class="c-ey-line"></div><div class="c-ey-text">Building Smarter Saudi Arabia</div></div>
-      <div class="c-h1">MAX<b>GENE</b>LLC</div>
+      <div class="c-h1">MAX<br><span>GENE</span><br><em>LLC</em></div>
       <div class="c-sub">A high-tech systems integrator delivering ELV, ICT, Security, MEP, and Telecom solutions across the Kingdom — from concept to commissioning.</div>
       <div class="c-pills">
         <div class="c-pill">ELV &amp; Automation</div>
@@ -302,7 +318,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
     <div class="mv-left-content">
       <div class="mv-label">Our Vision</div>
       <div class="mv-title">Inspire Change.<br>Open Possibilities.</div>
-      <div class="mv-body">AMAX Infotech envisions inspiring change and opening possibilities in the world of people-first solutions and services. We strive to empower organizations by delivering cutting-edge IT infrastructure design solutions.<br><br>Our vision is to transform IT components into specialized products through intelligent engineering design, fostering innovation and efficiency.</div>
+      <div class="mv-body">MAX GENE envisions inspiring change and opening possibilities in the world of people-first solutions and services. We strive to empower organizations by delivering cutting-edge IT infrastructure design solutions.<br><br>Our vision is to transform IT components into specialized products through intelligent engineering design, fostering innovation and efficiency.</div>
     </div>
   </div>
   <div class="mv-right">
@@ -315,9 +331,9 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
       <div class="mv-right-label" style="color:var(--g3)">Our Core Values</div>
       <div class="mv-values">
         <div class="mv-val"><div class="mv-val-icon">🤝</div><div class="mv-val-title">Integrity</div><div class="mv-val-text">Transparent and honest business dealings in everything we do</div></div>
-        <div class="mv-val"><div class="mv-val-icon">💡</div><div class="mv-val-title">Innovation</div><div class="mv-val-text">Intelligent engineering design fostering efficiency and creativity</div></div>
+        <div class="mv-val blue"><div class="mv-val-icon">💡</div><div class="mv-val-title">Innovation</div><div class="mv-val-text">Intelligent engineering design fostering efficiency and creativity</div></div>
         <div class="mv-val"><div class="mv-val-icon">🏆</div><div class="mv-val-title">Excellence</div><div class="mv-val-text">World-class consulting and certified, future-proof solutions</div></div>
-        <div class="mv-val"><div class="mv-val-icon">🛡️</div><div class="mv-val-title">Reliability</div><div class="mv-val-text">CE, GS, UL &amp; TUV certified — zero compromise on quality</div></div>
+        <div class="mv-val blue"><div class="mv-val-icon">🛡️</div><div class="mv-val-title">Reliability</div><div class="mv-val-text">CE, GS, UL &amp; TUV certified — zero compromise on quality</div></div>
       </div>
     </div>
   </div>
@@ -329,7 +345,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">ELV / Automation &amp; Control Systems</div></div><div class="ph-badge">ELV Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">01</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">01</div><div class="sb-photo-tag">ELV / Automation</div></div>
   <div class="sb-body">
     <div class="sb-watermark">01</div>
     <div class="sb-cat">ELV / Automation</div>
@@ -345,7 +361,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">02</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">02</div><div class="sb-photo-tag">Building Automation</div></div>
   <div class="sb-body">
     <div class="sb-watermark">02</div>
     <div class="sb-cat">ELV / Building Automation</div>
@@ -366,7 +382,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">ELV / Life Safety Systems</div></div><div class="ph-badge">Life Safety</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1582139329536-e7284fece006?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">03</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1582139329536-e7284fece006?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">03</div><div class="sb-photo-tag">Life Safety</div></div>
   <div class="sb-body">
     <div class="sb-watermark">03</div>
     <div class="sb-cat">ELV / Life Safety</div>
@@ -382,7 +398,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">04</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">04</div><div class="sb-photo-tag">Fire Suppression</div></div>
   <div class="sb-body">
     <div class="sb-watermark">04</div>
     <div class="sb-cat">ELV / Life Safety</div>
@@ -403,7 +419,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">ICT &amp; Security Systems</div></div><div class="ph-badge">ICT Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">05</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">05</div><div class="sb-photo-tag">ICT / Data Systems</div></div>
   <div class="sb-body">
     <div class="sb-watermark">05</div>
     <div class="sb-cat">ICT / Data Systems</div>
@@ -419,7 +435,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">06</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">06</div><div class="sb-photo-tag">Surveillance</div></div>
   <div class="sb-body">
     <div class="sb-watermark">06</div>
     <div class="sb-cat">LCS / Security Surveillance</div>
@@ -440,7 +456,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Security &amp; Access Systems</div></div><div class="ph-badge">Security Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">07</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">07</div><div class="sb-photo-tag">Access Control</div></div>
   <div class="sb-body">
     <div class="sb-watermark">07</div>
     <div class="sb-cat">LCS / Access Control</div>
@@ -456,7 +472,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1487611272882-4de8cbc7b5be?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">08</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1487611272882-4de8cbc7b5be?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">08</div><div class="sb-photo-tag">Intrusion Detection</div></div>
   <div class="sb-body">
     <div class="sb-watermark">08</div>
     <div class="sb-cat">LCS / Security</div>
@@ -477,7 +493,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Communication &amp; Healthcare Systems</div></div><div class="ph-badge">ELV / Life Safety</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">09</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">09</div><div class="sb-photo-tag">PA / Voice Evacuation</div></div>
   <div class="sb-body">
     <div class="sb-watermark">09</div>
     <div class="sb-cat">ELV / Life Safety</div>
@@ -493,7 +509,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">10</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">10</div><div class="sb-photo-tag">Healthcare</div></div>
   <div class="sb-body">
     <div class="sb-watermark">10</div>
     <div class="sb-cat">ELV / Healthcare</div>
@@ -514,7 +530,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Power Backup &amp; Industrial Protection</div></div><div class="ph-badge">ELV / Security</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">11</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">11</div><div class="sb-photo-tag">Power Systems</div></div>
   <div class="sb-body">
     <div class="sb-watermark">11</div>
     <div class="sb-cat">ELV / Power Systems</div>
@@ -530,7 +546,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">12</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">12</div><div class="sb-photo-tag">Industrial Security</div></div>
   <div class="sb-body">
     <div class="sb-watermark">12</div>
     <div class="sb-cat">LCS / Industrial</div>
@@ -551,7 +567,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Smart Facilities Management</div></div><div class="ph-badge">Smart Systems</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">13</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">13</div><div class="sb-photo-tag">Parking Systems</div></div>
   <div class="sb-body">
     <div class="sb-watermark">13</div>
     <div class="sb-cat">LCS / Smart Facilities</div>
@@ -567,7 +583,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">14</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">14</div><div class="sb-photo-tag">Queue Management</div></div>
   <div class="sb-body">
     <div class="sb-watermark">14</div>
     <div class="sb-cat">LCS / Smart Facilities</div>
@@ -588,7 +604,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Energy &amp; MEP Division</div></div><div class="ph-badge">MEP / Energy</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">15</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">15</div><div class="sb-photo-tag">Renewable Energy</div></div>
   <div class="sb-body">
     <div class="sb-watermark">15</div>
     <div class="sb-cat">ELV / Energy</div>
@@ -604,7 +620,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">16</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">16</div><div class="sb-photo-tag">HVAC Systems</div></div>
   <div class="sb-body">
     <div class="sb-watermark">16</div>
     <div class="sb-cat">MEP / Mechanical</div>
@@ -625,7 +641,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">MEP / Electrical Works</div></div><div class="ph-badge">MEP Division</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1621905251918-42e8e2ada5a2?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">17</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1621905251918-42e8e2ada5a2?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">17</div><div class="sb-photo-tag">Electrical Works</div></div>
   <div class="sb-body">
     <div class="sb-watermark">17</div>
     <div class="sb-cat">MEP / Electrical</div>
@@ -641,7 +657,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1504615755583-2916b52192a3?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">18</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1504615755583-2916b52192a3?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">18</div><div class="sb-photo-tag">Grounding & Lightning</div></div>
   <div class="sb-body">
     <div class="sb-watermark">18</div>
     <div class="sb-cat">MEP / Electrical</div>
@@ -662,7 +678,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Telecom Division</div></div><div class="ph-badge">Telecom</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">19</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">19</div><div class="sb-photo-tag">Telecom / OSP</div></div>
   <div class="sb-body">
     <div class="sb-watermark">19</div>
     <div class="sb-cat">Telecom Division</div>
@@ -678,7 +694,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">20</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">20</div><div class="sb-photo-tag">Unified Comms</div></div>
   <div class="sb-body">
     <div class="sb-watermark">20</div>
     <div class="sb-cat">Telecom / Unified Comms</div>
@@ -699,7 +715,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Specialized Systems</div></div><div class="ph-badge">Security / ELV</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">21</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">21</div><div class="sb-photo-tag">Security Screening</div></div>
   <div class="sb-body">
     <div class="sb-watermark">21</div>
     <div class="sb-cat">LCS / Security Screening</div>
@@ -715,7 +731,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">22</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">22</div><div class="sb-photo-tag">Master Clock</div></div>
   <div class="sb-body">
     <div class="sb-watermark">22</div>
     <div class="sb-cat">ELV / Specialized</div>
@@ -736,7 +752,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Fleet &amp; MEP Services</div></div><div class="ph-badge">Logistics / MEP</div></div>
 <div class="sb">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">23</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">23</div><div class="sb-photo-tag">Fleet / IoT</div></div>
   <div class="sb-body">
     <div class="sb-watermark">23</div>
     <div class="sb-cat">Logistics / IoT</div>
@@ -752,7 +768,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 </div>
 <div class="gold-rule"></div>
 <div class="sb flip">
-  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">24</div></div>
+  <div class="sb-photo"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=520&fit=crop&q=85" alt=""><div class="sb-photo-veil"></div><div class="sb-photo-num">24</div><div class="sb-photo-tag">MEP Division</div></div>
   <div class="sb-body">
     <div class="sb-watermark">24</div>
     <div class="sb-cat">MEP Division</div>
@@ -773,16 +789,16 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <div class="page">
 <div class="ph"><div class="ph-left"><div class="ph-dot"></div><div class="ph-title">Technology Partners</div></div><div class="ph-badge">Partners</div></div>
 <div class="partners-hero">
-  <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=220&fit=crop&q=85" alt="">
+  <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=230&fit=crop&q=85" alt="">
   <div class="partners-hero-veil"></div>
   <div class="partners-hero-text">
     <div class="partners-hero-label">Trusted Partners</div>
     <div class="partners-hero-title">Our Partners</div>
   </div>
-  <div style="position:absolute;top:16px;right:24px;font-size:11px;color:rgba(255,255,255,.4);">16</div>
+  <div style="position:absolute;top:18px;right:26px;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1px">16</div>
 </div>
 <div class="partners-body">
-  <div style="font-size:9px;font-weight:700;color:var(--g3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">Brand Partners &amp; Technology Alliances</div>
+  <div class="partners-sub">Brand Partners &amp; Technology Alliances</div>
   <div class="partner-grid">
     <div class="partner-card"><div class="partner-card-name" style="color:#049fd9">CISCO</div><div class="partner-card-sub">Networking</div></div>
     <div class="partner-card"><div class="partner-card-name" style="color:#009999">SIEMENS</div><div class="partner-card-sub">Automation</div></div>
@@ -790,10 +806,10 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
     <div class="partner-card"><div class="partner-card-name" style="color:#ff8300">ARUBA</div><div class="partner-card-sub">Wireless</div></div>
     <div class="partner-card"><div class="partner-card-name" style="color:#007db8">DELL</div><div class="partner-card-sub">Infrastructure</div></div>
     <div class="partner-card"><div class="partner-card-name" style="color:#c40000">BOSCH</div><div class="partner-card-sub">Security</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#1245a8">ZKTeco</div><div class="partner-card-sub">Access Control</div></div>
+    <div class="partner-card"><div class="partner-card-name" style="color:#0f3d8c">ZKTeco</div><div class="partner-card-sub">Access Control</div></div>
     <div class="partner-card"><div class="partner-card-name" style="color:#e8151b">BFT</div><div class="partner-card-sub">Parking / Gates</div></div>
     <div class="partner-card"><div class="partner-card-name" style="color:#cc0000">3M</div><div class="partner-card-sub">Cabling / Safety</div></div>
-    <div class="partner-card"><div class="partner-card-name" style="color:#444">ZETTA</div><div class="partner-card-sub">Storage</div></div>
+    <div class="partner-card"><div class="partner-card-name" style="color:#333">ZETTA</div><div class="partner-card-sub">Storage</div></div>
   </div>
   <div class="cert-row">
     <div class="cert-label">Certifications Supported</div>
@@ -848,7 +864,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
         <div class="sector-tag">Government</div><div class="sector-tag">Banking</div><div class="sector-tag">Healthcare</div><div class="sector-tag">Telecom</div><div class="sector-tag">Hospitality</div><div class="sector-tag">Education</div><div class="sector-tag">Logistics</div><div class="sector-tag">Airports</div><div class="sector-tag">Retail</div>
       </div>
     </div>
-    <div class="clients-stat"><div class="clients-stat-num">20<span style="color:var(--gold);font-size:28px">+</span></div><div class="clients-stat-label">Active Clients</div></div>
+    <div class="clients-stat"><div class="clients-stat-num">20<span style="color:var(--goldb);font-size:28px;letter-spacing:0">+</span></div><div class="clients-stat-label">Active Clients</div></div>
   </div>
 </div>
 <div class="pf"><div class="pf-l">MAX GENE LLC</div><div class="pf-c">www.maxgen.com.sa</div><div class="pf-r">17</div></div>
@@ -857,13 +873,13 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <!-- ═══════ PAGE 18 — PROJECTS ═══════ -->
 <div class="page">
 <div class="proj-hero">
-  <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&h=280&fit=crop&q=85" alt="">
+  <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&h=290&fit=crop&q=85" alt="">
   <div class="proj-hero-veil"></div>
   <div class="proj-hero-text">
     <div class="mv-label" style="margin-bottom:6px">Our Work</div>
-    <div style="font-size:36px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1">Key Projects</div>
+    <div style="font-size:40px;font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:.95">Key Projects</div>
   </div>
-  <div style="position:absolute;top:16px;right:24px;font-size:11px;color:rgba(255,255,255,.4);">18</div>
+  <div style="position:absolute;top:18px;right:26px;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1px">18</div>
 </div>
 <div class="proj-body">
   <div class="proj-cards">
@@ -903,12 +919,12 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
 <!-- ═══════ PAGE 19 — CONTACT ═══════ -->
 <div class="page">
 <div class="contact-cover">
-  <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&h=340&fit=crop&q=85" alt="">
+  <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&h=330&fit=crop&q=85" alt="">
   <div class="contact-cover-veil"></div>
   <div class="contact-cover-content">
     <div class="mv-label" style="margin-bottom:8px">Contact Us</div>
-    <div style="font-size:42px;font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1;margin-bottom:10px">Get In Touch</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.5);max-width:420px;line-height:1.65;font-weight:300">Ready to build smarter? Our team is here to consult, design, and deliver — from concept to commissioning across Saudi Arabia.</div>
+    <div style="font-size:46px;font-weight:900;color:#fff;letter-spacing:-2px;line-height:.92;margin-bottom:12px">Get In Touch</div>
+    <div style="font-size:12.5px;color:rgba(255,255,255,.45);max-width:420px;line-height:1.7;font-weight:300">Ready to build smarter? Our team is here to consult, design, and deliver — from concept to commissioning across Saudi Arabia.</div>
   </div>
 </div>
 <div class="contact-body">
@@ -945,7 +961,7 @@ body{font-family:'Inter',sans-serif;background:#c8cdd6}
     </div>
   </div>
   <div class="contact-cta">
-    <div class="contact-cta-left">
+    <div>
       <div class="cta-left-title">MAX GENE LLC</div>
       <div class="cta-left-sub">ELV · ICT · Security · MEP · Telecom · Building Smarter Saudi Arabia</div>
     </div>
