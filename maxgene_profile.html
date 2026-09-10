@@ -167,24 +167,46 @@ body{font-family:'Inter',sans-serif;background:#1a1f2e}
 .cert-badge{background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.25);border-radius:3px;padding:5px 13px;font-size:9.5px;font-weight:700;color:var(--goldb)}
 
 /* ── CLIENTS ── */
-.clients-top{background:var(--ink);padding:38px 52px 34px;flex-shrink:0;position:relative;overflow:hidden}
+.clients-top{background:var(--ink);padding:36px 52px 30px;flex-shrink:0;position:relative;overflow:hidden}
 .clients-top::after{content:'';position:absolute;top:0;right:0;width:200px;height:100%;background:linear-gradient(to left,rgba(232,160,32,.04),transparent)}
 .clients-top-label{font-size:8.5px;font-weight:700;color:var(--goldb);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .clients-top-label::before{content:'';width:18px;height:2px;background:var(--goldb)}
-.clients-top-title{font-size:40px;font-weight:900;color:#fff;line-height:.95;letter-spacing:-1.5px;margin-bottom:8px}
-.clients-top-sub{font-size:11.5px;color:rgba(255,255,255,.38);max-width:500px;line-height:1.65;font-weight:300}
-.clients-body{padding:26px 52px;flex:1}
-.client-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-bottom:18px}
-.client-card{border:1px solid var(--g1);border-radius:6px;padding:12px 10px;display:flex;align-items:center;justify-content:center;min-height:55px;background:#fff}
-.client-card:hover{border-color:var(--gold);background:var(--off)}
-.client-card-name{font-size:10.5px;font-weight:700;color:var(--ink);text-align:center;line-height:1.35}
-.sectors-strip{background:var(--off);border:1px solid var(--g1);border-radius:7px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
-.sectors-label{font-size:8.5px;font-weight:700;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.sectors-list{display:flex;gap:7px;flex-wrap:wrap}
-.sector-tag{background:#fff;border:1px solid var(--g1);border-radius:3px;padding:4px 11px;font-size:9.5px;font-weight:600;color:var(--g3)}
-.clients-stat{text-align:right;flex-shrink:0}
-.clients-stat-num{font-size:46px;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-2px}
-.clients-stat-label{font-size:9px;color:var(--g2);letter-spacing:1.5px;text-transform:uppercase}
+.clients-top-title{font-size:38px;font-weight:900;color:#fff;line-height:.95;letter-spacing:-1.5px;margin-bottom:8px}
+.clients-top-sub{font-size:11px;color:rgba(255,255,255,.38);max-width:500px;line-height:1.6;font-weight:300}
+.clients-body{padding:20px 52px 16px;flex:1;display:flex;flex-direction:column;gap:14px}
+/* sector grouping */
+.sector-group{}
+.sector-group-label{font-size:8px;font-weight:700;color:var(--g2);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.sector-group-label::before{content:'';width:12px;height:1px;background:var(--g2)}
+.client-row{display:flex;gap:9px;flex-wrap:wrap}
+/* logo card */
+.client-logo-card{width:110px;height:62px;border:1px solid var(--g1);border-radius:6px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;flex-shrink:0;transition:border-color .2s,box-shadow .2s}
+.client-logo-card:hover{border-color:var(--goldb);box-shadow:0 2px 8px rgba(184,120,10,.15)}
+.client-logo-card img{width:100%;height:100%;object-fit:contain;padding:8px;display:none}
+.client-logo-card img.loaded{display:block}
+.client-logo-initials{font-size:11px;font-weight:800;color:var(--navy);text-align:center;line-height:1.2;padding:4px 6px}
+.client-logo-name{font-size:8px;color:var(--g2);text-align:center;margin-top:2px;padding:0 4px;line-height:1.2}
+.client-upload-hint{position:absolute;inset:0;background:rgba(10,24,48,.82);display:none;align-items:center;justify-content:center;flex-direction:column;gap:3px}
+.client-logo-card:hover .client-upload-hint{display:flex}
+.client-upload-hint span{font-size:8px;font-weight:700;color:#fff;letter-spacing:.5px}
+.client-upload-hint svg{width:16px;height:16px;fill:#fff;opacity:.8}
+.clients-stats-bar{background:var(--off);border:1px solid var(--g1);border-radius:7px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.clients-stat-item{text-align:center}
+.clients-stat-num{font-size:32px;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-1px}
+.clients-stat-label{font-size:8px;color:var(--g2);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+.clients-stat-item+.clients-stat-item{border-left:1px solid var(--g1);padding-left:24px;margin-left:24px}
+/* image manager panel */
+#img-manager{position:fixed;top:0;right:-420px;width:400px;height:100vh;background:var(--ink);color:#fff;z-index:9999;transition:right .3s;overflow-y:auto;padding:24px;font-family:'Inter',sans-serif;box-shadow:-8px 0 32px rgba(0,0,0,.5)}
+#img-manager.open{right:0}
+#img-manager h2{font-size:14px;font-weight:800;margin-bottom:4px;color:#fff}
+#img-manager p{font-size:10px;color:rgba(255,255,255,.4);margin-bottom:20px}
+.img-row{margin-bottom:14px}
+.img-row label{display:block;font-size:9px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+.img-row input{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:7px 10px;font-size:10px;color:#fff;outline:none}
+.img-row input:focus{border-color:var(--goldb)}
+.img-apply-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--goldb));border:none;color:#fff;font-size:11px;font-weight:700;padding:10px;border-radius:4px;cursor:pointer;margin-top:4px;letter-spacing:.5px}
+#img-toggle{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--goldb);border:none;cursor:pointer;z-index:10000;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.4);font-size:18px}
+@media print{#img-manager,#img-toggle{display:none!important}}
 
 /* ── PROJECTS ── */
 .proj-hero{position:relative;height:270px;overflow:hidden;flex-shrink:0}
@@ -832,39 +854,119 @@ body{font-family:'Inter',sans-serif;background:#1a1f2e}
 <div class="clients-top">
   <div class="clients-top-label">Trusted By</div>
   <div class="clients-top-title">Our Clients</div>
-  <div class="clients-top-sub">Proud to serve leading organizations across government, banking, healthcare, logistics, telecom, and hospitality sectors across the Kingdom and beyond.</div>
+  <div class="clients-top-sub">Proud to serve leading organizations across banking, telecom, hospitality, logistics, and government sectors across the Kingdom and beyond. Click any logo card to upload a client logo.</div>
 </div>
 <div class="clients-body">
-  <div class="client-grid">
-    <div class="client-card"><div class="client-card-name">Clyde &amp; Co</div></div>
-    <div class="client-card"><div class="client-card-name">Four Seasons Hotels</div></div>
-    <div class="client-card"><div class="client-card-name">SAR — Saudi Railway</div></div>
-    <div class="client-card"><div class="client-card-name">Nextel KSA</div></div>
-    <div class="client-card"><div class="client-card-name">Emirates NBD</div></div>
-    <div class="client-card"><div class="client-card-name">Al Rajhi Telecom</div></div>
-    <div class="client-card"><div class="client-card-name">Baud Telecom Company</div></div>
-    <div class="client-card"><div class="client-card-name">Trans Telecoms</div></div>
-    <div class="client-card"><div class="client-card-name">Hellmann Worldwide Logistics</div></div>
-    <div class="client-card"><div class="client-card-name">Al Arab Contracting Co.</div></div>
-    <div class="client-card"><div class="client-card-name">Ebttikar</div></div>
-    <div class="client-card"><div class="client-card-name">Edutech</div></div>
-    <div class="client-card"><div class="client-card-name">Madaf</div></div>
-    <div class="client-card"><div class="client-card-name">Arabian Fal Company</div></div>
-    <div class="client-card"><div class="client-card-name">SIG Obeikan</div></div>
-    <div class="client-card"><div class="client-card-name">RTCC</div></div>
-    <div class="client-card"><div class="client-card-name">Wallah Trading Co.</div></div>
-    <div class="client-card"><div class="client-card-name">ICL</div></div>
-    <div class="client-card"><div class="client-card-name">Al Ghaniya</div></div>
-    <div class="client-card" style="background:var(--off);border-style:dashed"><div class="client-card-name" style="color:var(--g2)">And many more...</div></div>
-  </div>
-  <div class="sectors-strip">
-    <div>
-      <div class="sectors-label">Sectors We Serve</div>
-      <div class="sectors-list">
-        <div class="sector-tag">Government</div><div class="sector-tag">Banking</div><div class="sector-tag">Healthcare</div><div class="sector-tag">Telecom</div><div class="sector-tag">Hospitality</div><div class="sector-tag">Education</div><div class="sector-tag">Logistics</div><div class="sector-tag">Airports</div><div class="sector-tag">Retail</div>
+
+  <div class="sector-group">
+    <div class="sector-group-label">Banking &amp; Finance</div>
+    <div class="client-row">
+      <div class="client-logo-card" onclick="uploadLogo(this,'Emirates NBD')">
+        <img alt="Emirates NBD"><div class="client-logo-initials">EN</div><div class="client-logo-name">Emirates NBD</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'Al Rajhi Telecom')">
+        <img alt="Al Rajhi Telecom"><div class="client-logo-initials">AR</div><div class="client-logo-name">Al Rajhi Telecom</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
       </div>
     </div>
-    <div class="clients-stat"><div class="clients-stat-num">20<span style="color:var(--goldb);font-size:28px;letter-spacing:0">+</span></div><div class="clients-stat-label">Active Clients</div></div>
+  </div>
+
+  <div class="sector-group">
+    <div class="sector-group-label">Telecom &amp; Connectivity</div>
+    <div class="client-row">
+      <div class="client-logo-card" onclick="uploadLogo(this,'Baud Telecom')">
+        <img alt="Baud Telecom"><div class="client-logo-initials">BT</div><div class="client-logo-name">Baud Telecom Co.</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'Trans Telecoms')">
+        <img alt="Trans Telecoms"><div class="client-logo-initials">TT</div><div class="client-logo-name">Trans Telecoms</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'Nextel KSA')">
+        <img alt="Nextel KSA"><div class="client-logo-initials">NX</div><div class="client-logo-name">Nextel KSA</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sector-group">
+    <div class="sector-group-label">Hospitality &amp; Legal</div>
+    <div class="client-row">
+      <div class="client-logo-card" onclick="uploadLogo(this,'Four Seasons')">
+        <img alt="Four Seasons"><div class="client-logo-initials">FS</div><div class="client-logo-name">Four Seasons Hotels</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'Clyde & Co')">
+        <img alt="Clyde & Co"><div class="client-logo-initials">C&amp;C</div><div class="client-logo-name">Clyde &amp; Co</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sector-group">
+    <div class="sector-group-label">Logistics &amp; Infrastructure</div>
+    <div class="client-row">
+      <div class="client-logo-card" onclick="uploadLogo(this,'Hellmann')">
+        <img alt="Hellmann"><div class="client-logo-initials">HW</div><div class="client-logo-name">Hellmann Worldwide</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'SAR')">
+        <img alt="SAR"><div class="client-logo-initials">SAR</div><div class="client-logo-name">Saudi Railway</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'Al Arab Contracting')">
+        <img alt="Al Arab Contracting"><div class="client-logo-initials">AA</div><div class="client-logo-name">Al Arab Contracting</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sector-group">
+    <div class="sector-group-label">Education, Technology &amp; Others</div>
+    <div class="client-row">
+      <div class="client-logo-card" onclick="uploadLogo(this,'Ebttikar')">
+        <img alt="Ebttikar"><div class="client-logo-initials">EB</div><div class="client-logo-name">Ebttikar</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'Edutech')">
+        <img alt="Edutech"><div class="client-logo-initials">ED</div><div class="client-logo-name">Edutech</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'Madaf')">
+        <img alt="Madaf"><div class="client-logo-initials">MD</div><div class="client-logo-name">Madaf</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'SIG Obeikan')">
+        <img alt="SIG Obeikan"><div class="client-logo-initials">SIG</div><div class="client-logo-name">SIG Obeikan</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'RTCC')">
+        <img alt="RTCC"><div class="client-logo-initials">RT</div><div class="client-logo-name">RTCC</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+      <div class="client-logo-card" onclick="uploadLogo(this,'ICL')">
+        <img alt="ICL"><div class="client-logo-initials">ICL</div><div class="client-logo-name">ICL</div>
+        <div class="client-upload-hint"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Upload Logo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clients-stats-bar">
+    <div class="clients-stat-item"><div class="clients-stat-num">20<span style="color:var(--goldb);font-size:20px">+</span></div><div class="clients-stat-label">Active Clients</div></div>
+    <div class="clients-stat-item"><div class="clients-stat-num">5</div><div class="clients-stat-label">Sectors Served</div></div>
+    <div class="clients-stat-item"><div class="clients-stat-num">5<span style="color:var(--goldb);font-size:20px">+</span></div><div class="clients-stat-label">Years Serving</div></div>
+    <div style="text-align:right;flex:1">
+      <div style="font-size:8px;font-weight:700;color:var(--g2);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Sectors We Serve</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
+        <span style="background:#fff;border:1px solid var(--g1);border-radius:3px;padding:3px 9px;font-size:8.5px;font-weight:600;color:var(--g3)">Government</span>
+        <span style="background:#fff;border:1px solid var(--g1);border-radius:3px;padding:3px 9px;font-size:8.5px;font-weight:600;color:var(--g3)">Banking</span>
+        <span style="background:#fff;border:1px solid var(--g1);border-radius:3px;padding:3px 9px;font-size:8.5px;font-weight:600;color:var(--g3)">Telecom</span>
+        <span style="background:#fff;border:1px solid var(--g1);border-radius:3px;padding:3px 9px;font-size:8.5px;font-weight:600;color:var(--g3)">Hospitality</span>
+        <span style="background:#fff;border:1px solid var(--g1);border-radius:3px;padding:3px 9px;font-size:8.5px;font-weight:600;color:var(--g3)">Logistics</span>
+        <span style="background:#fff;border:1px solid var(--g1);border-radius:3px;padding:3px 9px;font-size:8.5px;font-weight:600;color:var(--g3)">Education</span>
+      </div>
+    </div>
   </div>
 </div>
 <div class="pf"><div class="pf-l">MAX GENE LLC</div><div class="pf-c">www.maxgen.com.sa</div><div class="pf-r">17</div></div>
@@ -971,5 +1073,121 @@ body{font-family:'Inter',sans-serif;background:#1a1f2e}
 <div class="pf"><div class="pf-l">MAX GENE LLC</div><div class="pf-c">www.maxgen.com.sa</div><div class="pf-r">19</div></div>
 </div>
 
+<!-- ═══════ IMAGE MANAGER PANEL ═══════ -->
+<button id="img-toggle" title="Manage Images" onclick="document.getElementById('img-manager').classList.toggle('open')">🖼️</button>
+<div id="img-manager">
+  <h2>Image Manager</h2>
+  <p>Paste a new Unsplash or image URL to replace any service photo. Changes save automatically.</p>
+  <div class="img-row"><label>Cover Page</label><input id="img-cover" placeholder="https://images.unsplash.com/..."><button class="img-apply-btn" onclick="applyImg('img-cover','.c-bg img')">Apply</button></div>
+  <div class="img-row"><label>01 Guest Management</label><input id="img-01" placeholder="https://images.unsplash.com/..."><button class="img-apply-btn" onclick="applyImgN('img-01',0)">Apply</button></div>
+  <div class="img-row"><label>02 BMS</label><input id="img-02" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-02',1)">Apply</button></div>
+  <div class="img-row"><label>03 Fire Alarm</label><input id="img-03" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-03',2)">Apply</button></div>
+  <div class="img-row"><label>04 Fire Suppression</label><input id="img-04" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-04',3)">Apply</button></div>
+  <div class="img-row"><label>05 Enterprise Networking</label><input id="img-05" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-05',4)">Apply</button></div>
+  <div class="img-row"><label>06 CCTV</label><input id="img-06" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-06',5)">Apply</button></div>
+  <div class="img-row"><label>07 Access Control</label><input id="img-07" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-07',6)">Apply</button></div>
+  <div class="img-row"><label>08 Intrusion Alarm</label><input id="img-08" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-08',7)">Apply</button></div>
+  <div class="img-row"><label>09 PA / Voice Evacuation</label><input id="img-09" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-09',8)">Apply</button></div>
+  <div class="img-row"><label>10 Nurse Call</label><input id="img-10" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-10',9)">Apply</button></div>
+  <div class="img-row"><label>11 UPS / Battery</label><input id="img-11" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-11',10)">Apply</button></div>
+  <div class="img-row"><label>12 Industrial Security</label><input id="img-12" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-12',11)">Apply</button></div>
+  <div class="img-row"><label>13 Parking Management</label><input id="img-13" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-13',12)">Apply</button></div>
+  <div class="img-row"><label>14 Queue Management</label><input id="img-14" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-14',13)">Apply</button></div>
+  <div class="img-row"><label>15 Renewable Energy</label><input id="img-15" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-15',14)">Apply</button></div>
+  <div class="img-row"><label>16 HVAC</label><input id="img-16" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-16',15)">Apply</button></div>
+  <div class="img-row"><label>17 Electrical Works</label><input id="img-17" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-17',16)">Apply</button></div>
+  <div class="img-row"><label>18 Grounding</label><input id="img-18" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-18',17)">Apply</button></div>
+  <div class="img-row"><label>19 Telecom / OSP</label><input id="img-19" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-19',18)">Apply</button></div>
+  <div class="img-row"><label>20 IP PBX</label><input id="img-20" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-20',19)">Apply</button></div>
+  <div class="img-row"><label>21 Metal Detection</label><input id="img-21" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-21',20)">Apply</button></div>
+  <div class="img-row"><label>22 Master Clock</label><input id="img-22" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-22',21)">Apply</button></div>
+  <div class="img-row"><label>23 Vehicle Tracking</label><input id="img-23" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-23',22)">Apply</button></div>
+  <div class="img-row"><label>24 MEP</label><input id="img-24" placeholder=""><button class="img-apply-btn" onclick="applyImgN('img-24',23)">Apply</button></div>
+  <div class="img-row" style="margin-top:20px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px">
+    <button class="img-apply-btn" style="background:rgba(255,255,255,.08);margin-bottom:8px" onclick="resetAll()">Reset All to Default</button>
+    <p style="font-size:9px;color:rgba(255,255,255,.3);margin:0">Images save in your browser. Clear browser data to reset.</p>
+  </div>
+</div>
+
+<!-- hidden file input for logo upload -->
+<input type="file" id="logo-file-input" accept="image/*" style="display:none">
+
+<script>
+// ── Logo Upload ──
+var _currentLogoCard = null;
+function uploadLogo(card, name) {
+  _currentLogoCard = card;
+  document.getElementById('logo-file-input').click();
+}
+document.getElementById('logo-file-input').addEventListener('change', function(e) {
+  var file = e.target.files[0];
+  if (!file || !_currentLogoCard) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var img = _currentLogoCard.querySelector('img');
+    var initials = _currentLogoCard.querySelector('.client-logo-initials');
+    var nameEl = _currentLogoCard.querySelector('.client-logo-name');
+    img.src = ev.target.result;
+    img.classList.add('loaded');
+    if (initials) initials.style.display = 'none';
+    // persist
+    try { localStorage.setItem('logo_' + img.alt, ev.target.result); } catch(e){}
+  };
+  reader.readAsDataURL(file);
+  this.value = '';
+});
+
+// ── Restore logos from localStorage ──
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.client-logo-card img').forEach(function(img) {
+    try {
+      var saved = localStorage.getItem('logo_' + img.alt);
+      if (saved) {
+        img.src = saved;
+        img.classList.add('loaded');
+        var initials = img.parentElement.querySelector('.client-logo-initials');
+        if (initials) initials.style.display = 'none';
+      }
+    } catch(e) {}
+  });
+  // restore service images
+  var serviceImgs = document.querySelectorAll('.sb-photo img');
+  serviceImgs.forEach(function(img, i) {
+    try {
+      var saved = localStorage.getItem('svc_img_' + i);
+      if (saved) img.src = saved;
+    } catch(e) {}
+  });
+  try {
+    var coverSaved = localStorage.getItem('cover_img');
+    if (coverSaved) document.querySelector('.c-bg img').src = coverSaved;
+  } catch(e) {}
+});
+
+// ── Image Manager ──
+var serviceImgEls = null;
+function applyImg(inputId, selector) {
+  var url = document.getElementById(inputId).value.trim();
+  if (!url) return;
+  document.querySelector(selector).src = url;
+  try { localStorage.setItem('cover_img', url); } catch(e) {}
+}
+function applyImgN(inputId, index) {
+  var url = document.getElementById(inputId).value.trim();
+  if (!url) return;
+  if (!serviceImgEls) serviceImgEls = document.querySelectorAll('.sb-photo img');
+  serviceImgEls[index].src = url;
+  try { localStorage.setItem('svc_img_' + index, url); } catch(e) {}
+}
+function resetAll() {
+  if (!confirm('Reset all custom images? This cannot be undone.')) return;
+  try {
+    Object.keys(localStorage).forEach(function(k) {
+      if (k.startsWith('svc_img_') || k === 'cover_img' || k.startsWith('logo_')) localStorage.removeItem(k);
+    });
+  } catch(e) {}
+  location.reload();
+}
+</script>
 </body>
 </html>
